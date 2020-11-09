@@ -8,18 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Proejkt_BD
+namespace Proejkt_BD.Control.Worker
 {
-    public partial class Form1 : Form
+    public partial class Activity_details : Form
     {
-        public Form1()
+        public Activity_details()
         {
             InitializeComponent();
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }
