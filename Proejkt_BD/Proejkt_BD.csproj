@@ -52,6 +52,18 @@
     <Compile Include="Control\Admin\Administrator.Designer.cs">
       <DependentUpon>Administrator.cs</DependentUpon>
     </Compile>
+    <Compile Include="Control\Admin\EditUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Control\Admin\EditUser.Designer.cs">
+      <DependentUpon>EditUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\Admin\NewUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Control\Admin\NewUser.Designer.cs">
+      <DependentUpon>NewUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="Control\Menager\Menager.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -74,6 +86,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Control\Admin\Administrator.resx">
       <DependentUpon>Administrator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\Admin\EditUser.resx">
+      <DependentUpon>EditUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\Admin\NewUser.resx">
+      <DependentUpon>NewUser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Control\Menager\Menager.resx">
       <DependentUpon>Menager.cs</DependentUpon>
