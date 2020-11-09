@@ -16,5 +16,10 @@ namespace Proejkt_BD.Control.Worker
         {
             InitializeComponent();
         }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

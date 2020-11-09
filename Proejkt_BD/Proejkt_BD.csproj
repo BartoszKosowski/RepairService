@@ -70,6 +70,12 @@
     <Compile Include="Control\Menager\Menager.Designer.cs">
       <DependentUpon>Menager.cs</DependentUpon>
     </Compile>
+    <Compile Include="Control\Worker\Activity_details.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Control\Worker\Activity_details.Designer.cs">
+      <DependentUpon>Activity_details.cs</DependentUpon>
+    </Compile>
     <Compile Include="Control\Worker\Worker.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -95,6 +101,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Control\Menager\Menager.resx">
       <DependentUpon>Menager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\Worker\Activity_details.resx">
+      <DependentUpon>Activity_details.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Control\Worker\Worker.resx">
       <DependentUpon>Worker.cs</DependentUpon>
