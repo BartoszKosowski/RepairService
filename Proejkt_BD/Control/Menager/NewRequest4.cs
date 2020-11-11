@@ -10,28 +10,16 @@ using System.Windows.Forms;
 
 namespace Proejkt_BD.Control.Menager
 {
-    public partial class NewRequest : Form
+    public partial class NewRequest4 : Form
     {
-        public NewRequest()
+        public NewRequest4()
         {
             InitializeComponent();
-         
-        }
-
-        public void MainPanel_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            NewRequest2 a1 = new NewRequest2();
-            a1.ShowDialog();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            AddCustomer a1 = new AddCustomer();
+            AddActivity a1 = new AddActivity();
             a1.ShowDialog();
         }
     }

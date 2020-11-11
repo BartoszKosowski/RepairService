@@ -1,25 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Drawing;
 using System.Data;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Proejkt_BD.Control.Admin
+namespace Proejkt_BD.Control.Menager
 {
-    public partial class Administrator : UserControl
+    public partial class AddActivity : Form
     {
-        public Administrator()
+        public AddActivity()
         {
             InitializeComponent();
-        }
-
-        private void Administrator_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

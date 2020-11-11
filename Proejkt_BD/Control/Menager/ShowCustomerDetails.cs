@@ -10,11 +10,17 @@ using System.Windows.Forms;
 
 namespace Proejkt_BD.Control.Menager
 {
-    public partial class MManager : Form
+    public partial class ShowCustomerDetails : Form
     {
-        public MManager()
+        public ShowCustomerDetails()
         {
             InitializeComponent();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            AddVehicle a1 = new AddVehicle();
+            a1.ShowDialog();
         }
     }
 }

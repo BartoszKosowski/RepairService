@@ -8,30 +8,31 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Proejkt_BD.Control.Menager
+namespace Proejkt_BD.Control.Admin
 {
-    public partial class NewRequest : Form
+    public partial class AdminPanel : Form
     {
-        public NewRequest()
+        public AdminPanel()
         {
             InitializeComponent();
-         
         }
 
-        public void MainPanel_Paint(object sender, PaintEventArgs e)
+        private void button5_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            Form1 a1 = new Form1();
+            a1.ShowDialog();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            NewRequest2 a1 = new NewRequest2();
+            NewUser a1 = new NewUser();
             a1.ShowDialog();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button3_Click(object sender, EventArgs e)
         {
-            AddCustomer a1 = new AddCustomer();
+            EditUser a1 = new EditUser();
             a1.ShowDialog();
         }
     }

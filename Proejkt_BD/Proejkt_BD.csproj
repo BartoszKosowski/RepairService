@@ -46,11 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Control\Admin\Administrator.cs">
-      <SubType>UserControl</SubType>
+    <Compile Include="Control\Admin\AdminPanel.cs">
+      <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Control\Admin\Administrator.Designer.cs">
-      <DependentUpon>Administrator.cs</DependentUpon>
+    <Compile Include="Control\Admin\AdminPanel.Designer.cs">
+      <DependentUpon>AdminPanel.cs</DependentUpon>
     </Compile>
     <Compile Include="Control\Admin\EditUser.cs">
       <SubType>Form</SubType>
@@ -70,6 +70,12 @@
     <Compile Include="Control\Menager\Activity.Designer.cs">
       <DependentUpon>Activity.cs</DependentUpon>
     </Compile>
+    <Compile Include="Control\Menager\AddActivity.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Control\Menager\AddActivity.Designer.cs">
+      <DependentUpon>AddActivity.cs</DependentUpon>
+    </Compile>
     <Compile Include="Control\Menager\AddCustomer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -81,6 +87,12 @@
     </Compile>
     <Compile Include="Control\Menager\AddVehicle.Designer.cs">
       <DependentUpon>AddVehicle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\Menager\Customers.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\Menager\Customers.Designer.cs">
+      <DependentUpon>Customers.cs</DependentUpon>
     </Compile>
     <Compile Include="Control\Menager\EditCustomerDetails.cs">
       <SubType>Form</SubType>
@@ -94,23 +106,47 @@
     <Compile Include="Control\Menager\MainManager.Designer.cs">
       <DependentUpon>MainManager.cs</DependentUpon>
     </Compile>
-    <Compile Include="Control\Menager\MManager.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Control\Menager\MManager.Designer.cs">
-      <DependentUpon>MManager.cs</DependentUpon>
-    </Compile>
     <Compile Include="Control\Menager\NewRequest.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Control\Menager\NewRequest.Designer.cs">
       <DependentUpon>NewRequest.cs</DependentUpon>
     </Compile>
-    <Compile Include="Control\Menager\Request.cs">
+    <Compile Include="Control\Menager\NewRequest2.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Control\Menager\Request.Designer.cs">
-      <DependentUpon>Request.cs</DependentUpon>
+    <Compile Include="Control\Menager\NewRequest2.Designer.cs">
+      <DependentUpon>NewRequest2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\Menager\NewRequest3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Control\Menager\NewRequest3.Designer.cs">
+      <DependentUpon>NewRequest3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\Menager\NewRequest4.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Control\Menager\NewRequest4.Designer.cs">
+      <DependentUpon>NewRequest4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\Menager\RequestDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Control\Menager\RequestDetails.Designer.cs">
+      <DependentUpon>RequestDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\Menager\Requests.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\Menager\Requests.Designer.cs">
+      <DependentUpon>Requests.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\Menager\ShowCustomerDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Control\Menager\ShowCustomerDetails.Designer.cs">
+      <DependentUpon>ShowCustomerDetails.cs</DependentUpon>
     </Compile>
     <Compile Include="Control\Menager\Vehicle.cs">
       <SubType>UserControl</SubType>
@@ -124,11 +160,11 @@
     <Compile Include="Control\Worker\Activity_details.Designer.cs">
       <DependentUpon>Activity_details.cs</DependentUpon>
     </Compile>
-    <Compile Include="Control\Worker\Worker.cs">
-      <SubType>UserControl</SubType>
+    <Compile Include="Control\Worker\WorkerPanel.cs">
+      <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Control\Worker\Worker.Designer.cs">
-      <DependentUpon>Worker.cs</DependentUpon>
+    <Compile Include="Control\Worker\WorkerPanel.Designer.cs">
+      <DependentUpon>WorkerPanel.cs</DependentUpon>
     </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -138,8 +174,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Control\Admin\Administrator.resx">
-      <DependentUpon>Administrator.cs</DependentUpon>
+    <EmbeddedResource Include="Control\Admin\AdminPanel.resx">
+      <DependentUpon>AdminPanel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Control\Admin\EditUser.resx">
       <DependentUpon>EditUser.cs</DependentUpon>
@@ -150,11 +186,17 @@
     <EmbeddedResource Include="Control\Menager\Activity.resx">
       <DependentUpon>Activity.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Control\Menager\AddActivity.resx">
+      <DependentUpon>AddActivity.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Control\Menager\AddCustomer.resx">
       <DependentUpon>AddCustomer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Control\Menager\AddVehicle.resx">
       <DependentUpon>AddVehicle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\Menager\Customers.resx">
+      <DependentUpon>Customers.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Control\Menager\EditCustomerDetails.resx">
       <DependentUpon>EditCustomerDetails.cs</DependentUpon>
@@ -162,14 +204,26 @@
     <EmbeddedResource Include="Control\Menager\MainManager.resx">
       <DependentUpon>MainManager.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Control\Menager\MManager.resx">
-      <DependentUpon>MManager.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Control\Menager\NewRequest.resx">
       <DependentUpon>NewRequest.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Control\Menager\Request.resx">
-      <DependentUpon>Request.cs</DependentUpon>
+    <EmbeddedResource Include="Control\Menager\NewRequest2.resx">
+      <DependentUpon>NewRequest2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\Menager\NewRequest3.resx">
+      <DependentUpon>NewRequest3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\Menager\NewRequest4.resx">
+      <DependentUpon>NewRequest4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\Menager\RequestDetails.resx">
+      <DependentUpon>RequestDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\Menager\Requests.resx">
+      <DependentUpon>Requests.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\Menager\ShowCustomerDetails.resx">
+      <DependentUpon>ShowCustomerDetails.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Control\Menager\Vehicle.resx">
       <DependentUpon>Vehicle.cs</DependentUpon>
@@ -177,8 +231,11 @@
     <EmbeddedResource Include="Control\Worker\Activity_details.resx">
       <DependentUpon>Activity_details.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Control\Worker\Worker.resx">
-      <DependentUpon>Worker.cs</DependentUpon>
+    <EmbeddedResource Include="Control\Worker\WorkerPanel.resx">
+      <DependentUpon>WorkerPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
