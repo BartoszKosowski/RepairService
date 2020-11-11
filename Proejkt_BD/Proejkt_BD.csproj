@@ -64,11 +64,59 @@
     <Compile Include="Control\Admin\NewUser.Designer.cs">
       <DependentUpon>NewUser.cs</DependentUpon>
     </Compile>
-    <Compile Include="Control\Menager\Menager.cs">
+    <Compile Include="Control\Menager\Activity.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Control\Menager\Activity.Designer.cs">
+      <DependentUpon>Activity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\Menager\AddCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Control\Menager\AddCustomer.Designer.cs">
+      <DependentUpon>AddCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\Menager\AddVehicle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Control\Menager\AddVehicle.Designer.cs">
+      <DependentUpon>AddVehicle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\Menager\EditCustomerDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Control\Menager\EditCustomerDetails.Designer.cs">
+      <DependentUpon>EditCustomerDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\Menager\MainManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Control\Menager\MainManager.Designer.cs">
+      <DependentUpon>MainManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\Menager\MManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Control\Menager\MManager.Designer.cs">
+      <DependentUpon>MManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\Menager\NewRequest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Control\Menager\NewRequest.Designer.cs">
+      <DependentUpon>NewRequest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\Menager\Request.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Control\Menager\Request.Designer.cs">
+      <DependentUpon>Request.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\Menager\Vehicle.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Control\Menager\Menager.Designer.cs">
-      <DependentUpon>Menager.cs</DependentUpon>
+    <Compile Include="Control\Menager\Vehicle.Designer.cs">
+      <DependentUpon>Vehicle.cs</DependentUpon>
     </Compile>
     <Compile Include="Control\Worker\Activity_details.cs">
       <SubType>Form</SubType>
@@ -99,8 +147,32 @@
     <EmbeddedResource Include="Control\Admin\NewUser.resx">
       <DependentUpon>NewUser.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Control\Menager\Menager.resx">
-      <DependentUpon>Menager.cs</DependentUpon>
+    <EmbeddedResource Include="Control\Menager\Activity.resx">
+      <DependentUpon>Activity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\Menager\AddCustomer.resx">
+      <DependentUpon>AddCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\Menager\AddVehicle.resx">
+      <DependentUpon>AddVehicle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\Menager\EditCustomerDetails.resx">
+      <DependentUpon>EditCustomerDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\Menager\MainManager.resx">
+      <DependentUpon>MainManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\Menager\MManager.resx">
+      <DependentUpon>MManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\Menager\NewRequest.resx">
+      <DependentUpon>NewRequest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\Menager\Request.resx">
+      <DependentUpon>Request.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\Menager\Vehicle.resx">
+      <DependentUpon>Vehicle.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Control\Worker\Activity_details.resx">
       <DependentUpon>Activity_details.cs</DependentUpon>

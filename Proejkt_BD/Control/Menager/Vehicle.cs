@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Proejkt_BD.Control.Menager
 {
-    public partial class Menager : UserControl
+    public partial class Vehicle : UserControl
     {
-        public Menager()
+        public Vehicle()
         {
             InitializeComponent();
         }
