@@ -26,8 +26,14 @@ namespace Proejkt_BD.Control.Worker
 
         private void button4_Click(object sender, EventArgs e)
         {
-            Activity_details a1 = new Activity_details();
+            Activity_details a1 = new Activity_details(1,"read_mode");
+        
             a1.ShowDialog();
+        }
+
+        private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
