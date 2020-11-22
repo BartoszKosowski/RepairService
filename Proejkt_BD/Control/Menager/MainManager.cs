@@ -44,5 +44,11 @@ namespace Proejkt_BD.Control.Menager
             NewRequest a1 = new NewRequest();
             a1.ShowDialog();
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            MainPanel.Controls.Clear();
+            MainPanel.Controls.Add(new Vehicle());
+        }
     }
 }

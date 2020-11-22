@@ -35,5 +35,10 @@ namespace Proejkt_BD.Control.Admin
             EditUser a1 = new EditUser();
             a1.ShowDialog();
         }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
