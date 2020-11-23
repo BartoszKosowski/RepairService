@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -42,14 +43,20 @@
             this.label4 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.First_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Last_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Role = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Login = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Active = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label5 = new System.Windows.Forms.Label();
+            this.rSSDataSet = new Proejkt_BD.RSSDataSet();
+            this.pERSONELBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.pERSONELTableAdapter = new Proejkt_BD.RSSDataSetTableAdapters.PERSONELTableAdapter();
+            this.idpersonelDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.firstnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lastnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.roleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.activeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.loginDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.passwordDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rSSDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pERSONELBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label3
@@ -134,6 +141,7 @@
             this.button1.TabIndex = 14;
             this.button1.Text = "Search";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // checkBox1
             // 
@@ -183,62 +191,28 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.id,
-            this.First_name,
-            this.Last_name,
-            this.Role,
-            this.Login,
-            this.Active});
+            this.idpersonelDataGridViewTextBoxColumn,
+            this.firstnameDataGridViewTextBoxColumn,
+            this.lastnameDataGridViewTextBoxColumn,
+            this.roleDataGridViewTextBoxColumn,
+            this.activeDataGridViewTextBoxColumn,
+            this.loginDataGridViewTextBoxColumn,
+            this.passwordDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.pERSONELBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(12, 101);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(1001, 345);
             this.dataGridView1.TabIndex = 28;
-            // 
-            // id
-            // 
-            this.id.HeaderText = "ID";
-            this.id.MinimumWidth = 6;
-            this.id.Name = "id";
-            this.id.Width = 125;
-            // 
-            // First_name
-            // 
-            this.First_name.HeaderText = "First Name";
-            this.First_name.MinimumWidth = 6;
-            this.First_name.Name = "First_name";
-            this.First_name.Width = 125;
-            // 
-            // Last_name
-            // 
-            this.Last_name.HeaderText = "Last Name";
-            this.Last_name.MinimumWidth = 6;
-            this.Last_name.Name = "Last_name";
-            this.Last_name.Width = 125;
-            // 
-            // Role
-            // 
-            this.Role.HeaderText = "Role";
-            this.Role.MinimumWidth = 6;
-            this.Role.Name = "Role";
-            this.Role.Width = 125;
-            // 
-            // Login
-            // 
-            this.Login.HeaderText = "Login";
-            this.Login.MinimumWidth = 6;
-            this.Login.Name = "Login";
-            this.Login.Width = 125;
-            // 
-            // Active
-            // 
-            this.Active.HeaderText = "Active";
-            this.Active.MinimumWidth = 6;
-            this.Active.Name = "Active";
-            this.Active.Width = 125;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // label5
             // 
@@ -249,6 +223,77 @@
             this.label5.Size = new System.Drawing.Size(198, 31);
             this.label5.TabIndex = 29;
             this.label5.Text = "ADMIN PANEL";
+            // 
+            // rSSDataSet
+            // 
+            this.rSSDataSet.DataSetName = "RSSDataSet";
+            this.rSSDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // pERSONELBindingSource
+            // 
+            this.pERSONELBindingSource.DataMember = "PERSONEL";
+            this.pERSONELBindingSource.DataSource = this.rSSDataSet;
+            // 
+            // pERSONELTableAdapter
+            // 
+            this.pERSONELTableAdapter.ClearBeforeFill = true;
+            // 
+            // idpersonelDataGridViewTextBoxColumn
+            // 
+            this.idpersonelDataGridViewTextBoxColumn.DataPropertyName = "id_personel";
+            this.idpersonelDataGridViewTextBoxColumn.HeaderText = "id_personel";
+            this.idpersonelDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.idpersonelDataGridViewTextBoxColumn.Name = "idpersonelDataGridViewTextBoxColumn";
+            this.idpersonelDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idpersonelDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // firstnameDataGridViewTextBoxColumn
+            // 
+            this.firstnameDataGridViewTextBoxColumn.DataPropertyName = "first_name";
+            this.firstnameDataGridViewTextBoxColumn.HeaderText = "first_name";
+            this.firstnameDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.firstnameDataGridViewTextBoxColumn.Name = "firstnameDataGridViewTextBoxColumn";
+            this.firstnameDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // lastnameDataGridViewTextBoxColumn
+            // 
+            this.lastnameDataGridViewTextBoxColumn.DataPropertyName = "last_name";
+            this.lastnameDataGridViewTextBoxColumn.HeaderText = "last_name";
+            this.lastnameDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.lastnameDataGridViewTextBoxColumn.Name = "lastnameDataGridViewTextBoxColumn";
+            this.lastnameDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // roleDataGridViewTextBoxColumn
+            // 
+            this.roleDataGridViewTextBoxColumn.DataPropertyName = "role";
+            this.roleDataGridViewTextBoxColumn.HeaderText = "role";
+            this.roleDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.roleDataGridViewTextBoxColumn.Name = "roleDataGridViewTextBoxColumn";
+            this.roleDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // activeDataGridViewTextBoxColumn
+            // 
+            this.activeDataGridViewTextBoxColumn.DataPropertyName = "active";
+            this.activeDataGridViewTextBoxColumn.HeaderText = "active";
+            this.activeDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.activeDataGridViewTextBoxColumn.Name = "activeDataGridViewTextBoxColumn";
+            this.activeDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // loginDataGridViewTextBoxColumn
+            // 
+            this.loginDataGridViewTextBoxColumn.DataPropertyName = "login";
+            this.loginDataGridViewTextBoxColumn.HeaderText = "login";
+            this.loginDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.loginDataGridViewTextBoxColumn.Name = "loginDataGridViewTextBoxColumn";
+            this.loginDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // passwordDataGridViewTextBoxColumn
+            // 
+            this.passwordDataGridViewTextBoxColumn.DataPropertyName = "password";
+            this.passwordDataGridViewTextBoxColumn.HeaderText = "password";
+            this.passwordDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.passwordDataGridViewTextBoxColumn.Name = "passwordDataGridViewTextBoxColumn";
+            this.passwordDataGridViewTextBoxColumn.Width = 125;
             // 
             // AdminPanel
             // 
@@ -274,6 +319,8 @@
             this.Text = "AdminPanel";
             this.Load += new System.EventHandler(this.AdminPanel_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rSSDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pERSONELBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -295,12 +342,16 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn First_name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Last_name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Role;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Login;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Active;
         private System.Windows.Forms.Label label5;
+        private RSSDataSet rSSDataSet;
+        private System.Windows.Forms.BindingSource pERSONELBindingSource;
+        private RSSDataSetTableAdapters.PERSONELTableAdapter pERSONELTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idpersonelDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn firstnameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lastnameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn roleDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn activeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn loginDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn passwordDataGridViewTextBoxColumn;
     }
 }
