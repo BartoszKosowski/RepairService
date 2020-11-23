@@ -1,4 +1,5 @@
 ﻿using System;
+using Proejkt_BD.Control.Admin;
 using Proejkt_BD.Control.Baza;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -19,10 +20,12 @@ namespace Proejkt_BD.Control.Admin
         }
 
         private void button5_Click(object sender, EventArgs e)
-        {
+        {           
             this.Hide();
+            MessageBox.Show("Goodbye!");
             Form1 a1 = new Form1();
             a1.ShowDialog();
+            this.Close();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -34,6 +37,13 @@ namespace Proejkt_BD.Control.Admin
         private void button3_Click(object sender, EventArgs e)
         {
             EditUser a1 = new EditUser();
+            a1.textBox5.Text = this.dataGridView1.CurrentRow.Cells[0].Value.ToString(); //id
+            a1.textBox1.Text = this.dataGridView1.CurrentRow.Cells[1].Value.ToString(); //fname
+            a1.textBox2.Text = this.dataGridView1.CurrentRow.Cells[2].Value.ToString(); //lname
+            a1.comboBox1.Text = this.dataGridView1.CurrentRow.Cells[3].Value.ToString(); //role
+            a1.checkBox1.Text = this.dataGridView1.CurrentRow.Cells[4].Value.ToString(); //active
+            a1.textBox3.Text = this.dataGridView1.CurrentRow.Cells[5].Value.ToString(); //login
+            a1.textBox4.Text = this.dataGridView1.CurrentRow.Cells[6].Value.ToString(); //password
             a1.ShowDialog();
         }
 
@@ -58,9 +68,23 @@ namespace Proejkt_BD.Control.Admin
         {
             string a;
             if (checkBox1.Checked)
-                a = "T";
-            else 
-                a = "F";
+            {
+                if (checkBox2.Checked)
+                    a = "A";
+                else
+                    a = "T";
+            }
+
+            else if (checkBox2.Checked)
+            {
+                if (checkBox1.Checked)
+                    a = "A";
+                else
+                    a = "F";
+            }
+
+            else
+                a = "A";
 
             var result = SQL.SearchAdmin(textBox1.Text.ToString(), textBox2.Text.ToString(), textBox3.Text.ToString(), comboBox1.Text.ToString(), a);
             dataGridView1.DataSource = result;
