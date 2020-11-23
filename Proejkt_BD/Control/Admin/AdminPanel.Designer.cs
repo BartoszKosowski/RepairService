@@ -272,6 +272,7 @@
             this.Controls.Add(this.checkBox1);
             this.Name = "AdminPanel";
             this.Text = "AdminPanel";
+            this.Load += new System.EventHandler(this.AdminPanel_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

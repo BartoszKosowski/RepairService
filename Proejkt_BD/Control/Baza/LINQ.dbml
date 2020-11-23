@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="RSS" Class="LINQDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-DT1ADTB\SQLEXPRESS;Initial Catalog=RSS;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False" SettingsObjectName="Proejkt_BD.Properties.Settings" SettingsPropertyName="RSSConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.ACT_DICT" Member="ACT_DICT">
+    <Type Name="ACT_DICT">
+      <Column Name="act_type" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="act_name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="ACT_DICT_ACTIVITY" Member="ACTIVITY" ThisKey="act_type" OtherKey="act_dict" Type="ACTIVITY" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ACTIVITY" Member="ACTIVITY">
+    <Type Name="ACTIVITY">
+      <Column Name="id_activity" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="description" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="result" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="status" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="date_reg" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="date_fn_cn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="id_request" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="id_personel" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="act_dict" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="sequence_nb" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="ACT_DICT_ACTIVITY" Member="ACT_DICT1" ThisKey="act_dict" OtherKey="act_type" Type="ACT_DICT" IsForeignKey="true" />
+      <Association Name="PERSONEL_ACTIVITY" Member="PERSONEL" ThisKey="id_personel" OtherKey="id_personel" Type="PERSONEL" IsForeignKey="true" />
+      <Association Name="REQUEST_ACTIVITY" Member="REQUEST" ThisKey="id_request" OtherKey="id_request" Type="REQUEST" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CLIENT" Member="CLIENT">
+    <Type Name="CLIENT">
+      <Column Name="id_client" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="first_name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="last_name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="tel" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="CLIENT_OBJECT" Member="OBJECT" ThisKey="id_client" OtherKey="id_client" Type="OBJECT" />
+    </Type>
+  </Table>
+  <Table Name="dbo.OBJ_TYPE" Member="OBJ_TYPE">
+    <Type Name="OBJ_TYPE">
+      <Column Name="type" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="OBJ_TYPE_OBJECT" Member="OBJECT" ThisKey="type" OtherKey="obj_type" Type="OBJECT" />
+    </Type>
+  </Table>
+  <Table Name="dbo.OBJECT" Member="OBJECT">
+    <Type Name="OBJECT">
+      <Column Name="nr_object" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="id_client" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="obj_type" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="OBJECT_REQUEST" Member="REQUEST" ThisKey="nr_object" OtherKey="nr_object" Type="REQUEST" />
+      <Association Name="CLIENT_OBJECT" Member="CLIENT" ThisKey="id_client" OtherKey="id_client" Type="CLIENT" IsForeignKey="true" />
+      <Association Name="OBJ_TYPE_OBJECT" Member="OBJ_TYPE1" ThisKey="obj_type" OtherKey="type" Type="OBJ_TYPE" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PERSONEL" Member="PERSONEL">
+    <Type Name="PERSONEL">
+      <Column Name="id_personel" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="first_name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="last_name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="role" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="active" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="login" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="password" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Association Name="PERSONEL_ACTIVITY" Member="ACTIVITY" ThisKey="id_personel" OtherKey="id_personel" Type="ACTIVITY" />
+      <Association Name="PERSONEL_REQUEST" Member="REQUEST" ThisKey="id_personel" OtherKey="id_personel" Type="REQUEST" />
+    </Type>
+  </Table>
+  <Table Name="dbo.REQUEST" Member="REQUEST">
+    <Type Name="REQUEST">
+      <Column Name="id_request" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="description" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="status" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="result" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="date_reg" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="date_fn_cn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="id_personel" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="nr_object" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="REQUEST_ACTIVITY" Member="ACTIVITY" ThisKey="id_request" OtherKey="id_request" Type="ACTIVITY" />
+      <Association Name="OBJECT_REQUEST" Member="OBJECT" ThisKey="nr_object" OtherKey="nr_object" Type="OBJECT" IsForeignKey="true" />
+      <Association Name="PERSONEL_REQUEST" Member="PERSONEL" ThisKey="id_personel" OtherKey="id_personel" Type="PERSONEL" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

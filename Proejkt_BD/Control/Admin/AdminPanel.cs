@@ -40,5 +40,10 @@ namespace Proejkt_BD.Control.Admin
         {
 
         }
+
+        private void AdminPanel_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
