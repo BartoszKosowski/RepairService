@@ -85,6 +85,25 @@ namespace Proejkt_BD.Control.Baza
 			return result;
 		}
 
+		public static IQueryable<OBJ_TYPE> SearchObjType(string type)
+		{
+			LINQDataContext db = new LINQDataContext();
+			var result = from adm in db.OBJ_TYPE
+						 where adm.type.Equals(type)
+						 select adm;
+			return result;
+		}
+
+		public static IQueryable<CLIENT> SearchClient(string id)
+		{
+			LINQDataContext db = new LINQDataContext();
+			var result = from adm in db.CLIENT
+						 where adm.id_client.Equals(id)
+						 select adm;
+			return result;
+		}
+
+
 		public static void AddObject(string nr, string name, string id, string type)
 		{
 			//Create new Employee

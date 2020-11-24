@@ -43,13 +43,17 @@
             this.rSSDataSet = new Proejkt_BD.RSSDataSet();
             this.oBJECTBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.oBJECTTableAdapter = new Proejkt_BD.RSSDataSetTableAdapters.OBJECTTableAdapter();
+            this.oBJECTBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.oBJECTBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.nrobjectDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idclientDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.objtypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idclientDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rSSDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.oBJECTBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.oBJECTBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.oBJECTBindingSource2)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -59,9 +63,9 @@
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.nrobjectDataGridViewTextBoxColumn,
             this.nameDataGridViewTextBoxColumn,
-            this.idclientDataGridViewTextBoxColumn,
-            this.objtypeDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.oBJECTBindingSource;
+            this.objtypeDataGridViewTextBoxColumn,
+            this.idclientDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.oBJECTBindingSource2;
             this.dataGridView1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.dataGridView1.Location = new System.Drawing.Point(13, 54);
             this.dataGridView1.Name = "dataGridView1";
@@ -82,6 +86,7 @@
             this.button1.TabIndex = 39;
             this.button1.Text = "Vehicle Details";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // addButton1
             // 
@@ -187,6 +192,16 @@
             // 
             this.oBJECTTableAdapter.ClearBeforeFill = true;
             // 
+            // oBJECTBindingSource1
+            // 
+            this.oBJECTBindingSource1.DataMember = "OBJECT";
+            this.oBJECTBindingSource1.DataSource = this.rSSDataSet;
+            // 
+            // oBJECTBindingSource2
+            // 
+            this.oBJECTBindingSource2.DataMember = "OBJECT";
+            this.oBJECTBindingSource2.DataSource = this.rSSDataSet;
+            // 
             // nrobjectDataGridViewTextBoxColumn
             // 
             this.nrobjectDataGridViewTextBoxColumn.DataPropertyName = "nr_object";
@@ -205,15 +220,6 @@
             this.nameDataGridViewTextBoxColumn.ReadOnly = true;
             this.nameDataGridViewTextBoxColumn.Width = 125;
             // 
-            // idclientDataGridViewTextBoxColumn
-            // 
-            this.idclientDataGridViewTextBoxColumn.DataPropertyName = "id_client";
-            this.idclientDataGridViewTextBoxColumn.HeaderText = "id_client";
-            this.idclientDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.idclientDataGridViewTextBoxColumn.Name = "idclientDataGridViewTextBoxColumn";
-            this.idclientDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idclientDataGridViewTextBoxColumn.Width = 125;
-            // 
             // objtypeDataGridViewTextBoxColumn
             // 
             this.objtypeDataGridViewTextBoxColumn.DataPropertyName = "obj_type";
@@ -222,6 +228,16 @@
             this.objtypeDataGridViewTextBoxColumn.Name = "objtypeDataGridViewTextBoxColumn";
             this.objtypeDataGridViewTextBoxColumn.ReadOnly = true;
             this.objtypeDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // idclientDataGridViewTextBoxColumn
+            // 
+            this.idclientDataGridViewTextBoxColumn.DataPropertyName = "id_client";
+            this.idclientDataGridViewTextBoxColumn.HeaderText = "id_client";
+            this.idclientDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.idclientDataGridViewTextBoxColumn.Name = "idclientDataGridViewTextBoxColumn";
+            this.idclientDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idclientDataGridViewTextBoxColumn.Visible = false;
+            this.idclientDataGridViewTextBoxColumn.Width = 125;
             // 
             // Vehicle
             // 
@@ -245,6 +261,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rSSDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.oBJECTBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.oBJECTBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.oBJECTBindingSource2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -263,12 +281,14 @@
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nrobjectDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idclientDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn objtypeDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource oBJECTBindingSource;
         private RSSDataSet rSSDataSet;
         private RSSDataSetTableAdapters.OBJECTTableAdapter oBJECTTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nrobjectDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn objtypeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idclientDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource oBJECTBindingSource2;
+        private System.Windows.Forms.BindingSource oBJECTBindingSource1;
     }
 }

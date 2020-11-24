@@ -163,6 +163,12 @@
     <Compile Include="Control\Menager\Vehicle.Designer.cs">
       <DependentUpon>Vehicle.cs</DependentUpon>
     </Compile>
+    <Compile Include="Control\Menager\VehicleDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Control\Menager\VehicleDetails.Designer.cs">
+      <DependentUpon>VehicleDetails.cs</DependentUpon>
+    </Compile>
     <Compile Include="Control\Worker\Activity_details.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -244,6 +250,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Control\Menager\Vehicle.resx">
       <DependentUpon>Vehicle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\Menager\VehicleDetails.resx">
+      <DependentUpon>VehicleDetails.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Control\Worker\Activity_details.resx">
       <DependentUpon>Activity_details.cs</DependentUpon>

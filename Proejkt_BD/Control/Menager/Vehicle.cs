@@ -34,5 +34,27 @@ namespace Proejkt_BD.Control.Menager
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            var client = SQLmanager.SearchClient(this.dataGridView1.CurrentRow.Cells[3].Value.ToString());
+            var type = SQLmanager.SearchObjType(this.dataGridView1.CurrentRow.Cells[2].Value.ToString());
+            
+            VehicleDetails a1 = new VehicleDetails();
+            a1.textBox6.Text = this.dataGridView1.CurrentRow.Cells[0].Value.ToString(); //reg            
+            a1.textBox10.Text = this.dataGridView1.CurrentRow.Cells[1].Value.ToString(); //name
+            a1.textBox9.Text = this.dataGridView1.CurrentRow.Cells[2].Value.ToString(); //obj type
+            
+            a1.textBox8.Text = type.First().name;  //obj name
+            a1.textBox5.Text = this.dataGridView1.CurrentRow.Cells[3].Value.ToString(); ; //client id
+            a1.textBox1.Text = client.First().first_name; //fname
+            a1.textBox2.Text = client.First().last_name; //lname
+            a1.textBox3.Text = client.First().name; ; //name
+            a1.textBox4.Text = client.First().tel; ; //tel
+            
+            
+
+            a1.ShowDialog();
+        }
     }
 }
