@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Proejkt_BD.Control.Baza;
 
 namespace Proejkt_BD.Control.Menager
 {
@@ -21,6 +22,19 @@ namespace Proejkt_BD.Control.Menager
         {
             AddVehicle a1 = new AddVehicle();
             a1.ShowDialog();
+        }
+
+        private void ShowCustomerDetails_Load(object sender, EventArgs e)
+        {
+            // TODO: Ten wiersz kodu wczytuje dane do tabeli 'rSSDataSet.OBJECT' . Możesz go przenieść lub usunąć.
+            //this.oBJECTTableAdapter.Fill(this.rSSDataSet.OBJECT);
+            var result = SQLmanager.SearchObjects2(this.textBox5.Text.ToString());
+            dataGridView1.DataSource = result;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

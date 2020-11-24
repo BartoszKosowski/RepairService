@@ -43,10 +43,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label5 = new System.Windows.Forms.Label();
-            this.rSSDataSet = new Proejkt_BD.RSSDataSet();
-            this.pERSONELBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.pERSONELTableAdapter = new Proejkt_BD.RSSDataSetTableAdapters.PERSONELTableAdapter();
             this.idpersonelDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.firstnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lastnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -54,10 +50,14 @@
             this.activeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.loginDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.passwordDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pERSONELBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.rSSDataSet = new Proejkt_BD.RSSDataSet();
+            this.label5 = new System.Windows.Forms.Label();
+            this.pERSONELTableAdapter = new Proejkt_BD.RSSDataSetTableAdapters.PERSONELTableAdapter();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rSSDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pERSONELBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rSSDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // label3
@@ -215,30 +215,6 @@
             this.dataGridView1.TabIndex = 28;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
-            this.label5.Location = new System.Drawing.Point(-3, -1);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(198, 31);
-            this.label5.TabIndex = 29;
-            this.label5.Text = "ADMIN PANEL";
-            // 
-            // rSSDataSet
-            // 
-            this.rSSDataSet.DataSetName = "RSSDataSet";
-            this.rSSDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // pERSONELBindingSource
-            // 
-            this.pERSONELBindingSource.DataMember = "PERSONEL";
-            this.pERSONELBindingSource.DataSource = this.rSSDataSet;
-            // 
-            // pERSONELTableAdapter
-            // 
-            this.pERSONELTableAdapter.ClearBeforeFill = true;
-            // 
             // idpersonelDataGridViewTextBoxColumn
             // 
             this.idpersonelDataGridViewTextBoxColumn.DataPropertyName = "id_personel";
@@ -254,6 +230,7 @@
             this.firstnameDataGridViewTextBoxColumn.HeaderText = "first_name";
             this.firstnameDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.firstnameDataGridViewTextBoxColumn.Name = "firstnameDataGridViewTextBoxColumn";
+            this.firstnameDataGridViewTextBoxColumn.ReadOnly = true;
             this.firstnameDataGridViewTextBoxColumn.Width = 125;
             // 
             // lastnameDataGridViewTextBoxColumn
@@ -262,6 +239,7 @@
             this.lastnameDataGridViewTextBoxColumn.HeaderText = "last_name";
             this.lastnameDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.lastnameDataGridViewTextBoxColumn.Name = "lastnameDataGridViewTextBoxColumn";
+            this.lastnameDataGridViewTextBoxColumn.ReadOnly = true;
             this.lastnameDataGridViewTextBoxColumn.Width = 125;
             // 
             // roleDataGridViewTextBoxColumn
@@ -270,6 +248,7 @@
             this.roleDataGridViewTextBoxColumn.HeaderText = "role";
             this.roleDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.roleDataGridViewTextBoxColumn.Name = "roleDataGridViewTextBoxColumn";
+            this.roleDataGridViewTextBoxColumn.ReadOnly = true;
             this.roleDataGridViewTextBoxColumn.Width = 125;
             // 
             // activeDataGridViewTextBoxColumn
@@ -278,6 +257,7 @@
             this.activeDataGridViewTextBoxColumn.HeaderText = "active";
             this.activeDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.activeDataGridViewTextBoxColumn.Name = "activeDataGridViewTextBoxColumn";
+            this.activeDataGridViewTextBoxColumn.ReadOnly = true;
             this.activeDataGridViewTextBoxColumn.Width = 125;
             // 
             // loginDataGridViewTextBoxColumn
@@ -286,6 +266,7 @@
             this.loginDataGridViewTextBoxColumn.HeaderText = "login";
             this.loginDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.loginDataGridViewTextBoxColumn.Name = "loginDataGridViewTextBoxColumn";
+            this.loginDataGridViewTextBoxColumn.ReadOnly = true;
             this.loginDataGridViewTextBoxColumn.Width = 125;
             // 
             // passwordDataGridViewTextBoxColumn
@@ -294,7 +275,32 @@
             this.passwordDataGridViewTextBoxColumn.HeaderText = "password";
             this.passwordDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.passwordDataGridViewTextBoxColumn.Name = "passwordDataGridViewTextBoxColumn";
+            this.passwordDataGridViewTextBoxColumn.ReadOnly = true;
             this.passwordDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // pERSONELBindingSource
+            // 
+            this.pERSONELBindingSource.DataMember = "PERSONEL";
+            this.pERSONELBindingSource.DataSource = this.rSSDataSet;
+            // 
+            // rSSDataSet
+            // 
+            this.rSSDataSet.DataSetName = "RSSDataSet";
+            this.rSSDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
+            this.label5.Location = new System.Drawing.Point(-3, -1);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(198, 31);
+            this.label5.TabIndex = 29;
+            this.label5.Text = "ADMIN PANEL";
+            // 
+            // pERSONELTableAdapter
+            // 
+            this.pERSONELTableAdapter.ClearBeforeFill = true;
             // 
             // checkBox2
             // 
@@ -332,8 +338,8 @@
             this.Text = "AdminPanel";
             this.Load += new System.EventHandler(this.AdminPanel_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rSSDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pERSONELBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rSSDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

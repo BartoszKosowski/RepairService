@@ -35,7 +35,7 @@ namespace Proejkt_BD.Control.Admin
                     check = "T";
                 else
                     check = "F";
-                SQL.EditPersonel(textBox5.Text.ToString(), textBox1.Text.ToString(), textBox2.Text.ToString(), textBox4.Text.ToString(), check);
+                SQLadmin.EditPersonel(textBox5.Text.ToString(), textBox1.Text.ToString(), textBox2.Text.ToString(), textBox4.Text.ToString(), check);
                 //this.Hide();
                 //MessageBox.Show("User updated successfully");
                 this.Close();
@@ -45,6 +45,11 @@ namespace Proejkt_BD.Control.Admin
         private void button2_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void EditUser_Load(object sender, EventArgs e)
+        {
+            
         }
     }
 }

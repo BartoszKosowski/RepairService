@@ -24,16 +24,6 @@
       <Association Name="REQUEST_ACTIVITY" Member="REQUEST" ThisKey="id_request" OtherKey="id_request" Type="REQUEST" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.CLIENT" Member="CLIENT">
-    <Type Name="CLIENT">
-      <Column Name="id_client" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="first_name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="last_name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="tel" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Association Name="CLIENT_OBJECT" Member="OBJECT" ThisKey="id_client" OtherKey="id_client" Type="OBJECT" />
-    </Type>
-  </Table>
   <Table Name="dbo.OBJ_TYPE" Member="OBJ_TYPE">
     <Type Name="OBJ_TYPE">
       <Column Name="type" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -48,8 +38,8 @@
       <Column Name="id_client" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="obj_type" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Association Name="OBJECT_REQUEST" Member="REQUEST" ThisKey="nr_object" OtherKey="nr_object" Type="REQUEST" />
-      <Association Name="CLIENT_OBJECT" Member="CLIENT" ThisKey="id_client" OtherKey="id_client" Type="CLIENT" IsForeignKey="true" />
       <Association Name="OBJ_TYPE_OBJECT" Member="OBJ_TYPE1" ThisKey="obj_type" OtherKey="type" Type="OBJ_TYPE" IsForeignKey="true" />
+      <Association Name="CLIENT_OBJECT" Member="CLIENT" ThisKey="id_client" OtherKey="id_client" Type="CLIENT" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.PERSONEL" Member="PERSONEL">
@@ -78,6 +68,16 @@
       <Association Name="REQUEST_ACTIVITY" Member="ACTIVITY" ThisKey="id_request" OtherKey="id_request" Type="ACTIVITY" />
       <Association Name="OBJECT_REQUEST" Member="OBJECT" ThisKey="nr_object" OtherKey="nr_object" Type="OBJECT" IsForeignKey="true" />
       <Association Name="PERSONEL_REQUEST" Member="PERSONEL" ThisKey="id_personel" OtherKey="id_personel" Type="PERSONEL" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CLIENT" Member="CLIENT">
+    <Type Name="CLIENT">
+      <Column Name="id_client" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="first_name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="last_name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="tel" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="CLIENT_OBJECT" Member="OBJECT" ThisKey="id_client" OtherKey="id_client" Type="OBJECT" />
     </Type>
   </Table>
 </Database>

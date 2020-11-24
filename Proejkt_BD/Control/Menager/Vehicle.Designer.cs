@@ -28,23 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.First_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Last_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Role = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Login = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Active = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.addButton1 = new System.Windows.Forms.Button();
             this.searchBox = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.surnameBox = new System.Windows.Forms.TextBox();
-            this.nameBox = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -52,106 +40,45 @@
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
+            this.rSSDataSet = new Proejkt_BD.RSSDataSet();
+            this.oBJECTBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.oBJECTTableAdapter = new Proejkt_BD.RSSDataSetTableAdapters.OBJECTTableAdapter();
+            this.nrobjectDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idclientDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.objtypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rSSDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.oBJECTBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.id,
-            this.First_name,
-            this.Last_name,
-            this.Role,
-            this.Login,
-            this.Active});
-            this.dataGridView1.Location = new System.Drawing.Point(13, 88);
+            this.nrobjectDataGridViewTextBoxColumn,
+            this.nameDataGridViewTextBoxColumn,
+            this.idclientDataGridViewTextBoxColumn,
+            this.objtypeDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.oBJECTBindingSource;
+            this.dataGridView1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.dataGridView1.Location = new System.Drawing.Point(13, 54);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1048, 313);
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.Size = new System.Drawing.Size(1048, 347);
             this.dataGridView1.TabIndex = 44;
-            // 
-            // id
-            // 
-            this.id.HeaderText = "ID";
-            this.id.MinimumWidth = 6;
-            this.id.Name = "id";
-            this.id.Width = 125;
-            // 
-            // First_name
-            // 
-            this.First_name.HeaderText = "First Name";
-            this.First_name.MinimumWidth = 6;
-            this.First_name.Name = "First_name";
-            this.First_name.Width = 125;
-            // 
-            // Last_name
-            // 
-            this.Last_name.HeaderText = "Last Name";
-            this.Last_name.MinimumWidth = 6;
-            this.Last_name.Name = "Last_name";
-            this.Last_name.Width = 125;
-            // 
-            // Role
-            // 
-            this.Role.HeaderText = "Role";
-            this.Role.MinimumWidth = 6;
-            this.Role.Name = "Role";
-            this.Role.Width = 125;
-            // 
-            // Login
-            // 
-            this.Login.HeaderText = "Login";
-            this.Login.MinimumWidth = 6;
-            this.Login.Name = "Login";
-            this.Login.Width = 125;
-            // 
-            // Active
-            // 
-            this.Active.HeaderText = "Active";
-            this.Active.MinimumWidth = 6;
-            this.Active.Name = "Active";
-            this.Active.Width = 125;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(743, 55);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(132, 22);
-            this.textBox1.TabIndex = 42;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label3.Location = new System.Drawing.Point(644, 55);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(91, 20);
-            this.label3.TabIndex = 41;
-            this.label3.Text = "Last Name";
-            // 
-            // button3
-            // 
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.button3.Location = new System.Drawing.Point(389, 408);
-            this.button3.Margin = new System.Windows.Forms.Padding(4);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(346, 67);
-            this.button3.TabIndex = 40;
-            this.button3.Text = "Delete Vehicle";
-            this.button3.UseVisualStyleBackColor = true;
             // 
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.button1.Location = new System.Drawing.Point(743, 408);
+            this.button1.Location = new System.Drawing.Point(558, 408);
             this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(318, 67);
+            this.button1.Size = new System.Drawing.Size(503, 67);
             this.button1.TabIndex = 39;
             this.button1.Text = "Vehicle Details";
             this.button1.UseVisualStyleBackColor = true;
@@ -162,58 +89,22 @@
             this.addButton1.Location = new System.Drawing.Point(13, 408);
             this.addButton1.Margin = new System.Windows.Forms.Padding(4);
             this.addButton1.Name = "addButton1";
-            this.addButton1.Size = new System.Drawing.Size(368, 67);
+            this.addButton1.Size = new System.Drawing.Size(537, 67);
             this.addButton1.TabIndex = 38;
             this.addButton1.Text = "Add New Vehicle";
             this.addButton1.UseVisualStyleBackColor = true;
+            this.addButton1.Click += new System.EventHandler(this.addButton1_Click);
             // 
             // searchBox
             // 
             this.searchBox.Location = new System.Drawing.Point(890, 14);
             this.searchBox.Margin = new System.Windows.Forms.Padding(4);
             this.searchBox.Name = "searchBox";
-            this.searchBox.Size = new System.Drawing.Size(171, 61);
+            this.searchBox.Size = new System.Drawing.Size(171, 33);
             this.searchBox.TabIndex = 37;
             this.searchBox.Text = "Search";
             this.searchBox.UseVisualStyleBackColor = true;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label2.Location = new System.Drawing.Point(383, 55);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(92, 20);
-            this.label2.TabIndex = 36;
-            this.label2.Text = "First Name";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.Location = new System.Drawing.Point(167, 55);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(53, 20);
-            this.label1.TabIndex = 35;
-            this.label1.Text = "Name";
-            // 
-            // surnameBox
-            // 
-            this.surnameBox.Location = new System.Drawing.Point(483, 55);
-            this.surnameBox.Margin = new System.Windows.Forms.Padding(4);
-            this.surnameBox.Name = "surnameBox";
-            this.surnameBox.Size = new System.Drawing.Size(132, 22);
-            this.surnameBox.TabIndex = 34;
-            // 
-            // nameBox
-            // 
-            this.nameBox.Location = new System.Drawing.Point(228, 55);
-            this.nameBox.Margin = new System.Windows.Forms.Padding(4);
-            this.nameBox.Name = "nameBox";
-            this.nameBox.Size = new System.Drawing.Size(132, 22);
-            this.nameBox.TabIndex = 33;
+            this.searchBox.Click += new System.EventHandler(this.searchBox_Click);
             // 
             // textBox2
             // 
@@ -276,27 +167,66 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label7.Location = new System.Drawing.Point(24, 25);
+            this.label7.Location = new System.Drawing.Point(9, 14);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(118, 20);
             this.label7.TabIndex = 51;
             this.label7.Text = "Vehicle details";
             // 
-            // label8
+            // rSSDataSet
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label8.Location = new System.Drawing.Point(24, 55);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(136, 20);
-            this.label8.TabIndex = 52;
-            this.label8.Text = "Customer details";
+            this.rSSDataSet.DataSetName = "RSSDataSet";
+            this.rSSDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // oBJECTBindingSource
+            // 
+            this.oBJECTBindingSource.DataMember = "OBJECT";
+            this.oBJECTBindingSource.DataSource = this.rSSDataSet;
+            // 
+            // oBJECTTableAdapter
+            // 
+            this.oBJECTTableAdapter.ClearBeforeFill = true;
+            // 
+            // nrobjectDataGridViewTextBoxColumn
+            // 
+            this.nrobjectDataGridViewTextBoxColumn.DataPropertyName = "nr_object";
+            this.nrobjectDataGridViewTextBoxColumn.HeaderText = "nr_object";
+            this.nrobjectDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.nrobjectDataGridViewTextBoxColumn.Name = "nrobjectDataGridViewTextBoxColumn";
+            this.nrobjectDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nrobjectDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "name";
+            this.nameDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nameDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // idclientDataGridViewTextBoxColumn
+            // 
+            this.idclientDataGridViewTextBoxColumn.DataPropertyName = "id_client";
+            this.idclientDataGridViewTextBoxColumn.HeaderText = "id_client";
+            this.idclientDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.idclientDataGridViewTextBoxColumn.Name = "idclientDataGridViewTextBoxColumn";
+            this.idclientDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idclientDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // objtypeDataGridViewTextBoxColumn
+            // 
+            this.objtypeDataGridViewTextBoxColumn.DataPropertyName = "obj_type";
+            this.objtypeDataGridViewTextBoxColumn.HeaderText = "obj_type";
+            this.objtypeDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.objtypeDataGridViewTextBoxColumn.Name = "objtypeDataGridViewTextBoxColumn";
+            this.objtypeDataGridViewTextBoxColumn.ReadOnly = true;
+            this.objtypeDataGridViewTextBoxColumn.Width = 125;
             // 
             // Vehicle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.label4);
@@ -305,20 +235,16 @@
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.button3);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.addButton1);
             this.Controls.Add(this.searchBox);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.surnameBox);
-            this.Controls.Add(this.nameBox);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Vehicle";
             this.Size = new System.Drawing.Size(1070, 483);
+            this.Load += new System.EventHandler(this.Vehicle_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rSSDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.oBJECTBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -327,22 +253,9 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn First_name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Last_name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Role;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Login;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Active;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button addButton1;
         private System.Windows.Forms.Button searchBox;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox surnameBox;
-        private System.Windows.Forms.TextBox nameBox;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
@@ -350,6 +263,12 @@
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nrobjectDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idclientDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn objtypeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource oBJECTBindingSource;
+        private RSSDataSet rSSDataSet;
+        private RSSDataSetTableAdapters.OBJECTTableAdapter oBJECTTableAdapter;
     }
 }

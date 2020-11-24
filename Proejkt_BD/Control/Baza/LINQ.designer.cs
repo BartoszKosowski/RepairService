@@ -36,9 +36,6 @@ namespace Proejkt_BD.Control.Baza
     partial void InsertACTIVITY(ACTIVITY instance);
     partial void UpdateACTIVITY(ACTIVITY instance);
     partial void DeleteACTIVITY(ACTIVITY instance);
-    partial void InsertCLIENT(CLIENT instance);
-    partial void UpdateCLIENT(CLIENT instance);
-    partial void DeleteCLIENT(CLIENT instance);
     partial void InsertOBJ_TYPE(OBJ_TYPE instance);
     partial void UpdateOBJ_TYPE(OBJ_TYPE instance);
     partial void DeleteOBJ_TYPE(OBJ_TYPE instance);
@@ -51,6 +48,9 @@ namespace Proejkt_BD.Control.Baza
     partial void InsertREQUEST(REQUEST instance);
     partial void UpdateREQUEST(REQUEST instance);
     partial void DeleteREQUEST(REQUEST instance);
+    partial void InsertCLIENT(CLIENT instance);
+    partial void UpdateCLIENT(CLIENT instance);
+    partial void DeleteCLIENT(CLIENT instance);
     #endregion
 		
 		public LINQDataContext() : 
@@ -99,14 +99,6 @@ namespace Proejkt_BD.Control.Baza
 			}
 		}
 		
-		public System.Data.Linq.Table<CLIENT> CLIENT
-		{
-			get
-			{
-				return this.GetTable<CLIENT>();
-			}
-		}
-		
 		public System.Data.Linq.Table<OBJ_TYPE> OBJ_TYPE
 		{
 			get
@@ -136,6 +128,14 @@ namespace Proejkt_BD.Control.Baza
 			get
 			{
 				return this.GetTable<REQUEST>();
+			}
+		}
+		
+		public System.Data.Linq.Table<CLIENT> CLIENT
+		{
+			get
+			{
+				return this.GetTable<CLIENT>();
 			}
 		}
 	}
@@ -655,192 +655,6 @@ namespace Proejkt_BD.Control.Baza
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.CLIENT")]
-	public partial class CLIENT : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _id_client;
-		
-		private string _name;
-		
-		private string _first_name;
-		
-		private string _last_name;
-		
-		private System.Nullable<int> _tel;
-		
-		private EntitySet<OBJECT> _OBJECT;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void Onid_clientChanging(int value);
-    partial void Onid_clientChanged();
-    partial void OnnameChanging(string value);
-    partial void OnnameChanged();
-    partial void Onfirst_nameChanging(string value);
-    partial void Onfirst_nameChanged();
-    partial void Onlast_nameChanging(string value);
-    partial void Onlast_nameChanged();
-    partial void OntelChanging(System.Nullable<int> value);
-    partial void OntelChanged();
-    #endregion
-		
-		public CLIENT()
-		{
-			this._OBJECT = new EntitySet<OBJECT>(new Action<OBJECT>(this.attach_OBJECT), new Action<OBJECT>(this.detach_OBJECT));
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_client", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int id_client
-		{
-			get
-			{
-				return this._id_client;
-			}
-			set
-			{
-				if ((this._id_client != value))
-				{
-					this.Onid_clientChanging(value);
-					this.SendPropertyChanging();
-					this._id_client = value;
-					this.SendPropertyChanged("id_client");
-					this.Onid_clientChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_name", DbType="VarChar(50)")]
-		public string name
-		{
-			get
-			{
-				return this._name;
-			}
-			set
-			{
-				if ((this._name != value))
-				{
-					this.OnnameChanging(value);
-					this.SendPropertyChanging();
-					this._name = value;
-					this.SendPropertyChanged("name");
-					this.OnnameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_first_name", DbType="VarChar(50)")]
-		public string first_name
-		{
-			get
-			{
-				return this._first_name;
-			}
-			set
-			{
-				if ((this._first_name != value))
-				{
-					this.Onfirst_nameChanging(value);
-					this.SendPropertyChanging();
-					this._first_name = value;
-					this.SendPropertyChanged("first_name");
-					this.Onfirst_nameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_last_name", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string last_name
-		{
-			get
-			{
-				return this._last_name;
-			}
-			set
-			{
-				if ((this._last_name != value))
-				{
-					this.Onlast_nameChanging(value);
-					this.SendPropertyChanging();
-					this._last_name = value;
-					this.SendPropertyChanged("last_name");
-					this.Onlast_nameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tel", DbType="Int")]
-		public System.Nullable<int> tel
-		{
-			get
-			{
-				return this._tel;
-			}
-			set
-			{
-				if ((this._tel != value))
-				{
-					this.OntelChanging(value);
-					this.SendPropertyChanging();
-					this._tel = value;
-					this.SendPropertyChanged("tel");
-					this.OntelChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="CLIENT_OBJECT", Storage="_OBJECT", ThisKey="id_client", OtherKey="id_client")]
-		public EntitySet<OBJECT> OBJECT
-		{
-			get
-			{
-				return this._OBJECT;
-			}
-			set
-			{
-				this._OBJECT.Assign(value);
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_OBJECT(OBJECT entity)
-		{
-			this.SendPropertyChanging();
-			entity.CLIENT = this;
-		}
-		
-		private void detach_OBJECT(OBJECT entity)
-		{
-			this.SendPropertyChanging();
-			entity.CLIENT = null;
-		}
-	}
-	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.OBJ_TYPE")]
 	public partial class OBJ_TYPE : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -971,9 +785,9 @@ namespace Proejkt_BD.Control.Baza
 		
 		private EntitySet<REQUEST> _REQUEST;
 		
-		private EntityRef<CLIENT> _CLIENT;
-		
 		private EntityRef<OBJ_TYPE> _OBJ_TYPE1;
+		
+		private EntityRef<CLIENT> _CLIENT;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -992,8 +806,8 @@ namespace Proejkt_BD.Control.Baza
 		public OBJECT()
 		{
 			this._REQUEST = new EntitySet<REQUEST>(new Action<REQUEST>(this.attach_REQUEST), new Action<REQUEST>(this.detach_REQUEST));
-			this._CLIENT = default(EntityRef<CLIENT>);
 			this._OBJ_TYPE1 = default(EntityRef<OBJ_TYPE>);
+			this._CLIENT = default(EntityRef<CLIENT>);
 			OnCreated();
 		}
 		
@@ -1098,40 +912,6 @@ namespace Proejkt_BD.Control.Baza
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="CLIENT_OBJECT", Storage="_CLIENT", ThisKey="id_client", OtherKey="id_client", IsForeignKey=true)]
-		public CLIENT CLIENT
-		{
-			get
-			{
-				return this._CLIENT.Entity;
-			}
-			set
-			{
-				CLIENT previousValue = this._CLIENT.Entity;
-				if (((previousValue != value) 
-							|| (this._CLIENT.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._CLIENT.Entity = null;
-						previousValue.OBJECT.Remove(this);
-					}
-					this._CLIENT.Entity = value;
-					if ((value != null))
-					{
-						value.OBJECT.Add(this);
-						this._id_client = value.id_client;
-					}
-					else
-					{
-						this._id_client = default(int);
-					}
-					this.SendPropertyChanged("CLIENT");
-				}
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="OBJ_TYPE_OBJECT", Storage="_OBJ_TYPE1", ThisKey="obj_type", OtherKey="type", IsForeignKey=true)]
 		public OBJ_TYPE OBJ_TYPE1
 		{
@@ -1162,6 +942,40 @@ namespace Proejkt_BD.Control.Baza
 						this._obj_type = default(string);
 					}
 					this.SendPropertyChanged("OBJ_TYPE1");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="CLIENT_OBJECT", Storage="_CLIENT", ThisKey="id_client", OtherKey="id_client", IsForeignKey=true)]
+		public CLIENT CLIENT
+		{
+			get
+			{
+				return this._CLIENT.Entity;
+			}
+			set
+			{
+				CLIENT previousValue = this._CLIENT.Entity;
+				if (((previousValue != value) 
+							|| (this._CLIENT.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._CLIENT.Entity = null;
+						previousValue.OBJECT.Remove(this);
+					}
+					this._CLIENT.Entity = value;
+					if ((value != null))
+					{
+						value.OBJECT.Add(this);
+						this._id_client = value.id_client;
+					}
+					else
+					{
+						this._id_client = default(int);
+					}
+					this.SendPropertyChanged("CLIENT");
 				}
 			}
 		}
@@ -1798,6 +1612,192 @@ namespace Proejkt_BD.Control.Baza
 		{
 			this.SendPropertyChanging();
 			entity.REQUEST = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.CLIENT")]
+	public partial class CLIENT : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _id_client;
+		
+		private string _name;
+		
+		private string _first_name;
+		
+		private string _last_name;
+		
+		private string _tel;
+		
+		private EntitySet<OBJECT> _OBJECT;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void Onid_clientChanging(int value);
+    partial void Onid_clientChanged();
+    partial void OnnameChanging(string value);
+    partial void OnnameChanged();
+    partial void Onfirst_nameChanging(string value);
+    partial void Onfirst_nameChanged();
+    partial void Onlast_nameChanging(string value);
+    partial void Onlast_nameChanged();
+    partial void OntelChanging(string value);
+    partial void OntelChanged();
+    #endregion
+		
+		public CLIENT()
+		{
+			this._OBJECT = new EntitySet<OBJECT>(new Action<OBJECT>(this.attach_OBJECT), new Action<OBJECT>(this.detach_OBJECT));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_client", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int id_client
+		{
+			get
+			{
+				return this._id_client;
+			}
+			set
+			{
+				if ((this._id_client != value))
+				{
+					this.Onid_clientChanging(value);
+					this.SendPropertyChanging();
+					this._id_client = value;
+					this.SendPropertyChanged("id_client");
+					this.Onid_clientChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_name", DbType="VarChar(50)")]
+		public string name
+		{
+			get
+			{
+				return this._name;
+			}
+			set
+			{
+				if ((this._name != value))
+				{
+					this.OnnameChanging(value);
+					this.SendPropertyChanging();
+					this._name = value;
+					this.SendPropertyChanged("name");
+					this.OnnameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_first_name", DbType="VarChar(50)")]
+		public string first_name
+		{
+			get
+			{
+				return this._first_name;
+			}
+			set
+			{
+				if ((this._first_name != value))
+				{
+					this.Onfirst_nameChanging(value);
+					this.SendPropertyChanging();
+					this._first_name = value;
+					this.SendPropertyChanged("first_name");
+					this.Onfirst_nameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_last_name", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string last_name
+		{
+			get
+			{
+				return this._last_name;
+			}
+			set
+			{
+				if ((this._last_name != value))
+				{
+					this.Onlast_nameChanging(value);
+					this.SendPropertyChanging();
+					this._last_name = value;
+					this.SendPropertyChanged("last_name");
+					this.Onlast_nameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tel", DbType="VarChar(50)")]
+		public string tel
+		{
+			get
+			{
+				return this._tel;
+			}
+			set
+			{
+				if ((this._tel != value))
+				{
+					this.OntelChanging(value);
+					this.SendPropertyChanging();
+					this._tel = value;
+					this.SendPropertyChanged("tel");
+					this.OntelChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="CLIENT_OBJECT", Storage="_OBJECT", ThisKey="id_client", OtherKey="id_client")]
+		public EntitySet<OBJECT> OBJECT
+		{
+			get
+			{
+				return this._OBJECT;
+			}
+			set
+			{
+				this._OBJECT.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_OBJECT(OBJECT entity)
+		{
+			this.SendPropertyChanging();
+			entity.CLIENT = this;
+		}
+		
+		private void detach_OBJECT(OBJECT entity)
+		{
+			this.SendPropertyChanging();
+			entity.CLIENT = null;
 		}
 	}
 }

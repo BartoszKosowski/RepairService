@@ -97,7 +97,7 @@ namespace Proejkt_BD.Control.Admin
             else
                 a = "A";
 
-            var result = SQL.SearchAdmin(textBox1.Text.ToString(), textBox2.Text.ToString(), textBox3.Text.ToString(), comboBox1.Text.ToString(), a);
+            var result = SQLadmin.SearchAdmin(textBox1.Text.ToString(), textBox2.Text.ToString(), textBox3.Text.ToString(), comboBox1.Text.ToString(), a);
             dataGridView1.DataSource = result;
          }
     }

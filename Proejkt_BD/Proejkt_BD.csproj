@@ -71,6 +71,8 @@
       <DependentUpon>LINQ.dbml</DependentUpon>
     </Compile>
     <Compile Include="Control\Baza\SQL.cs" />
+    <Compile Include="Control\Baza\SQLadmin.cs" />
+    <Compile Include="Control\Baza\SQLmanager.cs" />
     <Compile Include="Control\Menager\Activity.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -181,6 +183,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RSSDataSet.cs">
+      <DependentUpon>RSSDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="RSSDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

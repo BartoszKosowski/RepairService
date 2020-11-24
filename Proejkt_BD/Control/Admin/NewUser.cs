@@ -25,7 +25,7 @@ namespace Proejkt_BD.Control.Admin
                 check = "T";
             else
                 check = "F";
-            SQL.AddPersonel(textBox1.Text.ToString(), textBox2.Text.ToString(), textBox3.Text.ToString(), comboBox1.Text.ToString(), textBox4.Text.ToString(), check);           
+            SQLadmin.AddPersonel(textBox1.Text.ToString(), textBox2.Text.ToString(), textBox3.Text.ToString(), comboBox1.Text.ToString(), textBox4.Text.ToString(), check);           
             MessageBox.Show("New user added successfully");
             this.Close();
         }
@@ -33,6 +33,11 @@ namespace Proejkt_BD.Control.Admin
         private void button2_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void NewUser_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

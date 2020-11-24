@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 11.375" name="LINQ">
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 10.75" name="LINQ">
   <DataContextMoniker Name="/LINQDataContext" />
   <nestedChildShapes>
     <classShape Id="7dd21ba0-ea8a-40f9-bbc8-8d036bee5c16" absoluteBounds="3.5, 1.75, 2, 1.1939925130208335">
@@ -12,12 +12,6 @@
       <DataClassMoniker Name="/LINQDataContext/ACTIVITY" />
       <nestedChildShapes>
         <elementListCompartment Id="03af11d7-cdc5-4bbc-a562-5b8e8b7d185b" absoluteBounds="6.265, 4.585, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="5861966b-ef4e-4726-abbb-7d3d8352d33d" absoluteBounds="1.5, 9.375, 2, 1.7708968098958327">
-      <DataClassMoniker Name="/LINQDataContext/CLIENT" />
-      <nestedChildShapes>
-        <elementListCompartment Id="a21a57f0-6067-42e7-ab9f-3a44e64b9a24" absoluteBounds="1.5150000000000001, 9.835, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
     <classShape Id="eae9681e-cddc-4856-858d-359dba273f24" absoluteBounds="1.5, 7.5, 2, 1.1939925130208353">
@@ -44,53 +38,59 @@
         <elementListCompartment Id="b1f985f8-709a-4298-95c9-9b22416dbeac" absoluteBounds="3.515, 4.835, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(5.5 : 2.34699625651042); (7.25 : 2.34699625651042); (7.25 : 4.125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(5.5 : 2.34699625651042); (5.79166666666667 : 2.34699625651042 : JumpStart); (5.95833333333333 : 2.34699625651042 : JumpEnd); (7.25 : 2.34699625651042); (7.25 : 4.125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/LINQDataContext/ACT_DICT/ACT_DICT_ACTIVITY" />
       <nodes>
         <classShapeMoniker Id="7dd21ba0-ea8a-40f9-bbc8-8d036bee5c16" />
         <classShapeMoniker Id="c2543228-25a0-4304-98e2-d736c66e117a" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(1.5013612283153 : 9.375); (1.1263612283153 : 9); (0.375 : 9); (0.375 : 2.70359537760417); (0.75 : 2.32859537760417)]" fixedFrom="NotFixed" fixedTo="NotFixed">
-      <AssociationMoniker Name="/LINQDataContext/CLIENT/CLIENT_OBJECT" />
-      <nodes>
-        <classShapeMoniker Id="5861966b-ef4e-4726-abbb-7d3d8352d33d" />
-        <classShapeMoniker Id="2bacb9bb-73e0-4bcc-87a8-d90291f6f9a5" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(3.0937505 : 7.5); (3.0937505 : 1.53929768880208); (2.75 : 1.53929768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(3.1250025 : 7.5); (3.1250025 : 1.53929768880208); (2.75 : 1.53929768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/LINQDataContext/OBJ_TYPE/OBJ_TYPE_OBJECT" />
       <nodes>
         <classShapeMoniker Id="eae9681e-cddc-4856-858d-359dba273f24" />
         <classShapeMoniker Id="2bacb9bb-73e0-4bcc-87a8-d90291f6f9a5" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(1.75 : 4.5); (1.75 : 4.21875); (3.01041716666667 : 4.21875 : JumpStart); (3.17708383333333 : 4.21875 : JumpEnd); (3.22916666666667 : 4.21875 : JumpStart); (3.39583333333333 : 4.21875 : JumpEnd); (6.25 : 4.21875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(1.75 : 4.5); (1.75 : 4.21875); (3.04166916666667 : 4.21875 : JumpStart); (3.20833583333333 : 4.21875 : JumpEnd); (3.22916666666667 : 4.21875 : JumpStart); (3.39583333333333 : 4.21875 : JumpEnd); (5.79166666666667 : 4.21875 : JumpStart); (5.95833333333333 : 4.21875 : JumpEnd); (6.25 : 4.21875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/LINQDataContext/PERSONEL/PERSONEL_ACTIVITY" />
       <nodes>
         <classShapeMoniker Id="dd6575c4-2a1a-473d-92b8-20d41ea5c2df" />
         <classShapeMoniker Id="c2543228-25a0-4304-98e2-d736c66e117a" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 5.54890055338542); (6.25 : 5.54890055338542)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(5.5 : 5.54890055338542); (5.79166666666667 : 5.54890055338542 : JumpStart); (5.95833333333333 : 5.54890055338542 : JumpEnd); (6.25 : 5.54890055338542)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/LINQDataContext/REQUEST/REQUEST_ACTIVITY" />
       <nodes>
         <classShapeMoniker Id="1569487b-4d6d-41c9-b6ae-31cadb8a8f28" />
         <classShapeMoniker Id="c2543228-25a0-4304-98e2-d736c66e117a" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 2.26666486663662); (3.03482493490112 : 2.55148980153774 : JumpStart); (3.15267606509888 : 2.6693409317355 : JumpEnd); (3.3125 : 2.82916486663662); (3.3125 : 5.54890055338542); (3.5 : 5.54890055338542)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2.75 : 2.26666486663662); (3.06607693490112 : 2.58274180153774 : JumpStart); (3.18392806509888 : 2.7005929317355 : JumpEnd); (3.3125 : 2.82916486663662); (3.3125 : 5.54890055338542); (3.5 : 5.54890055338542)]" fixedFrom="NotFixed" fixedTo="Algorithm">
       <AssociationMoniker Name="/LINQDataContext/OBJECT/OBJECT_REQUEST" />
       <nodes>
         <classShapeMoniker Id="2bacb9bb-73e0-4bcc-87a8-d90291f6f9a5" />
         <classShapeMoniker Id="1569487b-4d6d-41c9-b6ae-31cadb8a8f28" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 6.16470011393229); (3.01041716666667 : 6.16470011393229 : JumpStart); (3.17708383333333 : 6.16470011393229 : JumpEnd); (3.5 : 6.16470011393229)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2.75 : 6.16470011393229); (3.04166916666667 : 6.16470011393229 : JumpStart); (3.20833583333333 : 6.16470011393229 : JumpEnd); (3.5 : 6.16470011393229)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/LINQDataContext/PERSONEL/PERSONEL_REQUEST" />
       <nodes>
         <classShapeMoniker Id="dd6575c4-2a1a-473d-92b8-20d41ea5c2df" />
         <classShapeMoniker Id="1569487b-4d6d-41c9-b6ae-31cadb8a8f28" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="8acf56c8-3368-4fe5-b0b0-8a42007f05f4" absoluteBounds="4.5, 8.75, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/LINQDataContext/CLIENT" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e0fb6d6f-e917-48ef-8ac5-ce00c90ce145" absoluteBounds="4.515, 9.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.875 : 8.75); (5.875 : 1.11339634440104); (2.75 : 1.11339634440104)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/LINQDataContext/CLIENT/CLIENT_OBJECT" />
+      <nodes>
+        <classShapeMoniker Id="8acf56c8-3368-4fe5-b0b0-8a42007f05f4" />
+        <classShapeMoniker Id="2bacb9bb-73e0-4bcc-87a8-d90291f6f9a5" />
       </nodes>
     </associationConnector>
   </nestedChildShapes>

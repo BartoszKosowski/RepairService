@@ -28,25 +28,39 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.button3 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.addButton1 = new System.Windows.Forms.Button();
             this.searchBox = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.surnameBox = new System.Windows.Forms.TextBox();
+            this.fnameBox = new System.Windows.Forms.TextBox();
             this.nameBox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button5 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.First_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Last_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Role = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Login = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Active = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cLIENTBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.pERSONELBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.rSSDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.rSSDataSet = new Proejkt_BD.RSSDataSet();
+            this.pERSONELTableAdapter = new Proejkt_BD.RSSDataSetTableAdapters.PERSONELTableAdapter();
+            this.cLIENTTableAdapter = new Proejkt_BD.RSSDataSetTableAdapters.CLIENTTableAdapter();
+            this.cLIENTBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.cLIENTBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.idclientDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.firstnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lastnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.telDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cLIENTBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pERSONELBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rSSDataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rSSDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cLIENTBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cLIENTBindingSource2)).BeginInit();
             this.SuspendLayout();
             // 
             // button3
@@ -58,6 +72,7 @@
             this.button3.TabIndex = 27;
             this.button3.Text = "Delete Customer";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button1
             // 
@@ -83,13 +98,14 @@
             // 
             // searchBox
             // 
-            this.searchBox.Location = new System.Drawing.Point(956, 11);
+            this.searchBox.Location = new System.Drawing.Point(956, 8);
             this.searchBox.Margin = new System.Windows.Forms.Padding(4);
             this.searchBox.Name = "searchBox";
             this.searchBox.Size = new System.Drawing.Size(100, 28);
             this.searchBox.TabIndex = 22;
             this.searchBox.Text = "Search";
             this.searchBox.UseVisualStyleBackColor = true;
+            this.searchBox.Click += new System.EventHandler(this.searchBox_Click);
             // 
             // label2
             // 
@@ -113,13 +129,13 @@
             this.label1.TabIndex = 20;
             this.label1.Text = "Name";
             // 
-            // surnameBox
+            // fnameBox
             // 
-            this.surnameBox.Location = new System.Drawing.Point(320, 11);
-            this.surnameBox.Margin = new System.Windows.Forms.Padding(4);
-            this.surnameBox.Name = "surnameBox";
-            this.surnameBox.Size = new System.Drawing.Size(132, 22);
-            this.surnameBox.TabIndex = 19;
+            this.fnameBox.Location = new System.Drawing.Point(320, 11);
+            this.fnameBox.Margin = new System.Windows.Forms.Padding(4);
+            this.fnameBox.Name = "fnameBox";
+            this.fnameBox.Size = new System.Drawing.Size(132, 22);
+            this.fnameBox.TabIndex = 19;
             // 
             // nameBox
             // 
@@ -161,62 +177,104 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.id,
-            this.First_name,
-            this.Last_name,
-            this.Role,
-            this.Login,
-            this.Active});
-            this.dataGridView1.Location = new System.Drawing.Point(8, 40);
+            this.idclientDataGridViewTextBoxColumn,
+            this.nameDataGridViewTextBoxColumn,
+            this.firstnameDataGridViewTextBoxColumn,
+            this.lastnameDataGridViewTextBoxColumn,
+            this.telDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.cLIENTBindingSource2;
+            this.dataGridView1.Location = new System.Drawing.Point(8, 43);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(1048, 365);
             this.dataGridView1.TabIndex = 32;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // id
+            // cLIENTBindingSource
             // 
-            this.id.HeaderText = "ID";
-            this.id.MinimumWidth = 6;
-            this.id.Name = "id";
-            this.id.Width = 125;
+            this.cLIENTBindingSource.DataMember = "CLIENT";
+            this.cLIENTBindingSource.DataSource = this.rSSDataSetBindingSource;
             // 
-            // First_name
+            // pERSONELBindingSource
             // 
-            this.First_name.HeaderText = "First Name";
-            this.First_name.MinimumWidth = 6;
-            this.First_name.Name = "First_name";
-            this.First_name.Width = 125;
+            this.pERSONELBindingSource.DataMember = "PERSONEL";
+            this.pERSONELBindingSource.DataSource = this.rSSDataSetBindingSource;
             // 
-            // Last_name
+            // rSSDataSetBindingSource
             // 
-            this.Last_name.HeaderText = "Last Name";
-            this.Last_name.MinimumWidth = 6;
-            this.Last_name.Name = "Last_name";
-            this.Last_name.Width = 125;
+            this.rSSDataSetBindingSource.DataSource = this.rSSDataSet;
+            this.rSSDataSetBindingSource.Position = 0;
+            this.rSSDataSetBindingSource.CurrentChanged += new System.EventHandler(this.rSSDataSetBindingSource_CurrentChanged);
             // 
-            // Role
+            // rSSDataSet
             // 
-            this.Role.HeaderText = "Role";
-            this.Role.MinimumWidth = 6;
-            this.Role.Name = "Role";
-            this.Role.Width = 125;
+            this.rSSDataSet.DataSetName = "RSSDataSet";
+            this.rSSDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // Login
+            // pERSONELTableAdapter
             // 
-            this.Login.HeaderText = "Login";
-            this.Login.MinimumWidth = 6;
-            this.Login.Name = "Login";
-            this.Login.Width = 125;
+            this.pERSONELTableAdapter.ClearBeforeFill = true;
             // 
-            // Active
+            // cLIENTTableAdapter
             // 
-            this.Active.HeaderText = "Active";
-            this.Active.MinimumWidth = 6;
-            this.Active.Name = "Active";
-            this.Active.Width = 125;
+            this.cLIENTTableAdapter.ClearBeforeFill = true;
+            // 
+            // cLIENTBindingSource1
+            // 
+            this.cLIENTBindingSource1.DataMember = "CLIENT";
+            this.cLIENTBindingSource1.DataSource = this.rSSDataSetBindingSource;
+            // 
+            // cLIENTBindingSource2
+            // 
+            this.cLIENTBindingSource2.DataMember = "CLIENT";
+            this.cLIENTBindingSource2.DataSource = this.rSSDataSetBindingSource;
+            // 
+            // idclientDataGridViewTextBoxColumn
+            // 
+            this.idclientDataGridViewTextBoxColumn.DataPropertyName = "id_client";
+            this.idclientDataGridViewTextBoxColumn.HeaderText = "id_client";
+            this.idclientDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.idclientDataGridViewTextBoxColumn.Name = "idclientDataGridViewTextBoxColumn";
+            this.idclientDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idclientDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "name";
+            this.nameDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.nameDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // firstnameDataGridViewTextBoxColumn
+            // 
+            this.firstnameDataGridViewTextBoxColumn.DataPropertyName = "first_name";
+            this.firstnameDataGridViewTextBoxColumn.HeaderText = "first_name";
+            this.firstnameDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.firstnameDataGridViewTextBoxColumn.Name = "firstnameDataGridViewTextBoxColumn";
+            this.firstnameDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // lastnameDataGridViewTextBoxColumn
+            // 
+            this.lastnameDataGridViewTextBoxColumn.DataPropertyName = "last_name";
+            this.lastnameDataGridViewTextBoxColumn.HeaderText = "last_name";
+            this.lastnameDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.lastnameDataGridViewTextBoxColumn.Name = "lastnameDataGridViewTextBoxColumn";
+            this.lastnameDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // telDataGridViewTextBoxColumn
+            // 
+            this.telDataGridViewTextBoxColumn.DataPropertyName = "tel";
+            this.telDataGridViewTextBoxColumn.HeaderText = "tel";
+            this.telDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.telDataGridViewTextBoxColumn.Name = "telDataGridViewTextBoxColumn";
+            this.telDataGridViewTextBoxColumn.Width = 125;
             // 
             // Customers
             // 
@@ -232,11 +290,18 @@
             this.Controls.Add(this.searchBox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.surnameBox);
+            this.Controls.Add(this.fnameBox);
             this.Controls.Add(this.nameBox);
             this.Name = "Customers";
             this.Size = new System.Drawing.Size(1070, 483);
+            this.Load += new System.EventHandler(this.Customers_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cLIENTBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pERSONELBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rSSDataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rSSDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cLIENTBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cLIENTBindingSource2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -249,17 +314,24 @@
         private System.Windows.Forms.Button searchBox;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox surnameBox;
+        private System.Windows.Forms.TextBox fnameBox;
         private System.Windows.Forms.TextBox nameBox;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn First_name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Last_name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Role;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Login;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Active;
+        private System.Windows.Forms.BindingSource rSSDataSetBindingSource;
+        private RSSDataSet rSSDataSet;
+        private System.Windows.Forms.BindingSource pERSONELBindingSource;
+        private RSSDataSetTableAdapters.PERSONELTableAdapter pERSONELTableAdapter;
+        private System.Windows.Forms.BindingSource cLIENTBindingSource;
+        private RSSDataSetTableAdapters.CLIENTTableAdapter cLIENTTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idclientDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn firstnameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lastnameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn telDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource cLIENTBindingSource2;
+        private System.Windows.Forms.BindingSource cLIENTBindingSource1;
     }
 }
