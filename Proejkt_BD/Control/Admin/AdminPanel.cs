@@ -41,9 +41,20 @@ namespace Proejkt_BD.Control.Admin
             a1.textBox1.Text = this.dataGridView1.CurrentRow.Cells[1].Value.ToString(); //fname
             a1.textBox2.Text = this.dataGridView1.CurrentRow.Cells[2].Value.ToString(); //lname
             a1.comboBox1.Text = this.dataGridView1.CurrentRow.Cells[3].Value.ToString(); //role
-            a1.checkBox1.Text = this.dataGridView1.CurrentRow.Cells[4].Value.ToString(); //active
             a1.textBox3.Text = this.dataGridView1.CurrentRow.Cells[5].Value.ToString(); //login
             a1.textBox4.Text = this.dataGridView1.CurrentRow.Cells[6].Value.ToString(); //password
+            
+            string check = this.dataGridView1.CurrentRow.Cells[4].Value.ToString(); //active
+            if (check == "T")
+            {
+                a1.checkBox1.Text = "Konto jest aktywne";
+                a1.checkBox1.Checked = true;
+            }
+            else
+            {
+                a1.checkBox1.Text = "Konto jest zablokowane";
+                a1.checkBox1.Checked = false;
+            }
             a1.ShowDialog();
         }
 

@@ -29,5 +29,10 @@ namespace Proejkt_BD.Control.Admin
             MessageBox.Show("New user added successfully");
             this.Close();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

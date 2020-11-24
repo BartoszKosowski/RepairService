@@ -37,12 +37,12 @@ namespace Proejkt_BD.Control.Baza
 								adm.last_name.StartsWith(lname) &&
 								adm.login.StartsWith(login) &&
 								adm.role.StartsWith(role) &&
-								adm.active.StartsWith("") 
+								adm.active.StartsWith("")
 							 select adm;
 				return result;
 			}
 			else
-            {
+			{
 				var result = from adm in db.PERSONEL
 							 where adm.first_name.StartsWith(fname) &&
 								adm.last_name.StartsWith(lname) &&
@@ -89,11 +89,14 @@ namespace Proejkt_BD.Control.Baza
 			return;
 
 		}
-	}
-}
-		
+
+
 		//ADMIN PANEL /\/\/\
 
-	
 
 
+		//MANAGER PANEL \/\/\/\/\/
+
+
+	}
+}
