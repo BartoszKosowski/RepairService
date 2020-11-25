@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Proejkt_BD.Control.Baza;
 
 namespace Proejkt_BD.Control.Menager
 {
@@ -21,6 +22,14 @@ namespace Proejkt_BD.Control.Menager
         {
             Activity a1 = new Activity();
             a1.ShowDialog();
+        }
+
+        private void RequestDetails_Load(object sender, EventArgs e)
+        {
+            // TODO: Ten wiersz kodu wczytuje dane do tabeli 'rSSDataSet.ACTIVITY' . Możesz go przenieść lub usunąć.
+            //this.aCTIVITYTableAdapter.Fill(this.rSSDataSet.ACTIVITY);
+            var result = SQLmanager.SearchActivity(this.textBox1.Text.ToString());
+            dataGridView1.DataSource = result;
         }
     }
 }

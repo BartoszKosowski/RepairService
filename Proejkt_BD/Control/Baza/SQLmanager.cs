@@ -76,7 +76,7 @@ namespace Proejkt_BD.Control.Baza
 						 select adm;
 			return result;
 		}
-		public static IQueryable<OBJECT> SearchObjects2(string id)
+		public static IQueryable<OBJECT> SearchObjects2(string id) //po id klienta
 		{
 			LINQDataContext db = new LINQDataContext();
 			var result = from adm in db.OBJECT
@@ -85,7 +85,16 @@ namespace Proejkt_BD.Control.Baza
 			return result;
 		}
 
-		public static IQueryable<OBJ_TYPE> SearchObjType(string type)
+		public static IQueryable<OBJECT> SearchObjects3(string id) //po numerze rej
+		{
+			LINQDataContext db = new LINQDataContext();
+			var result = from adm in db.OBJECT
+						 where adm.nr_object.Equals(id)
+						 select adm;
+			return result;
+		}
+
+		public static IQueryable<OBJ_TYPE> SearchObjType(string type) 
 		{
 			LINQDataContext db = new LINQDataContext();
 			var result = from adm in db.OBJ_TYPE
@@ -94,7 +103,7 @@ namespace Proejkt_BD.Control.Baza
 			return result;
 		}
 
-		public static IQueryable<CLIENT> SearchClient(string id)
+		public static IQueryable<CLIENT> SearchCustomerFromID(string id)
 		{
 			LINQDataContext db = new LINQDataContext();
 			var result = from adm in db.CLIENT
@@ -121,6 +130,39 @@ namespace Proejkt_BD.Control.Baza
 			//Save changes to Database.
 			db.SubmitChanges();
 			return;
+		}
+
+		public static IQueryable<REQUEST> SearchRequests(string status, string date, string nr_object)
+		{
+			if (date == "")
+			{
+				LINQDataContext db = new LINQDataContext();
+				var result = from adm in db.REQUEST
+							 where adm.status.StartsWith(status) &&
+								adm.nr_object.StartsWith(nr_object)
+							 select adm;
+				return result;
+			}
+			else
+            {
+				LINQDataContext db = new LINQDataContext();
+				var result = from adm in db.REQUEST
+							 where adm.status.StartsWith(status) &&
+								adm.date_reg.Equals(date) &&
+								adm.nr_object.StartsWith(nr_object)
+							 select adm;
+				return result;
+			}
+
+		}
+
+		public static IQueryable<ACTIVITY> SearchActivity(string id)
+		{
+			LINQDataContext db = new LINQDataContext();
+			var result = from adm in db.ACTIVITY
+						 where adm.id_request.Equals(id)
+						 select adm;
+			return result;
 		}
 
 	}

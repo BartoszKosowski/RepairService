@@ -37,7 +37,7 @@ namespace Proejkt_BD.Control.Menager
 
         private void button1_Click(object sender, EventArgs e)
         {
-            var client = SQLmanager.SearchClient(this.dataGridView1.CurrentRow.Cells[3].Value.ToString());
+            var client = SQLmanager.SearchCustomerFromID(this.dataGridView1.CurrentRow.Cells[3].Value.ToString());
             var type = SQLmanager.SearchObjType(this.dataGridView1.CurrentRow.Cells[2].Value.ToString());
             
             VehicleDetails a1 = new VehicleDetails();

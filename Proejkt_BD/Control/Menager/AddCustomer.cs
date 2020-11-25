@@ -20,7 +20,7 @@ namespace Proejkt_BD.Control.Menager
 
         private void button1_Click(object sender, EventArgs e)
         {
-            SQLmanager.AddCustomer(textBox1.Text.ToString(), textBox2.Text.ToString(), textBox3.Text.ToString(), textBox4.Text.ToString());
+            SQLmanager.AddCustomer(textBox3.Text.ToString(), textBox1.Text.ToString(), textBox2.Text.ToString(), textBox4.Text.ToString());
                 MessageBox.Show("New customer added successfully");
                 this.Close();
         }

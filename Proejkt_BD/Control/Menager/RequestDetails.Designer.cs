@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -43,11 +44,29 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.listView1 = new System.Windows.Forms.ListView();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.rSSDataSet = new Proejkt_BD.RSSDataSet();
+            this.aCTIVITYBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.aCTIVITYTableAdapter = new Proejkt_BD.RSSDataSetTableAdapters.ACTIVITYTableAdapter();
+            this.idactivityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.resultDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.statusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateregDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.datefncnDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idrequestDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idpersonelDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.actdictDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sequencenbDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rSSDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.aCTIVITYBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -63,10 +82,10 @@
             // 
             // richTextBox1
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(170, 232);
+            this.richTextBox1.Location = new System.Drawing.Point(170, 80);
             this.richTextBox1.Margin = new System.Windows.Forms.Padding(4);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(319, 171);
+            this.richTextBox1.Size = new System.Drawing.Size(319, 79);
             this.richTextBox1.TabIndex = 48;
             this.richTextBox1.Text = "";
             // 
@@ -74,7 +93,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label5.Location = new System.Drawing.Point(8, 228);
+            this.label5.Location = new System.Drawing.Point(10, 80);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(95, 20);
@@ -85,7 +104,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label2.Location = new System.Drawing.Point(10, 174);
+            this.label2.Location = new System.Drawing.Point(10, 303);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(86, 20);
@@ -94,7 +113,7 @@
             // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(170, 173);
+            this.textBox5.Location = new System.Drawing.Point(170, 302);
             this.textBox5.Margin = new System.Windows.Forms.Padding(4);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(319, 22);
@@ -104,7 +123,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label7.Location = new System.Drawing.Point(10, 142);
+            this.label7.Location = new System.Drawing.Point(10, 167);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(112, 20);
@@ -115,7 +134,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label6.Location = new System.Drawing.Point(10, 112);
+            this.label6.Location = new System.Drawing.Point(10, 267);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(64, 20);
@@ -124,7 +143,7 @@
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(170, 142);
+            this.textBox4.Location = new System.Drawing.Point(170, 167);
             this.textBox4.Margin = new System.Windows.Forms.Padding(4);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(319, 22);
@@ -132,7 +151,7 @@
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(170, 110);
+            this.textBox3.Location = new System.Drawing.Point(170, 265);
             this.textBox3.Margin = new System.Windows.Forms.Padding(4);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(319, 22);
@@ -141,7 +160,7 @@
             // textBox2
             // 
             this.textBox2.Enabled = false;
-            this.textBox2.Location = new System.Drawing.Point(170, 76);
+            this.textBox2.Location = new System.Drawing.Point(170, 231);
             this.textBox2.Margin = new System.Windows.Forms.Padding(4);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(319, 22);
@@ -160,7 +179,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label4.Location = new System.Drawing.Point(18, 128);
+            this.label4.Location = new System.Drawing.Point(18, 283);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(0, 20);
@@ -170,7 +189,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label3.Location = new System.Drawing.Point(10, 81);
+            this.label3.Location = new System.Drawing.Point(10, 236);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(82, 20);
@@ -199,19 +218,10 @@
             this.label9.TabIndex = 49;
             this.label9.Text = "Activity list";
             // 
-            // listView1
-            // 
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(520, 43);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(527, 334);
-            this.listView1.TabIndex = 50;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            // 
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.button1.Location = new System.Drawing.Point(904, 383);
+            this.button1.Location = new System.Drawing.Point(906, 330);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(143, 31);
             this.button1.TabIndex = 51;
@@ -222,7 +232,7 @@
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.button2.Location = new System.Drawing.Point(12, 433);
+            this.button2.Location = new System.Drawing.Point(14, 465);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(1035, 31);
             this.button2.TabIndex = 52;
@@ -233,7 +243,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label10.Location = new System.Drawing.Point(10, 205);
+            this.label10.Location = new System.Drawing.Point(10, 200);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(57, 20);
@@ -249,21 +259,172 @@
             "CAN",
             "ACT",
             "XXX"});
-            this.comboBox1.Location = new System.Drawing.Point(170, 201);
+            this.comboBox1.Location = new System.Drawing.Point(170, 196);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(113, 24);
             this.comboBox1.TabIndex = 54;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label11.Location = new System.Drawing.Point(10, 341);
+            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(57, 20);
+            this.label11.TabIndex = 55;
+            this.label11.Text = "Result";
+            // 
+            // richTextBox2
+            // 
+            this.richTextBox2.Location = new System.Drawing.Point(170, 341);
+            this.richTextBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.richTextBox2.Name = "richTextBox2";
+            this.richTextBox2.Size = new System.Drawing.Size(319, 79);
+            this.richTextBox2.TabIndex = 56;
+            this.richTextBox2.Text = "";
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idactivityDataGridViewTextBoxColumn,
+            this.descriptionDataGridViewTextBoxColumn,
+            this.resultDataGridViewTextBoxColumn,
+            this.statusDataGridViewTextBoxColumn,
+            this.dateregDataGridViewTextBoxColumn,
+            this.datefncnDataGridViewTextBoxColumn,
+            this.idrequestDataGridViewTextBoxColumn,
+            this.idpersonelDataGridViewTextBoxColumn,
+            this.actdictDataGridViewTextBoxColumn,
+            this.sequencenbDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.aCTIVITYBindingSource;
+            this.dataGridView1.Location = new System.Drawing.Point(526, 49);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.Size = new System.Drawing.Size(521, 274);
+            this.dataGridView1.TabIndex = 57;
+            // 
+            // rSSDataSet
+            // 
+            this.rSSDataSet.DataSetName = "RSSDataSet";
+            this.rSSDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // aCTIVITYBindingSource
+            // 
+            this.aCTIVITYBindingSource.DataMember = "ACTIVITY";
+            this.aCTIVITYBindingSource.DataSource = this.rSSDataSet;
+            // 
+            // aCTIVITYTableAdapter
+            // 
+            this.aCTIVITYTableAdapter.ClearBeforeFill = true;
+            // 
+            // idactivityDataGridViewTextBoxColumn
+            // 
+            this.idactivityDataGridViewTextBoxColumn.DataPropertyName = "id_activity";
+            this.idactivityDataGridViewTextBoxColumn.HeaderText = "id_activity";
+            this.idactivityDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.idactivityDataGridViewTextBoxColumn.Name = "idactivityDataGridViewTextBoxColumn";
+            this.idactivityDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idactivityDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // descriptionDataGridViewTextBoxColumn
+            // 
+            this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "description";
+            this.descriptionDataGridViewTextBoxColumn.HeaderText = "description";
+            this.descriptionDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
+            this.descriptionDataGridViewTextBoxColumn.ReadOnly = true;
+            this.descriptionDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // resultDataGridViewTextBoxColumn
+            // 
+            this.resultDataGridViewTextBoxColumn.DataPropertyName = "result";
+            this.resultDataGridViewTextBoxColumn.HeaderText = "result";
+            this.resultDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.resultDataGridViewTextBoxColumn.Name = "resultDataGridViewTextBoxColumn";
+            this.resultDataGridViewTextBoxColumn.ReadOnly = true;
+            this.resultDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // statusDataGridViewTextBoxColumn
+            // 
+            this.statusDataGridViewTextBoxColumn.DataPropertyName = "status";
+            this.statusDataGridViewTextBoxColumn.HeaderText = "status";
+            this.statusDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.statusDataGridViewTextBoxColumn.Name = "statusDataGridViewTextBoxColumn";
+            this.statusDataGridViewTextBoxColumn.ReadOnly = true;
+            this.statusDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // dateregDataGridViewTextBoxColumn
+            // 
+            this.dateregDataGridViewTextBoxColumn.DataPropertyName = "date_reg";
+            this.dateregDataGridViewTextBoxColumn.HeaderText = "date_reg";
+            this.dateregDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.dateregDataGridViewTextBoxColumn.Name = "dateregDataGridViewTextBoxColumn";
+            this.dateregDataGridViewTextBoxColumn.ReadOnly = true;
+            this.dateregDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // datefncnDataGridViewTextBoxColumn
+            // 
+            this.datefncnDataGridViewTextBoxColumn.DataPropertyName = "date_fn_cn";
+            this.datefncnDataGridViewTextBoxColumn.HeaderText = "date_fn_cn";
+            this.datefncnDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.datefncnDataGridViewTextBoxColumn.Name = "datefncnDataGridViewTextBoxColumn";
+            this.datefncnDataGridViewTextBoxColumn.ReadOnly = true;
+            this.datefncnDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // idrequestDataGridViewTextBoxColumn
+            // 
+            this.idrequestDataGridViewTextBoxColumn.DataPropertyName = "id_request";
+            this.idrequestDataGridViewTextBoxColumn.HeaderText = "id_request";
+            this.idrequestDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.idrequestDataGridViewTextBoxColumn.Name = "idrequestDataGridViewTextBoxColumn";
+            this.idrequestDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idrequestDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // idpersonelDataGridViewTextBoxColumn
+            // 
+            this.idpersonelDataGridViewTextBoxColumn.DataPropertyName = "id_personel";
+            this.idpersonelDataGridViewTextBoxColumn.HeaderText = "id_personel";
+            this.idpersonelDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.idpersonelDataGridViewTextBoxColumn.Name = "idpersonelDataGridViewTextBoxColumn";
+            this.idpersonelDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idpersonelDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // actdictDataGridViewTextBoxColumn
+            // 
+            this.actdictDataGridViewTextBoxColumn.DataPropertyName = "act_dict";
+            this.actdictDataGridViewTextBoxColumn.HeaderText = "act_dict";
+            this.actdictDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.actdictDataGridViewTextBoxColumn.Name = "actdictDataGridViewTextBoxColumn";
+            this.actdictDataGridViewTextBoxColumn.ReadOnly = true;
+            this.actdictDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // sequencenbDataGridViewTextBoxColumn
+            // 
+            this.sequencenbDataGridViewTextBoxColumn.DataPropertyName = "sequence_nb";
+            this.sequencenbDataGridViewTextBoxColumn.HeaderText = "sequence_nb";
+            this.sequencenbDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.sequencenbDataGridViewTextBoxColumn.Name = "sequencenbDataGridViewTextBoxColumn";
+            this.sequencenbDataGridViewTextBoxColumn.ReadOnly = true;
+            this.sequencenbDataGridViewTextBoxColumn.Width = 125;
             // 
             // RequestDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1059, 476);
+            this.ClientSize = new System.Drawing.Size(1059, 508);
+            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.richTextBox2);
+            this.Controls.Add(this.label11);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.listView1);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.label5);
@@ -281,6 +442,10 @@
             this.Controls.Add(this.label1);
             this.Name = "RequestDetails";
             this.Text = "RequestDetails";
+            this.Load += new System.EventHandler(this.RequestDetails_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rSSDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.aCTIVITYBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -289,24 +454,39 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label11;
+        public System.Windows.Forms.RichTextBox richTextBox2;
+        public System.Windows.Forms.RichTextBox richTextBox1;
+        public System.Windows.Forms.TextBox textBox5;
+        public System.Windows.Forms.TextBox textBox4;
+        public System.Windows.Forms.TextBox textBox3;
+        public System.Windows.Forms.TextBox textBox2;
+        public System.Windows.Forms.TextBox textBox1;
+        public System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private RSSDataSet rSSDataSet;
+        private System.Windows.Forms.BindingSource aCTIVITYBindingSource;
+        private RSSDataSetTableAdapters.ACTIVITYTableAdapter aCTIVITYTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idactivityDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn resultDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn statusDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dateregDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn datefncnDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idrequestDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idpersonelDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn actdictDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sequencenbDataGridViewTextBoxColumn;
     }
 }

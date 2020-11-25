@@ -44,13 +44,13 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.textBox3 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // button3
             // 
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button3.Location = new System.Drawing.Point(330, 433);
+            this.button3.Location = new System.Drawing.Point(330, 434);
             this.button3.Margin = new System.Windows.Forms.Padding(4);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(309, 59);
@@ -127,6 +127,7 @@
             this.textBox4.Enabled = false;
             this.textBox4.Location = new System.Drawing.Point(177, 177);
             this.textBox4.Name = "textBox4";
+            this.textBox4.ReadOnly = true;
             this.textBox4.Size = new System.Drawing.Size(293, 22);
             this.textBox4.TabIndex = 36;
             // 
@@ -177,6 +178,7 @@
             this.textBox2.Enabled = false;
             this.textBox2.Location = new System.Drawing.Point(177, 93);
             this.textBox2.Name = "textBox2";
+            this.textBox2.ReadOnly = true;
             this.textBox2.Size = new System.Drawing.Size(293, 22);
             this.textBox2.TabIndex = 30;
             // 
@@ -205,23 +207,25 @@
             this.textBox1.Enabled = false;
             this.textBox1.Location = new System.Drawing.Point(177, 63);
             this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
             this.textBox1.Size = new System.Drawing.Size(293, 22);
             this.textBox1.TabIndex = 27;
             // 
-            // dateTimePicker1
+            // textBox3
             // 
-            this.dateTimePicker1.Enabled = false;
-            this.dateTimePicker1.Location = new System.Drawing.Point(177, 121);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(293, 22);
-            this.dateTimePicker1.TabIndex = 39;
+            this.textBox3.Enabled = false;
+            this.textBox3.Location = new System.Drawing.Point(177, 121);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.ReadOnly = true;
+            this.textBox3.Size = new System.Drawing.Size(293, 22);
+            this.textBox3.TabIndex = 37;
             // 
             // Activity_details
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(656, 549);
-            this.Controls.Add(this.dateTimePicker1);
+            this.ClientSize = new System.Drawing.Size(656, 517);
+            this.Controls.Add(this.textBox3);
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -265,6 +269,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.TextBox textBox3;
     }
 }

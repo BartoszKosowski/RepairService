@@ -73,6 +73,7 @@
     <Compile Include="Control\Baza\SQL.cs" />
     <Compile Include="Control\Baza\SQLadmin.cs" />
     <Compile Include="Control\Baza\SQLmanager.cs" />
+    <Compile Include="Control\Baza\SQLworker.cs" />
     <Compile Include="Control\Menager\Activity.cs">
       <SubType>Form</SubType>
     </Compile>

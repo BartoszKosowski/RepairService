@@ -77,6 +77,7 @@ namespace Proejkt_BD
                     MessageBox.Show("Login and password correct");
                     this.Hide();
                     WorkerPanel a1 = new WorkerPanel();
+                    a1.textBox1.Text = result.First().id_personel.ToString();
                     a1.ShowDialog();
                 }                
             }
