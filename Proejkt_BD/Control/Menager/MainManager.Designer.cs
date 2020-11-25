@@ -34,6 +34,7 @@
             this.MainPanel = new System.Windows.Forms.Panel();
             this.button3 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // button1
@@ -101,11 +102,20 @@
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(786, 16);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
+            this.textBox1.Size = new System.Drawing.Size(81, 22);
+            this.textBox1.TabIndex = 28;
+            // 
             // MainManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1096, 668);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.MainPanel);
@@ -116,6 +126,7 @@
             this.Name = "MainManager";
             this.Text = "MainManager";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -126,5 +137,6 @@
         public System.Windows.Forms.Button button1;
         public System.Windows.Forms.Button button2;
         public System.Windows.Forms.Button button5;
+        public System.Windows.Forms.TextBox textBox1;
     }
 }

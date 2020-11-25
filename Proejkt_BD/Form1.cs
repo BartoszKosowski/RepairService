@@ -70,7 +70,9 @@ namespace Proejkt_BD
                     MessageBox.Show("Login and password correct");
                     this.Hide();
                     MainManager a1 = new MainManager();
+                    a1.textBox1.Text = result.First().id_personel.ToString();
                     a1.ShowDialog();
+
                 }
                 if (result.First().role.ToString() == "Worker")
                 {
