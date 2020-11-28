@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Proejkt_BD.Control.Baza.Modele;
 
 namespace Proejkt_BD.Control.Baza
 {
@@ -134,7 +135,7 @@ namespace Proejkt_BD.Control.Baza
 
 		public static IQueryable<REQUEST> SearchRequests(string status, string date, string nr_object)
 		{
-			if (date == "")
+			if (string.IsNullOrWhiteSpace(date))
 			{
 				LINQDataContext db = new LINQDataContext();
 				var result = from adm in db.REQUEST
@@ -165,6 +166,70 @@ namespace Proejkt_BD.Control.Baza
 			return result;
 		}
 
+		public static IQueryable<OBJ_TYPE> GetAllObjectTypes()
+        {
+			LINQDataContext db = new LINQDataContext();
+			var result = from types in db.OBJ_TYPE select types;
+			return result;
+		}
+
+		public static void AddVehicle(string nr_object, string name , string obj_type, int id_client)
+		{
+			//Create new Employee
+			LINQDataContext db = new LINQDataContext();
+			OBJECT newVehicle = new OBJECT();
+			newVehicle.nr_object = nr_object;
+			newVehicle.name = name;
+			newVehicle.obj_type = obj_type;
+			newVehicle.id_client = id_client;
+			
+			//Add new Customer to database
+			db.OBJECT.InsertOnSubmit(newVehicle);
+
+			//Save changes to Database.
+			db.SubmitChanges();		  
+		}
+		public static IQueryable<CLIENT> GetAllClients()
+		{
+			LINQDataContext db = new LINQDataContext();
+			var result = from clients in db.CLIENT select clients;
+			return result;
+		}
+		public static IQueryable<ObjectFull> GetObjectFull(string nr, string name, string type)
+        {
+			LINQDataContext db = new LINQDataContext();
+			var result = from objects in db.OBJECT
+						 join clients in db.CLIENT on objects.id_client equals clients.id_client
+						 join types in db.OBJ_TYPE on objects.obj_type equals types.type
+						 where objects.nr_object.Contains(nr) &&
+							objects.name.Contains(name) &&
+							objects.obj_type.Contains(type)
+						 select new ObjectFull
+						 {
+							 client_name = clients.name,
+							 name = objects.name,
+							 nr_object = objects.nr_object,
+							 type_name = types.name
+						 };
+			return result;
+		}
+
+		public static IQueryable<ObjectFull> GetSingleObjectFull(string nr)
+		{
+			LINQDataContext db = new LINQDataContext();
+			var result = from objects in db.OBJECT
+						 join clients in db.CLIENT on objects.id_client equals clients.id_client
+						 join types in db.OBJ_TYPE on objects.obj_type equals types.type
+						 where objects.nr_object == nr
+						 select new ObjectFull
+						 {
+							 client_name = clients.name,
+							 name = objects.name,
+							 nr_object = objects.nr_object,
+							 type_name = types.name
+						 };
+			return result;
+		}
 	}
 }
 

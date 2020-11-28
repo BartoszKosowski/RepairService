@@ -70,6 +70,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>LINQ.dbml</DependentUpon>
     </Compile>
+    <Compile Include="Control\Baza\Modele\ObjectFull.cs" />
     <Compile Include="Control\Baza\SQL.cs" />
     <Compile Include="Control\Baza\SQLadmin.cs" />
     <Compile Include="Control\Baza\SQLmanager.cs" />

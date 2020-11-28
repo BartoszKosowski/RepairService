@@ -22,6 +22,7 @@ namespace Proejkt_BD.Control.Menager
         {
             AddCustomer a1 = new AddCustomer();
             a1.ShowDialog();
+            UsersDataLoad();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -65,12 +66,18 @@ namespace Proejkt_BD.Control.Menager
         private void button3_Click(object sender, EventArgs e)
         {
             SQLmanager.DeleteCustomer(this.dataGridView1.CurrentRow.Cells[0].Value.ToString()); //id
-            dataGridView1.Refresh();
+            UsersDataLoad();
+
         }
 
         private void Customers_Load(object sender, EventArgs e)
         {
-            var result = SQLmanager.SearchCustomers("","","");
+            UsersDataLoad();
+        }
+
+        private void UsersDataLoad(string name = "", string fname="", string lname="" )
+        {
+            var result = SQLmanager.SearchCustomers(name, fname, lname);
             dataGridView1.DataSource = result;
         }
     }
