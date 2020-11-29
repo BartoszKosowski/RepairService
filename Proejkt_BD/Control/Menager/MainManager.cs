@@ -41,7 +41,8 @@ namespace Proejkt_BD.Control.Menager
 
         private void button3_Click(object sender, EventArgs e)
         {
-            NewRequest a1 = new NewRequest();
+            //NewRequest a1 = new NewRequest();
+            var a1 = new NeuRequest(textBox1.Text);
             a1.ShowDialog();
         }
 

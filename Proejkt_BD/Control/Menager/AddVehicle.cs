@@ -37,6 +37,7 @@ namespace Proejkt_BD.Control.Menager
         {
             int.TryParse(comboBox2.SelectedValue.ToString(), out int id_client);
             SQLmanager.AddVehicle(textBox1.Text,textBox2.Text, comboBox1.SelectedValue.ToString(), id_client);
+            MessageBox.Show("The vehicle has been added to database");
         }
     }
 }

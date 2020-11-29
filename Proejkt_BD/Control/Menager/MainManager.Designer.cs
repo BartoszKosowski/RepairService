@@ -39,10 +39,9 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(730, 49);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
+            this.button1.Location = new System.Drawing.Point(548, 40);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(353, 28);
+            this.button1.Size = new System.Drawing.Size(265, 23);
             this.button1.TabIndex = 2;
             this.button1.Text = "Requests";
             this.button1.UseVisualStyleBackColor = true;
@@ -50,10 +49,9 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(13, 49);
-            this.button2.Margin = new System.Windows.Forms.Padding(4);
+            this.button2.Location = new System.Drawing.Point(10, 40);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(360, 28);
+            this.button2.Size = new System.Drawing.Size(270, 23);
             this.button2.TabIndex = 3;
             this.button2.Text = "Customers";
             this.button2.UseVisualStyleBackColor = true;
@@ -61,10 +59,9 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(874, 13);
-            this.button4.Margin = new System.Windows.Forms.Padding(4);
+            this.button4.Location = new System.Drawing.Point(656, 11);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(209, 28);
+            this.button4.Size = new System.Drawing.Size(157, 23);
             this.button4.TabIndex = 5;
             this.button4.Text = "Log out";
             this.button4.UseVisualStyleBackColor = true;
@@ -73,19 +70,17 @@
             // MainPanel
             // 
             this.MainPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.MainPanel.Location = new System.Drawing.Point(13, 85);
-            this.MainPanel.Margin = new System.Windows.Forms.Padding(4);
+            this.MainPanel.Location = new System.Drawing.Point(10, 69);
             this.MainPanel.Name = "MainPanel";
-            this.MainPanel.Size = new System.Drawing.Size(1070, 483);
+            this.MainPanel.Size = new System.Drawing.Size(803, 393);
             this.MainPanel.TabIndex = 23;
             // 
             // button3
             // 
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
-            this.button3.Location = new System.Drawing.Point(13, 576);
-            this.button3.Margin = new System.Windows.Forms.Padding(4);
+            this.button3.Location = new System.Drawing.Point(10, 468);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(1070, 79);
+            this.button3.Size = new System.Drawing.Size(802, 64);
             this.button3.TabIndex = 26;
             this.button3.Text = "NEW CASE (CREATOR)";
             this.button3.UseVisualStyleBackColor = true;
@@ -93,10 +88,9 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(381, 49);
-            this.button5.Margin = new System.Windows.Forms.Padding(4);
+            this.button5.Location = new System.Drawing.Point(286, 40);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(341, 28);
+            this.button5.Size = new System.Drawing.Size(256, 23);
             this.button5.TabIndex = 27;
             this.button5.Text = "Vehicles";
             this.button5.UseVisualStyleBackColor = true;
@@ -104,17 +98,18 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(786, 16);
+            this.textBox1.Location = new System.Drawing.Point(590, 13);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(81, 22);
+            this.textBox1.Size = new System.Drawing.Size(62, 20);
             this.textBox1.TabIndex = 28;
             // 
             // MainManager
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1096, 668);
+            this.ClientSize = new System.Drawing.Size(822, 543);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button3);
@@ -122,7 +117,6 @@
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MainManager";
             this.Text = "MainManager";
             this.ResumeLayout(false);

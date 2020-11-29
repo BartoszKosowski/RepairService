@@ -230,6 +230,43 @@ namespace Proejkt_BD.Control.Baza
 						 };
 			return result;
 		}
-	}
+
+        public static IQueryable<Baza.CLIENT> ChooseCustomer(object id)
+        {
+            LINQDataContext db = new LINQDataContext();
+            var result = from cc in db.CLIENT
+                         where cc.id_client.Equals(id)
+                         select cc;
+            return result;
+        }
+
+        public static IQueryable<Baza.OBJECT> ChooseObject(object id)
+        {
+            LINQDataContext db = new LINQDataContext();
+            var result = from co in db.OBJECT
+                         where co.nr_object.Equals(id)
+                         select co;
+            return result;
+        }
+
+        public static IQueryable<Baza.OBJECT> GetCustomerObject(object id)
+        {
+            LINQDataContext db = new LINQDataContext();
+            var result = from gco in db.OBJECT
+                         where gco.id_client.Equals(id)
+                         select gco;
+            return result;
+        }
+
+        public static void AddActivity(int id, int sn, string ad, string dc)
+        {
+            LINQDataContext db = new LINQDataContext();
+            ACTIVITY activity = new ACTIVITY();
+            activity.id_request = id;
+            activity.sequence_nb = sn;
+            activity.act_dict = ad;
+            activity.description = dc;
+        }
+    }
 }
 

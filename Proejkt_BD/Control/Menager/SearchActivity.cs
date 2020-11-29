@@ -10,17 +10,18 @@ using System.Windows.Forms;
 
 namespace Proejkt_BD.Control.Menager
 {
-    public partial class NewRequest4 : Form
+    public partial class SearchActivity : Form
     {
-        public NewRequest4()
+        public SearchActivity(string id)
         {
             InitializeComponent();
+            var result = Baza.SQLmanager.SearchActivity(id);
+            dataGridView1.DataSource = result;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
-            AddActivity a1 = new AddActivity(0);
-            a1.ShowDialog();
+            Close();
         }
     }
 }

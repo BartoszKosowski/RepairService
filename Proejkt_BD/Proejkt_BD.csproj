@@ -117,6 +117,12 @@
     <Compile Include="Control\Menager\MainManager.Designer.cs">
       <DependentUpon>MainManager.cs</DependentUpon>
     </Compile>
+    <Compile Include="Control\Menager\NeuRequest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Control\Menager\NeuRequest.Designer.cs">
+      <DependentUpon>NeuRequest.cs</DependentUpon>
+    </Compile>
     <Compile Include="Control\Menager\NewRequest.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -152,6 +158,24 @@
     </Compile>
     <Compile Include="Control\Menager\Requests.Designer.cs">
       <DependentUpon>Requests.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\Menager\SearchActivity.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Control\Menager\SearchActivity.Designer.cs">
+      <DependentUpon>SearchActivity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\Menager\SearchCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Control\Menager\SearchCustomer.Designer.cs">
+      <DependentUpon>SearchCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\Menager\SearchVehicle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Control\Menager\SearchVehicle.Designer.cs">
+      <DependentUpon>SearchVehicle.cs</DependentUpon>
     </Compile>
     <Compile Include="Control\Menager\ShowCustomerDetails.cs">
       <SubType>Form</SubType>
@@ -229,6 +253,9 @@
     <EmbeddedResource Include="Control\Menager\MainManager.resx">
       <DependentUpon>MainManager.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Control\Menager\NeuRequest.resx">
+      <DependentUpon>NeuRequest.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Control\Menager\NewRequest.resx">
       <DependentUpon>NewRequest.cs</DependentUpon>
     </EmbeddedResource>
@@ -246,6 +273,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Control\Menager\Requests.resx">
       <DependentUpon>Requests.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\Menager\SearchActivity.resx">
+      <DependentUpon>SearchActivity.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Control\Menager\ShowCustomerDetails.resx">
       <DependentUpon>ShowCustomerDetails.cs</DependentUpon>

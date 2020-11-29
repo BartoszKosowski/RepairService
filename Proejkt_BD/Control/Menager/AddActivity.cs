@@ -12,9 +12,22 @@ namespace Proejkt_BD.Control.Menager
 {
     public partial class AddActivity : Form
     {
-        public AddActivity()
+        public int _id;
+        public AddActivity(int id)
         {
             InitializeComponent();
+            _id = id;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Baza.SQLmanager.AddActivity(_id, Int16.Parse(textBox5.Text), comboBox1.Text, richTextBox1.Text);
+            Close();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }
