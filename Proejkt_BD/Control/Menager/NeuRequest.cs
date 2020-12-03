@@ -13,14 +13,21 @@ namespace Proejkt_BD.Control.Menager
 {
     public partial class NeuRequest : Form
     {
+        
         public NeuRequest(string id)
         {
             InitializeComponent();
             idTextBox.Text = "ID: " + id;
+
             //var man = Baza.SQLmanager.GetManagerName(id);
             //manNameBox.Text = man;
+
+            int requestId = Baza.SQLmanager.GetRequestId();
+            requestIdBox1.Text = requestId.ToString();
+
             var result0 = Baza.SQLmanager.SearchCustomers("", "", "");
             dataGridView1.DataSource = result0;
+
             var result1 = Baza.SQLmanager.SearchObjects("", "", "");
             dataGridView2.DataSource = result1;
             this.dataGridView2.Columns["id_client"].Visible = false;
@@ -61,14 +68,22 @@ namespace Proejkt_BD.Control.Menager
 
         private void button3_Click(object sender, EventArgs e)
         {
-            var aa = new AddActivity(Int16.Parse(idBox1.Text));
+            var aa = new AddActivity(Int32.Parse(requestIdBox1.Text), dateTimePicker1.Value, dateTimePicker2.Value);
             aa.ShowDialog();
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            var sa = new SearchActivity(idBox1.Text);
+            var sa = new SearchActivity(requestIdBox1.Text);
             sa.ShowDialog();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Baza.SQLmanager.FulfillRequestInformation(Int32.Parse(requestIdBox1.ToString()), richTextBox1.ToString(),
+                "Aktiv", " ", dateTimePicker1.Value, dateTimePicker2.Value, 1, dataGridView2.CurrentRow.Cells[0].ToString());
+            MessageBox.Show("The case has been created");
+            Close();
         }
     }
 }

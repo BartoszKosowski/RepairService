@@ -19,8 +19,8 @@ namespace Proejkt_BD.Control.Menager
 
         private void button1_Click(object sender, EventArgs e)
         {
-            AddActivity a1 = new AddActivity(0);
-            a1.ShowDialog();
+            //AddActivity a1 = new AddActivity(0);
+            //a1.ShowDialog();
         }
     }
 }

@@ -13,15 +13,18 @@ namespace Proejkt_BD.Control.Menager
     public partial class AddActivity : Form
     {
         public int _id;
-        public AddActivity(int id)
+        DateTime _reqDate, _exDate;
+        public AddActivity(int id, DateTime reqDate, DateTime exDate)
         {
             InitializeComponent();
             _id = id;
+            _exDate = exDate;
+            _reqDate = reqDate;
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Baza.SQLmanager.AddActivity(_id, Int16.Parse(textBox5.Text), comboBox1.Text, richTextBox1.Text);
+            Baza.SQLmanager.AddActivity(_id, Int16.Parse(textBox5.Text), comboBox1.Text, richTextBox1.Text, _reqDate, _exDate);
             Close();
         }
 

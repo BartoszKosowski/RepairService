@@ -231,7 +231,7 @@ namespace Proejkt_BD.Control.Baza
 			return result;
 		}
 
-        public static IQueryable<Baza.CLIENT> ChooseCustomer(object id)
+        public static IQueryable<CLIENT> ChooseCustomer(object id)
         {
             LINQDataContext db = new LINQDataContext();
             var result = from cc in db.CLIENT
@@ -240,7 +240,7 @@ namespace Proejkt_BD.Control.Baza
             return result;
         }
 
-        public static IQueryable<Baza.OBJECT> ChooseObject(object id)
+        public static IQueryable<OBJECT> ChooseObject(object id)
         {
             LINQDataContext db = new LINQDataContext();
             var result = from co in db.OBJECT
@@ -249,7 +249,7 @@ namespace Proejkt_BD.Control.Baza
             return result;
         }
 
-        public static IQueryable<Baza.OBJECT> GetCustomerObject(object id)
+        public static IQueryable<OBJECT> GetCustomerObject(object id)
         {
             LINQDataContext db = new LINQDataContext();
             var result = from gco in db.OBJECT
@@ -258,15 +258,82 @@ namespace Proejkt_BD.Control.Baza
             return result;
         }
 
-        public static void AddActivity(int id, int sn, string ad, string dc)
+        public static void AddActivity(Int32 id, Int32 sn, string ad, string dc, DateTime regDate, DateTime exDate)
         {
             LINQDataContext db = new LINQDataContext();
             ACTIVITY activity = new ACTIVITY();
             activity.id_request = id;
             activity.sequence_nb = sn;
-            activity.act_dict = ad;
+            activity.act_dict = " ";//ad ;
             activity.description = dc;
+            activity.date_reg = regDate;
+            activity.date_fn_cn = exDate;
+            activity.status = "Active";
+
+            db.ACTIVITY.InsertOnSubmit(activity);
+            db.SubmitChanges();
         }
+
+        public static int GetRequestId()
+        {
+            LINQDataContext db = new LINQDataContext();
+            var result = from gri in db.REQUEST
+                         select gri;
+            return result.Count();
+
+        }
+
+        public static string GetManagerName(string id) //do poprawy
+        {
+            LINQDataContext db = new LINQDataContext();
+            var result0 = from gmn in db.PERSONEL
+                          where gmn.id_personel.Equals(id)
+                          select gmn.first_name;
+            var result1 = from gmn in db.PERSONEL
+                          where gmn.id_personel.Equals(id)
+                          select gmn.last_name;
+            string name = result0.ToString() + result1.ToString();
+            return name;
+        }
+
+
+        public static void CreateEmptyRequest() // do poprawy
+        {
+            LINQDataContext db = new LINQDataContext();
+            REQUEST request = new REQUEST();
+            var number = from cer in db.REQUEST
+                         select cer;
+            request.id_request = number.Count();
+            request.description = "";
+            request.status = "";
+            request.result = "";
+            request.date_reg = DateTime.Today;
+            request.date_fn_cn = DateTime.Today;
+            request.id_personel = 1;
+            request.nr_object = "KNT2020"; // St. Christophorus gib mir Geduld  to nie powinno tak byc ale na razie niech bedzie
+
+            db.REQUEST.InsertOnSubmit(request);
+            db.SubmitChanges();
+        }
+
+        public static void FulfillRequestInformation(Int32 idre ,string desc, string stat, string resu, DateTime datr, DateTime datf, Int16 idpe, string nrob)
+        {
+            LINQDataContext db = new LINQDataContext();
+            REQUEST request = (from p in db.REQUEST 
+                              where p.id_request.Equals(idre)
+                              select p).SingleOrDefault();
+            request.description = desc;
+            request.status = stat;
+            request.result = resu;
+            request.date_reg = datr;
+            request.date_fn_cn = datf;
+            request.id_personel = idpe;
+            request.nr_object = nrob;
+
+            db.SubmitChanges();
+        }
+
+        
     }
 }
 
