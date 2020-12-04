@@ -264,7 +264,7 @@ namespace Proejkt_BD.Control.Baza
             ACTIVITY activity = new ACTIVITY();
             activity.id_request = id;
             activity.sequence_nb = sn;
-            activity.act_dict = " ";//ad ;
+            activity.act_dict = ad ;
             activity.description = dc;
             activity.date_reg = regDate;
             activity.date_fn_cn = exDate;
@@ -333,7 +333,13 @@ namespace Proejkt_BD.Control.Baza
             db.SubmitChanges();
         }
 
-        
+        public static IQueryable<string> GetAvailableActivity()
+        {
+            LINQDataContext db = new LINQDataContext();
+            var result = from gaa in db.ACT_DICT
+                         select gaa.act_name;
+            return result;
+        }
     }
 }
 

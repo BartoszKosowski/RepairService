@@ -12,14 +12,16 @@ namespace Proejkt_BD.Control.Menager
 {
     public partial class AddActivity : Form
     {
-        public int _id;
+        public Int32 _id;
         DateTime _reqDate, _exDate;
-        public AddActivity(int id, DateTime reqDate, DateTime exDate)
+        public AddActivity(Int32 id, DateTime reqDate, DateTime exDate)
         {
             InitializeComponent();
             _id = id;
             _exDate = exDate;
             _reqDate = reqDate;
+
+            comboBox1.DataSource = Baza.SQLmanager.GetAvailableActivity().ToList();
         }
 
         private void button2_Click(object sender, EventArgs e)

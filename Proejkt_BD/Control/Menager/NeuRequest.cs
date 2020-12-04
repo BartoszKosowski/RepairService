@@ -22,7 +22,7 @@ namespace Proejkt_BD.Control.Menager
             //var man = Baza.SQLmanager.GetManagerName(id);
             //manNameBox.Text = man;
 
-            int requestId = Baza.SQLmanager.GetRequestId();
+            Int32 requestId = Baza.SQLmanager.GetRequestId();
             requestIdBox1.Text = requestId.ToString();
 
             var result0 = Baza.SQLmanager.SearchCustomers("", "", "");
@@ -80,8 +80,8 @@ namespace Proejkt_BD.Control.Menager
 
         private void button5_Click(object sender, EventArgs e)
         {
-            Baza.SQLmanager.FulfillRequestInformation(Int32.Parse(requestIdBox1.ToString()), richTextBox1.ToString(),
-                "Aktiv", " ", dateTimePicker1.Value, dateTimePicker2.Value, 1, dataGridView2.CurrentRow.Cells[0].ToString());
+            Baza.SQLmanager.FulfillRequestInformation(Int32.Parse(requestIdBox1.Text.ToString()), richTextBox1.Text.ToString(),
+                "Active", " ", dateTimePicker1.Value.Date, dateTimePicker2.Value.Date, 1, dataGridView2.Rows[0].Cells[0].Value.ToString());
             MessageBox.Show("The case has been created");
             Close();
         }
