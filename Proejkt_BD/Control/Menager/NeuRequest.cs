@@ -69,13 +69,14 @@ namespace Proejkt_BD.Control.Menager
             if (result == DialogResult.Yes)
             {
                 if (activityFlag == true)
-                    //Baza.SQLmanager.DeleteRequestsActivity(Int32.Parse(idTextBox.Text));
-
-                    Baza.SQLmanager.DeleteCurrentRequest();
+                    {
+                    Baza.SQLmanager.DeleteRequestsActivity(Int32.Parse(idTextBox.Text));
+                    }
+                Baza.SQLmanager.DeleteCurrentRequest();
                 Close();
             }else
             {
-                this.Close();
+                //this.FormClosing.
             }*/
 
            if (activityFlag == true)

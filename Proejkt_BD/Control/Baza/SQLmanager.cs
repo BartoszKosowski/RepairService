@@ -345,10 +345,9 @@ namespace Proejkt_BD.Control.Baza
         public static void DeleteCurrentRequest()
         {
             LINQDataContext db = new LINQDataContext();
-            var number = from dcr in db.REQUEST
-                         select dcr;
+            var number = GetRequestId();
             var requests = from dcr in db.REQUEST
-                           where dcr.id_request.Equals(number.Count() - 1)
+                           where dcr.id_request.Equals(number)
                            select dcr;
 
             foreach (var request in requests)
@@ -373,7 +372,7 @@ namespace Proejkt_BD.Control.Baza
         {
             LINQDataContext db = new LINQDataContext();
             var result = from gaa in db.ACT_DICT
-                         select gaa.act_name;
+                         select gaa.act_type;
             return result;
         }
     }
