@@ -13,27 +13,20 @@ namespace Proejkt_BD.Control.Menager
 {
     public partial class NeuRequest : Form
     {
-        
+        public bool activityFlag = false;
         public NeuRequest(string id)
         {
             InitializeComponent();
             idTextBox.Text = "ID: " + id;
 
-            //var man = Baza.SQLmanager.GetManagerName(id);
-            //manNameBox.Text = man;
+            /*var man = Baza.SQLmanager.GetManagerName(id);
+            nameBox.Text = man;*/
 
-            Int32 requestId = Baza.SQLmanager.GetRequestId();
+            Int32 requestId = Int32.Parse(Baza.SQLmanager.GetRequestId().ToString());
             requestIdBox1.Text = requestId.ToString();
 
             var result0 = Baza.SQLmanager.SearchCustomers("", "", "");
             dataGridView1.DataSource = result0;
-
-            var result1 = Baza.SQLmanager.SearchObjects("", "", "");
-            dataGridView2.DataSource = result1;
-            this.dataGridView2.Columns["id_client"].Visible = false;
-            //this.dataGridView2.Columns["obj_type"].Visible = false;
-            this.dataGridView2.Columns["OBJ_TYPE1"].Visible = false;
-            this.dataGridView2.Columns["CLIENT"].Visible = false;
 
         }
 
@@ -44,6 +37,11 @@ namespace Proejkt_BD.Control.Menager
             sc.ShowDialog();
             dataGridView1.DataSource = sc.GetClient();
             dataGridView2.DataSource = Baza.SQLmanager.GetCustomerObject(dataGridView1.CurrentRow.Cells[0].Value);
+
+            this.dataGridView2.Columns["id_client"].Visible = false;
+            //this.dataGridView2.Columns["obj_type"].Visible = false;
+            this.dataGridView2.Columns["OBJ_TYPE1"].Visible = false;
+            this.dataGridView2.Columns["CLIENT"].Visible = false;
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -56,20 +54,44 @@ namespace Proejkt_BD.Control.Menager
             var sv = new SearchVehicle(this.dataGridView1.CurrentRow.Cells[0].Value);
             sv.ShowDialog();
             dataGridView2.DataSource = sv.GetVehicle();
+
+            this.dataGridView2.Columns["id_client"].Visible = false;
+            //this.dataGridView2.Columns["obj_type"].Visible = false;
+            this.dataGridView2.Columns["OBJ_TYPE1"].Visible = false;
+            this.dataGridView2.Columns["CLIENT"].Visible = false;
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
-           // string message = "Are you sure that you would like to close the form ? ";
-            //DialogResult result = MessageBox.Show(message, MessageBoxButtons.YesNo);
-            //if (result == DialogResult.Yes)
+            /*string message = "Are you sure that you would like to close the form ? ";
+            const string caption = "Form Closing";
+            DialogResult result = MessageBox.Show(message, caption, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                if (activityFlag == true)
+                    //Baza.SQLmanager.DeleteRequestsActivity(Int32.Parse(idTextBox.Text));
+
+                    Baza.SQLmanager.DeleteCurrentRequest();
                 Close();
+            }else
+            {
+                this.Close();
+            }*/
+
+           if (activityFlag == true)
+            {
+                Baza.SQLmanager.DeleteRequestsActivity(Int32.Parse(requestIdBox1.Text));
+            }
+            Baza.SQLmanager.DeleteCurrentRequest();
+            Close();
+
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
             var aa = new AddActivity(Int32.Parse(requestIdBox1.Text), dateTimePicker1.Value, dateTimePicker2.Value);
             aa.ShowDialog();
+            activityFlag = true;
         }
 
         private void button4_Click(object sender, EventArgs e)

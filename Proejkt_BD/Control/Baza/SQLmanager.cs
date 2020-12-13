@@ -274,43 +274,52 @@ namespace Proejkt_BD.Control.Baza
             db.SubmitChanges();
         }
 
-        public static int GetRequestId()
+        public static Int32 GetRequestId()
         {
+            int id = 0;
             LINQDataContext db = new LINQDataContext();
-            var result = from gri in db.REQUEST
-                         select gri;
-            return result.Count();
-
+            var requestId = from e in db.REQUEST
+                               orderby e.id_request descending
+                               select e.id_request;
+            id = Int32.Parse(requestId.First().ToString());
+            return id;
         }
 
         public static string GetManagerName(string id) //do poprawy
         {
             LINQDataContext db = new LINQDataContext();
             var result0 = from gmn in db.PERSONEL
-                          where gmn.id_personel.Equals(id)
+                          where gmn.id_personel.Equals(Int32.Parse(id))
                           select gmn.first_name;
             var result1 = from gmn in db.PERSONEL
-                          where gmn.id_personel.Equals(id)
+                          where gmn.id_personel.Equals(Int32.Parse(id))
                           select gmn.last_name;
             string name = result0.ToString() + result1.ToString();
             return name;
         }
 
+        public static string GetDefaultVehicle()
+        {
+            string ss = "";
+            LINQDataContext db = new LINQDataContext();
+            var defaultVehicle = from e in db.OBJECT
+                                 select e.nr_object;
+            ss = defaultVehicle.First().ToString();
+            return ss;
+        }
 
-        public static void CreateEmptyRequest() // do poprawy
+        public static void CreateEmptyRequest()
         {
             LINQDataContext db = new LINQDataContext();
             REQUEST request = new REQUEST();
-            var number = from cer in db.REQUEST
-                         select cer;
-            request.id_request = number.Count();
+            request.id_request = GetRequestId();
             request.description = "";
             request.status = "";
             request.result = "";
             request.date_reg = DateTime.Today;
             request.date_fn_cn = DateTime.Today;
             request.id_personel = 1;
-            request.nr_object = "KNT2020"; // St. Christophorus gib mir Geduld  to nie powinno tak byc ale na razie niech bedzie
+            request.nr_object = GetDefaultVehicle(); // Alles klar
 
             db.REQUEST.InsertOnSubmit(request);
             db.SubmitChanges();
@@ -329,6 +338,33 @@ namespace Proejkt_BD.Control.Baza
             request.date_fn_cn = datf;
             request.id_personel = idpe;
             request.nr_object = nrob;
+
+            db.SubmitChanges();
+        }
+
+        public static void DeleteCurrentRequest()
+        {
+            LINQDataContext db = new LINQDataContext();
+            var number = from dcr in db.REQUEST
+                         select dcr;
+            var requests = from dcr in db.REQUEST
+                           where dcr.id_request.Equals(number.Count() - 1)
+                           select dcr;
+
+            foreach (var request in requests)
+                db.REQUEST.DeleteOnSubmit(request);
+
+            db.SubmitChanges();
+        }
+
+        public static void DeleteRequestsActivity(Int32 id)
+        {
+            LINQDataContext db = new LINQDataContext();
+            var activityToDelete = from dra in db.ACTIVITY
+                                   where dra.id_request == id
+                                   select dra;
+            foreach (var activity in activityToDelete)
+                db.ACTIVITY.DeleteOnSubmit(activity);
 
             db.SubmitChanges();
         }

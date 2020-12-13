@@ -30,7 +30,6 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.idTextBox = new System.Windows.Forms.TextBox();
-            this.manNameBox = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
@@ -46,9 +45,9 @@
             this.button5 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.button6 = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.requestIdBox1 = new System.Windows.Forms.TextBox();
+            this.button6 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -68,15 +67,9 @@
             // 
             this.idTextBox.Location = new System.Drawing.Point(125, 12);
             this.idTextBox.Name = "idTextBox";
+            this.idTextBox.ReadOnly = true;
             this.idTextBox.Size = new System.Drawing.Size(60, 20);
             this.idTextBox.TabIndex = 1;
-            // 
-            // manNameBox
-            // 
-            this.manNameBox.Location = new System.Drawing.Point(200, 12);
-            this.manNameBox.Name = "manNameBox";
-            this.manNameBox.Size = new System.Drawing.Size(92, 20);
-            this.manNameBox.TabIndex = 2;
             // 
             // panel1
             // 
@@ -214,16 +207,6 @@
             this.dateTimePicker2.Size = new System.Drawing.Size(92, 20);
             this.dateTimePicker2.TabIndex = 15;
             // 
-            // button6
-            // 
-            this.button6.Location = new System.Drawing.Point(18, 493);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(143, 38);
-            this.button6.TabIndex = 16;
-            this.button6.Text = "Discard";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -237,8 +220,20 @@
             // 
             this.requestIdBox1.Location = new System.Drawing.Point(125, 35);
             this.requestIdBox1.Name = "requestIdBox1";
+            this.requestIdBox1.ReadOnly = true;
             this.requestIdBox1.Size = new System.Drawing.Size(167, 20);
             this.requestIdBox1.TabIndex = 18;
+            this.requestIdBox1.TabStop = false;
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(18, 493);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(143, 38);
+            this.button6.TabIndex = 16;
+            this.button6.Text = "Discard";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // NeuRequest
             // 
@@ -261,7 +256,6 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.manNameBox);
             this.Controls.Add(this.idTextBox);
             this.Controls.Add(this.label1);
             this.Name = "NeuRequest";
@@ -279,7 +273,6 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox idTextBox;
-        private System.Windows.Forms.TextBox manNameBox;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button button1;
         public System.Windows.Forms.DataGridView dataGridView1;
@@ -290,13 +283,13 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox requestIdBox1;
+        public System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button6;
     }
 }

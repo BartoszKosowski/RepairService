@@ -18,6 +18,8 @@ namespace Proejkt_BD.Control.Menager
         public MainManager()
         {
             InitializeComponent();
+            MainPanel.Controls.Clear();
+            MainPanel.Controls.Add(new Requests());
         }
 
         private void button4_Click(object sender, EventArgs e)
