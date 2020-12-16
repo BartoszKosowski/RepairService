@@ -45,7 +45,6 @@ namespace Proejkt_BD.Control.Worker
 
         private void button1_Click(object sender, EventArgs e)
         {
-      
             string check;
             if (checkBox1.Checked == true)
                 check = textBox1.Text.ToString();
@@ -61,6 +60,116 @@ namespace Proejkt_BD.Control.Worker
 
             var result = SQLworker.SearchActivity(comboBox1.Text.ToString(), d, check);
             dataGridView1.DataSource = result;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+            Activity_details a1 = new Activity_details();
+            a1.textBox3.Text = this.dataGridView1.CurrentRow.Cells[0].Value.ToString(); //request id
+            a1.textBox3.Enabled = false;
+
+            a1.textBox1.Text = this.dataGridView1.CurrentRow.Cells[6].Value.ToString(); //request id
+            a1.textBox1.Enabled = false;
+
+            a1.textBox2.Text = this.dataGridView1.CurrentRow.Cells[9].Value.ToString(); //sequence number
+            a1.textBox2.Enabled = false;
+
+            if (this.dataGridView1.CurrentRow.Cells[4].Value == null) //date reg
+            {
+                a1.dateTimePicker2.Text = "00-00-0000";
+            }
+            else
+            {
+                a1.dateTimePicker2.Text = this.dataGridView1.CurrentRow.Cells[4].Value.ToString(); //date of reg
+            }
+            a1.dateTimePicker2.Enabled = false;
+
+            a1.textBox4.Text = this.dataGridView1.CurrentRow.Cells[8].Value.ToString(); //activity dictionary
+            a1.textBox4.Enabled = false;
+
+            a1.comboBox1.Text = this.dataGridView1.CurrentRow.Cells[3].Value.ToString(); //status
+            a1.comboBox1.Enabled = false;
+
+            a1.richTextBox1.Text = this.dataGridView1.CurrentRow.Cells[1].Value.ToString(); //description
+            a1.richTextBox1.Enabled = false;
+
+            if (this.dataGridView1.CurrentRow.Cells[3].Value == null)
+                a1.richTextBox2.Text = "";
+            else
+                a1.richTextBox2.Text = this.dataGridView1.CurrentRow.Cells[2].Value.ToString(); //result
+            a1.richTextBox2.Enabled = false;
+
+            if (this.dataGridView1.CurrentRow.Cells[5].Value == null) //date f/c
+            {
+                a1.dateTimePicker1.Text = "00-00-0000";
+            }
+            else
+            {
+                a1.dateTimePicker1.Text = this.dataGridView1.CurrentRow.Cells[5].Value.ToString(); //date f/c
+            }
+            a1.dateTimePicker1.Enabled = false;
+            
+            a1.button1.Enabled = false;
+            a1.button1.Visible = false;
+
+            a1.ShowDialog();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+            Activity_details a1 = new Activity_details();
+            a1.textBox3.Text = this.dataGridView1.CurrentRow.Cells[0].Value.ToString(); //request id
+            a1.textBox3.Enabled = false;
+
+            a1.textBox1.Text = this.dataGridView1.CurrentRow.Cells[6].Value.ToString(); //request id
+            a1.textBox1.Enabled = false;
+
+            a1.textBox2.Text = this.dataGridView1.CurrentRow.Cells[9].Value.ToString(); //sequence number
+            a1.textBox2.Enabled = false;
+
+            if (this.dataGridView1.CurrentRow.Cells[4].Value == null) //date reg
+            {
+                var date1 = new DateTime(0000, 0, 0, 0, 00, 00);
+                a1.dateTimePicker2.Value = date1;
+            }
+            else
+            {
+                a1.dateTimePicker2.Text = this.dataGridView1.CurrentRow.Cells[4].Value.ToString();
+            }
+            a1.dateTimePicker2.Enabled = false;
+
+            a1.textBox4.Text = this.dataGridView1.CurrentRow.Cells[8].Value.ToString(); //activity dictionary
+            a1.textBox4.Enabled = false;
+
+            a1.comboBox1.Text = this.dataGridView1.CurrentRow.Cells[3].Value.ToString(); //status
+            a1.comboBox1.Enabled = true;
+
+            a1.richTextBox1.Text = this.dataGridView1.CurrentRow.Cells[1].Value.ToString(); //description
+            a1.richTextBox1.Enabled = false;
+
+            if (this.dataGridView1.CurrentRow.Cells[3].Value == null)
+                a1.richTextBox2.Text = "";
+            else
+                a1.richTextBox2.Text = this.dataGridView1.CurrentRow.Cells[2].Value.ToString(); //result
+            a1.richTextBox2.Enabled = true;
+
+            if (this.dataGridView1.CurrentRow.Cells[5].Value == null) //date f/c
+            {
+                var date1 = new DateTime(0000, 0, 0, 0, 00, 00);
+                a1.dateTimePicker1.Value = date1;
+            }
+            else
+            {
+                a1.dateTimePicker1.Text = this.dataGridView1.CurrentRow.Cells[5].Value.ToString();
+            }
+            a1.dateTimePicker1.Enabled = true;
+
+            a1.button1.Enabled = true;
+            a1.button1.Visible = true;
+
+            a1.ShowDialog();
         }
     }
 }

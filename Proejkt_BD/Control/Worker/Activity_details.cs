@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Proejkt_BD.Control.Baza;
 
 namespace Proejkt_BD.Control.Worker
 {
@@ -18,16 +19,24 @@ namespace Proejkt_BD.Control.Worker
             InitializeComponent();
         }
 
-        public Activity_details(int _id, string _mode) : base()
-        {
-            id = _id;
-            mode = _mode;
-        }
-        private int id;
-        private string mode;
+        //public Activity_details(object sender, EventArgs e)
+        //{
+
+        //}
         private void Activity_details_Load(object sender, EventArgs e)
         {
-        MessageBox.Show(mode);
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            SQLworker.EditActivity(textBox3.Text.ToString(), dateTimePicker1.Value, comboBox1.Text.ToString(), richTextBox2.Text.ToString());
+            this.Close();
         }
     }
 }

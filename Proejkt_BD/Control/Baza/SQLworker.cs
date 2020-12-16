@@ -6,22 +6,22 @@ using System.Threading.Tasks;
 
 namespace Proejkt_BD.Control.Baza
 {
-    class SQLworker
-    {
+	class SQLworker
+	{
 		public static IQueryable<ACTIVITY> SearchActivity(string status, string date, string id_worker)
 		{
-			
-			if (date == "" && id_worker =="")
+
+			if (date == "" && id_worker == "")
 			{
 				LINQDataContext db = new LINQDataContext();
 				var result = from adm in db.ACTIVITY
-							 where adm.status.StartsWith(status) 
+							 where adm.status.StartsWith(status)
 							 select adm;
 				return result;
 			}
 
 			else if (date == "" && id_worker != "")
-            {
+			{
 				LINQDataContext db = new LINQDataContext();
 				var result = from adm in db.ACTIVITY
 							 where adm.status.StartsWith(status) &&
@@ -51,7 +51,25 @@ namespace Proejkt_BD.Control.Baza
 				return result;
 			}
 
-			
+
 		}
+
+		public static void EditActivity(string id, DateTime final, string status, string result)
+		{
+			//Create new Employee
+			LINQDataContext db = new LINQDataContext();
+			ACTIVITY Act = db.ACTIVITY.First(e => e.id_activity.Equals(id));
+			Act.date_fn_cn = final;
+			Act.status = status;
+			Act.result = result;
+
+			//Edit Activity to database
+			db.SubmitChanges();
+
+			return;
+		}
+
+
+
 	}
 }

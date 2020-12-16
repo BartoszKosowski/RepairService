@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.button4 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
@@ -40,9 +39,6 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.rSSDataSet = new Proejkt_BD.RSSDataSet();
-            this.aCTIVITYBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.aCTIVITYTableAdapter = new Proejkt_BD.RSSDataSetTableAdapters.ACTIVITYTableAdapter();
             this.idactivityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.resultDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -53,10 +49,15 @@
             this.idpersonelDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.actdictDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sequencenbDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.aCTIVITYBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.rSSDataSet = new Proejkt_BD.RSSDataSet();
+            this.aCTIVITYTableAdapter = new Proejkt_BD.RSSDataSetTableAdapters.ACTIVITYTableAdapter();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rSSDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.aCTIVITYBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rSSDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // checkBox1
@@ -70,18 +71,6 @@
             this.checkBox1.TabIndex = 23;
             this.checkBox1.Text = "Me";
             this.checkBox1.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button4.Location = new System.Drawing.Point(13, 532);
-            this.button4.Margin = new System.Windows.Forms.Padding(4);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(1304, 50);
-            this.button4.TabIndex = 22;
-            this.button4.Text = "Show Details";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // label3
             // 
@@ -199,20 +188,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(1304, 416);
             this.dataGridView1.TabIndex = 31;
             // 
-            // rSSDataSet
-            // 
-            this.rSSDataSet.DataSetName = "RSSDataSet";
-            this.rSSDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // aCTIVITYBindingSource
-            // 
-            this.aCTIVITYBindingSource.DataMember = "ACTIVITY";
-            this.aCTIVITYBindingSource.DataSource = this.rSSDataSet;
-            // 
-            // aCTIVITYTableAdapter
-            // 
-            this.aCTIVITYTableAdapter.ClearBeforeFill = true;
-            // 
             // idactivityDataGridViewTextBoxColumn
             // 
             this.idactivityDataGridViewTextBoxColumn.DataPropertyName = "id_activity";
@@ -228,6 +203,7 @@
             this.descriptionDataGridViewTextBoxColumn.HeaderText = "description";
             this.descriptionDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
+            this.descriptionDataGridViewTextBoxColumn.ReadOnly = true;
             this.descriptionDataGridViewTextBoxColumn.Width = 125;
             // 
             // resultDataGridViewTextBoxColumn
@@ -236,6 +212,7 @@
             this.resultDataGridViewTextBoxColumn.HeaderText = "result";
             this.resultDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.resultDataGridViewTextBoxColumn.Name = "resultDataGridViewTextBoxColumn";
+            this.resultDataGridViewTextBoxColumn.ReadOnly = true;
             this.resultDataGridViewTextBoxColumn.Width = 125;
             // 
             // statusDataGridViewTextBoxColumn
@@ -244,6 +221,7 @@
             this.statusDataGridViewTextBoxColumn.HeaderText = "status";
             this.statusDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.statusDataGridViewTextBoxColumn.Name = "statusDataGridViewTextBoxColumn";
+            this.statusDataGridViewTextBoxColumn.ReadOnly = true;
             this.statusDataGridViewTextBoxColumn.Width = 125;
             // 
             // dateregDataGridViewTextBoxColumn
@@ -252,6 +230,7 @@
             this.dateregDataGridViewTextBoxColumn.HeaderText = "date_reg";
             this.dateregDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.dateregDataGridViewTextBoxColumn.Name = "dateregDataGridViewTextBoxColumn";
+            this.dateregDataGridViewTextBoxColumn.ReadOnly = true;
             this.dateregDataGridViewTextBoxColumn.Width = 125;
             // 
             // datefncnDataGridViewTextBoxColumn
@@ -260,6 +239,7 @@
             this.datefncnDataGridViewTextBoxColumn.HeaderText = "date_fn_cn";
             this.datefncnDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.datefncnDataGridViewTextBoxColumn.Name = "datefncnDataGridViewTextBoxColumn";
+            this.datefncnDataGridViewTextBoxColumn.ReadOnly = true;
             this.datefncnDataGridViewTextBoxColumn.Width = 125;
             // 
             // idrequestDataGridViewTextBoxColumn
@@ -268,6 +248,7 @@
             this.idrequestDataGridViewTextBoxColumn.HeaderText = "id_request";
             this.idrequestDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.idrequestDataGridViewTextBoxColumn.Name = "idrequestDataGridViewTextBoxColumn";
+            this.idrequestDataGridViewTextBoxColumn.ReadOnly = true;
             this.idrequestDataGridViewTextBoxColumn.Width = 125;
             // 
             // idpersonelDataGridViewTextBoxColumn
@@ -276,6 +257,7 @@
             this.idpersonelDataGridViewTextBoxColumn.HeaderText = "id_personel";
             this.idpersonelDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.idpersonelDataGridViewTextBoxColumn.Name = "idpersonelDataGridViewTextBoxColumn";
+            this.idpersonelDataGridViewTextBoxColumn.ReadOnly = true;
             this.idpersonelDataGridViewTextBoxColumn.Width = 125;
             // 
             // actdictDataGridViewTextBoxColumn
@@ -284,6 +266,7 @@
             this.actdictDataGridViewTextBoxColumn.HeaderText = "act_dict";
             this.actdictDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.actdictDataGridViewTextBoxColumn.Name = "actdictDataGridViewTextBoxColumn";
+            this.actdictDataGridViewTextBoxColumn.ReadOnly = true;
             this.actdictDataGridViewTextBoxColumn.Width = 125;
             // 
             // sequencenbDataGridViewTextBoxColumn
@@ -292,7 +275,22 @@
             this.sequencenbDataGridViewTextBoxColumn.HeaderText = "sequence_nb";
             this.sequencenbDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.sequencenbDataGridViewTextBoxColumn.Name = "sequencenbDataGridViewTextBoxColumn";
+            this.sequencenbDataGridViewTextBoxColumn.ReadOnly = true;
             this.sequencenbDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // aCTIVITYBindingSource
+            // 
+            this.aCTIVITYBindingSource.DataMember = "ACTIVITY";
+            this.aCTIVITYBindingSource.DataSource = this.rSSDataSet;
+            // 
+            // rSSDataSet
+            // 
+            this.rSSDataSet.DataSetName = "RSSDataSet";
+            this.rSSDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // aCTIVITYTableAdapter
+            // 
+            this.aCTIVITYTableAdapter.ClearBeforeFill = true;
             // 
             // textBox1
             // 
@@ -303,11 +301,37 @@
             this.textBox1.TabIndex = 32;
             this.textBox1.Visible = false;
             // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button2.Location = new System.Drawing.Point(13, 533);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(653, 50);
+            this.button2.TabIndex = 33;
+            this.button2.Text = "Show Activity Details";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button3
+            // 
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button3.Location = new System.Drawing.Point(674, 533);
+            this.button3.Margin = new System.Windows.Forms.Padding(4);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(653, 50);
+            this.button3.TabIndex = 34;
+            this.button3.Text = "Edit Activity";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // WorkerPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1364, 595);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label5);
@@ -315,7 +339,6 @@
             this.Controls.Add(this.dateTimePicker2);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.checkBox1);
-            this.Controls.Add(this.button4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label2);
@@ -324,8 +347,8 @@
             this.Text = "WorkerPanel";
             this.Load += new System.EventHandler(this.WorkerPanel_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rSSDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.aCTIVITYBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rSSDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -334,7 +357,6 @@
         #endregion
 
         private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label2;
@@ -358,5 +380,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn actdictDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn sequencenbDataGridViewTextBoxColumn;
         public System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
     }
 }
