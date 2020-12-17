@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.button3 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.addButton1 = new System.Windows.Forms.Button();
             this.searchBox = new System.Windows.Forms.Button();
@@ -41,45 +40,34 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button5 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.cLIENTBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.pERSONELBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.rSSDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.rSSDataSet = new Proejkt_BD.RSSDataSet();
-            this.pERSONELTableAdapter = new Proejkt_BD.RSSDataSetTableAdapters.PERSONELTableAdapter();
-            this.cLIENTTableAdapter = new Proejkt_BD.RSSDataSetTableAdapters.CLIENTTableAdapter();
-            this.cLIENTBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.cLIENTBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.idclientDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.firstnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lastnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.telDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cLIENTBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.rSSDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.rSSDataSet = new Proejkt_BD.RSSDataSet();
+            this.cLIENTBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.pERSONELBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.pERSONELTableAdapter = new Proejkt_BD.RSSDataSetTableAdapters.PERSONELTableAdapter();
+            this.cLIENTTableAdapter = new Proejkt_BD.RSSDataSetTableAdapters.CLIENTTableAdapter();
+            this.cLIENTBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cLIENTBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pERSONELBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cLIENTBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rSSDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rSSDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cLIENTBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pERSONELBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cLIENTBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cLIENTBindingSource2)).BeginInit();
             this.SuspendLayout();
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(287, 412);
-            this.button3.Margin = new System.Windows.Forms.Padding(4);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(267, 67);
-            this.button3.TabIndex = 27;
-            this.button3.Text = "Delete Customer";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(562, 412);
+            this.button1.Location = new System.Drawing.Point(392, 412);
             this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(249, 67);
+            this.button1.Size = new System.Drawing.Size(358, 67);
             this.button1.TabIndex = 25;
             this.button1.Text = "Edit Customer";
             this.button1.UseVisualStyleBackColor = true;
@@ -87,10 +75,10 @@
             // 
             // addButton1
             // 
-            this.addButton1.Location = new System.Drawing.Point(4, 412);
+            this.addButton1.Location = new System.Drawing.Point(8, 412);
             this.addButton1.Margin = new System.Windows.Forms.Padding(4);
             this.addButton1.Name = "addButton1";
-            this.addButton1.Size = new System.Drawing.Size(271, 67);
+            this.addButton1.Size = new System.Drawing.Size(376, 67);
             this.addButton1.TabIndex = 24;
             this.addButton1.Text = "Add Customer";
             this.addButton1.UseVisualStyleBackColor = true;
@@ -166,10 +154,10 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(819, 412);
+            this.button5.Location = new System.Drawing.Point(758, 412);
             this.button5.Margin = new System.Windows.Forms.Padding(4);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(237, 67);
+            this.button5.Size = new System.Drawing.Size(298, 67);
             this.button5.TabIndex = 31;
             this.button5.Text = "Show Customer Details";
             this.button5.UseVisualStyleBackColor = true;
@@ -196,45 +184,6 @@
             this.dataGridView1.TabIndex = 32;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // cLIENTBindingSource
-            // 
-            this.cLIENTBindingSource.DataMember = "CLIENT";
-            this.cLIENTBindingSource.DataSource = this.rSSDataSetBindingSource;
-            // 
-            // pERSONELBindingSource
-            // 
-            this.pERSONELBindingSource.DataMember = "PERSONEL";
-            this.pERSONELBindingSource.DataSource = this.rSSDataSetBindingSource;
-            // 
-            // rSSDataSetBindingSource
-            // 
-            this.rSSDataSetBindingSource.DataSource = this.rSSDataSet;
-            this.rSSDataSetBindingSource.Position = 0;
-            this.rSSDataSetBindingSource.CurrentChanged += new System.EventHandler(this.rSSDataSetBindingSource_CurrentChanged);
-            // 
-            // rSSDataSet
-            // 
-            this.rSSDataSet.DataSetName = "RSSDataSet";
-            this.rSSDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // pERSONELTableAdapter
-            // 
-            this.pERSONELTableAdapter.ClearBeforeFill = true;
-            // 
-            // cLIENTTableAdapter
-            // 
-            this.cLIENTTableAdapter.ClearBeforeFill = true;
-            // 
-            // cLIENTBindingSource1
-            // 
-            this.cLIENTBindingSource1.DataMember = "CLIENT";
-            this.cLIENTBindingSource1.DataSource = this.rSSDataSetBindingSource;
-            // 
-            // cLIENTBindingSource2
-            // 
-            this.cLIENTBindingSource2.DataMember = "CLIENT";
-            this.cLIENTBindingSource2.DataSource = this.rSSDataSetBindingSource;
-            // 
             // idclientDataGridViewTextBoxColumn
             // 
             this.idclientDataGridViewTextBoxColumn.DataPropertyName = "id_client";
@@ -250,6 +199,7 @@
             this.nameDataGridViewTextBoxColumn.HeaderText = "name";
             this.nameDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
             this.nameDataGridViewTextBoxColumn.Width = 125;
             // 
             // firstnameDataGridViewTextBoxColumn
@@ -258,6 +208,7 @@
             this.firstnameDataGridViewTextBoxColumn.HeaderText = "first_name";
             this.firstnameDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.firstnameDataGridViewTextBoxColumn.Name = "firstnameDataGridViewTextBoxColumn";
+            this.firstnameDataGridViewTextBoxColumn.ReadOnly = true;
             this.firstnameDataGridViewTextBoxColumn.Width = 125;
             // 
             // lastnameDataGridViewTextBoxColumn
@@ -266,6 +217,7 @@
             this.lastnameDataGridViewTextBoxColumn.HeaderText = "last_name";
             this.lastnameDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.lastnameDataGridViewTextBoxColumn.Name = "lastnameDataGridViewTextBoxColumn";
+            this.lastnameDataGridViewTextBoxColumn.ReadOnly = true;
             this.lastnameDataGridViewTextBoxColumn.Width = 125;
             // 
             // telDataGridViewTextBoxColumn
@@ -274,7 +226,47 @@
             this.telDataGridViewTextBoxColumn.HeaderText = "tel";
             this.telDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.telDataGridViewTextBoxColumn.Name = "telDataGridViewTextBoxColumn";
+            this.telDataGridViewTextBoxColumn.ReadOnly = true;
             this.telDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // cLIENTBindingSource2
+            // 
+            this.cLIENTBindingSource2.DataMember = "CLIENT";
+            this.cLIENTBindingSource2.DataSource = this.rSSDataSetBindingSource;
+            // 
+            // rSSDataSetBindingSource
+            // 
+            this.rSSDataSetBindingSource.DataSource = this.rSSDataSet;
+            this.rSSDataSetBindingSource.Position = 0;
+            this.rSSDataSetBindingSource.CurrentChanged += new System.EventHandler(this.rSSDataSetBindingSource_CurrentChanged);
+            // 
+            // rSSDataSet
+            // 
+            this.rSSDataSet.DataSetName = "RSSDataSet";
+            this.rSSDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // cLIENTBindingSource
+            // 
+            this.cLIENTBindingSource.DataMember = "CLIENT";
+            this.cLIENTBindingSource.DataSource = this.rSSDataSetBindingSource;
+            // 
+            // pERSONELBindingSource
+            // 
+            this.pERSONELBindingSource.DataMember = "PERSONEL";
+            this.pERSONELBindingSource.DataSource = this.rSSDataSetBindingSource;
+            // 
+            // pERSONELTableAdapter
+            // 
+            this.pERSONELTableAdapter.ClearBeforeFill = true;
+            // 
+            // cLIENTTableAdapter
+            // 
+            this.cLIENTTableAdapter.ClearBeforeFill = true;
+            // 
+            // cLIENTBindingSource1
+            // 
+            this.cLIENTBindingSource1.DataMember = "CLIENT";
+            this.cLIENTBindingSource1.DataSource = this.rSSDataSetBindingSource;
             // 
             // Customers
             // 
@@ -284,7 +276,6 @@
             this.Controls.Add(this.button5);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.button3);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.addButton1);
             this.Controls.Add(this.searchBox);
@@ -296,19 +287,18 @@
             this.Size = new System.Drawing.Size(1070, 483);
             this.Load += new System.EventHandler(this.Customers_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cLIENTBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pERSONELBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cLIENTBindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rSSDataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rSSDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cLIENTBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pERSONELBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cLIENTBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cLIENTBindingSource2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button addButton1;
         private System.Windows.Forms.Button searchBox;

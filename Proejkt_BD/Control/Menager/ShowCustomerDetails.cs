@@ -18,11 +18,11 @@ namespace Proejkt_BD.Control.Menager
             InitializeComponent();
         }
 
-        private void button3_Click(object sender, EventArgs e)
-        {
-            AddVehicle a1 = new AddVehicle();
-            a1.ShowDialog();
-        }
+        //private void button3_Click(object sender, EventArgs e)
+        //{
+        //    AddVehicle a1 = new AddVehicle();
+        //    a1.ShowDialog();
+        //}
 
         private void ShowCustomerDetails_Load(object sender, EventArgs e)
         {

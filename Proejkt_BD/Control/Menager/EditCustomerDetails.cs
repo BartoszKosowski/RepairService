@@ -20,10 +20,9 @@ namespace Proejkt_BD.Control.Menager
 
         private void button1_Click(object sender, EventArgs e)
         {
-            SQLmanager.EditCustomer(textBox5.Text.ToString(), textBox1.Text.ToString(), textBox2.Text.ToString(), textBox3.Text.ToString(), textBox4.Text.ToString());
-            //this.Hide();
-            //MessageBox.Show("User updated successfully");
+            SQLmanager.EditCustomer(textBox5.Text.ToString(), textBox3.Text.ToString(), textBox1.Text.ToString(), textBox2.Text.ToString(), textBox4.Text.ToString());
             this.Close();
+            MessageBox.Show("User updated successfully");
         }
 
         private void button2_Click(object sender, EventArgs e)

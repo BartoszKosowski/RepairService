@@ -28,6 +28,14 @@ namespace Proejkt_BD.Control.Menager
         private void button1_Click(object sender, EventArgs e)
         {
             EditCustomerDetails a1 = new EditCustomerDetails();
+            a1.textBox5.Text = this.dataGridView1.CurrentRow.Cells[0].Value.ToString(); //id
+            a1.textBox5.Enabled = false;
+
+            a1.textBox1.Text = this.dataGridView1.CurrentRow.Cells[2].Value.ToString(); //fname
+            a1.textBox2.Text = this.dataGridView1.CurrentRow.Cells[3].Value.ToString(); //lname
+            a1.textBox3.Text = this.dataGridView1.CurrentRow.Cells[1].Value.ToString(); //name
+            a1.textBox4.Text = this.dataGridView1.CurrentRow.Cells[4].Value.ToString(); //tel
+
             a1.ShowDialog();
         }
 
@@ -63,12 +71,12 @@ namespace Proejkt_BD.Control.Menager
 
         }
 
-        private void button3_Click(object sender, EventArgs e)
-        {
-            SQLmanager.DeleteCustomer(this.dataGridView1.CurrentRow.Cells[0].Value.ToString()); //id
-            UsersDataLoad();
+        //private void button3_Click(object sender, EventArgs e)
+        //{
+        //    SQLmanager.DeleteCustomer(this.dataGridView1.CurrentRow.Cells[0].Value.ToString()); //id
+        //    UsersDataLoad();
 
-        }
+        //}
 
         private void Customers_Load(object sender, EventArgs e)
         {

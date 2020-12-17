@@ -30,6 +30,11 @@ namespace Proejkt_BD.Control.Menager
             Close();
         }
 
+        private void AddActivity_Load(object sender, EventArgs e)
+        {
+
+        }
+
         private void button3_Click(object sender, EventArgs e)
         {
             Close();

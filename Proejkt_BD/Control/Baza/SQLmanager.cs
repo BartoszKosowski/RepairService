@@ -114,16 +114,15 @@ namespace Proejkt_BD.Control.Baza
 		}
 
 
-		public static void AddObject(string nr, string name, string id, string type)
+		public static void AddObject(string nr, string name, Int32 id, string type)
 		{
 			//Create new Employee
 			LINQDataContext db = new LINQDataContext();
 			OBJECT newObject = new OBJECT();
 			newObject.nr_object = nr;
-			newObject.name = name;
-			
-			//newObject.id_client = id;
-			//newObject.obj_type = type;
+			newObject.name = name;			
+			newObject.id_client = id;
+			newObject.obj_type = type;
 
 			//Add new Customer to database
 			db.OBJECT.InsertOnSubmit(newObject);
@@ -166,10 +165,11 @@ namespace Proejkt_BD.Control.Baza
 			return result;
 		}
 
-		public static IQueryable<OBJ_TYPE> GetAllObjectTypes()
+		public static IQueryable<string> GetAllObjectTypes()
         {
 			LINQDataContext db = new LINQDataContext();
-			var result = from types in db.OBJ_TYPE select types;
+			var result = from types in db.OBJ_TYPE 
+						select types.type;
 			return result;
 		}
 
@@ -204,6 +204,7 @@ namespace Proejkt_BD.Control.Baza
 						 where objects.nr_object.Contains(nr) &&
 							objects.name.Contains(name) &&
 							objects.obj_type.Contains(type)
+						 
 						 select new ObjectFull
 						 {
 							 client_name = clients.name,

@@ -42,19 +42,18 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.rSSDataSet = new Proejkt_BD.RSSDataSet();
-            this.oBJECTBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.oBJECTTableAdapter = new Proejkt_BD.RSSDataSetTableAdapters.OBJECTTableAdapter();
             this.nrobjectDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.objtypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.oBJECTBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.rSSDataSet = new Proejkt_BD.RSSDataSet();
+            this.oBJECTTableAdapter = new Proejkt_BD.RSSDataSetTableAdapters.OBJECTTableAdapter();
             this.label9 = new System.Windows.Forms.Label();
             this.textBox5 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rSSDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.oBJECTBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rSSDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // label7
@@ -191,17 +190,6 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(655, 243);
-            this.button3.Margin = new System.Windows.Forms.Padding(4);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(100, 28);
-            this.button3.TabIndex = 53;
-            this.button3.Text = "New Vehicle";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
             // dataGridView1
             // 
             this.dataGridView1.AutoGenerateColumns = false;
@@ -219,20 +207,6 @@
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(463, 172);
             this.dataGridView1.TabIndex = 54;
-            // 
-            // rSSDataSet
-            // 
-            this.rSSDataSet.DataSetName = "RSSDataSet";
-            this.rSSDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // oBJECTBindingSource
-            // 
-            this.oBJECTBindingSource.DataMember = "OBJECT";
-            this.oBJECTBindingSource.DataSource = this.rSSDataSet;
-            // 
-            // oBJECTTableAdapter
-            // 
-            this.oBJECTTableAdapter.ClearBeforeFill = true;
             // 
             // nrobjectDataGridViewTextBoxColumn
             // 
@@ -260,6 +234,20 @@
             this.objtypeDataGridViewTextBoxColumn.Name = "objtypeDataGridViewTextBoxColumn";
             this.objtypeDataGridViewTextBoxColumn.ReadOnly = true;
             this.objtypeDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // oBJECTBindingSource
+            // 
+            this.oBJECTBindingSource.DataMember = "OBJECT";
+            this.oBJECTBindingSource.DataSource = this.rSSDataSet;
+            // 
+            // rSSDataSet
+            // 
+            this.rSSDataSet.DataSetName = "RSSDataSet";
+            this.rSSDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // oBJECTTableAdapter
+            // 
+            this.oBJECTTableAdapter.ClearBeforeFill = true;
             // 
             // label9
             // 
@@ -289,7 +277,6 @@
             this.Controls.Add(this.textBox5);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
@@ -307,8 +294,8 @@
             this.Text = "ShowCustomerDetails";
             this.Load += new System.EventHandler(this.ShowCustomerDetails_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rSSDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.oBJECTBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rSSDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -324,7 +311,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.DataGridView dataGridView1;
         private RSSDataSet rSSDataSet;
         private System.Windows.Forms.BindingSource oBJECTBindingSource;

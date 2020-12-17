@@ -123,30 +123,6 @@
     <Compile Include="Control\Menager\NeuRequest.Designer.cs">
       <DependentUpon>NeuRequest.cs</DependentUpon>
     </Compile>
-    <Compile Include="Control\Menager\NewRequest.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Control\Menager\NewRequest.Designer.cs">
-      <DependentUpon>NewRequest.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Control\Menager\NewRequest2.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Control\Menager\NewRequest2.Designer.cs">
-      <DependentUpon>NewRequest2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Control\Menager\NewRequest3.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Control\Menager\NewRequest3.Designer.cs">
-      <DependentUpon>NewRequest3.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Control\Menager\NewRequest4.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Control\Menager\NewRequest4.Designer.cs">
-      <DependentUpon>NewRequest4.cs</DependentUpon>
-    </Compile>
     <Compile Include="Control\Menager\RequestDetails.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -255,18 +231,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Control\Menager\NeuRequest.resx">
       <DependentUpon>NeuRequest.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Control\Menager\NewRequest.resx">
-      <DependentUpon>NewRequest.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Control\Menager\NewRequest2.resx">
-      <DependentUpon>NewRequest2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Control\Menager\NewRequest3.resx">
-      <DependentUpon>NewRequest3.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Control\Menager\NewRequest4.resx">
-      <DependentUpon>NewRequest4.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Control\Menager\RequestDetails.resx">
       <DependentUpon>RequestDetails.cs</DependentUpon>

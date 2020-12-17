@@ -20,8 +20,7 @@ namespace Proejkt_BD.Control.Menager
 
         private void button1_Click(object sender, EventArgs e)
         {
-            NewRequest a1 = new NewRequest();
-            a1.ShowDialog();
+
         }
 
         private void button2_Click(object sender, EventArgs e)

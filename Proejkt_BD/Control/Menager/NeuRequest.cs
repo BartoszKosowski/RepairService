@@ -108,5 +108,10 @@ namespace Proejkt_BD.Control.Menager
             MessageBox.Show("The case has been created");
             Close();
         }
+
+        private void NeuRequest_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

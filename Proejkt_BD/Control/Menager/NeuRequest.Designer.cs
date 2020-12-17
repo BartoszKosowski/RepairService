@@ -57,18 +57,20 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(15, 15);
+            this.label1.Location = new System.Drawing.Point(20, 18);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(104, 13);
+            this.label1.Size = new System.Drawing.Size(138, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "Manager Information";
             // 
             // idTextBox
             // 
-            this.idTextBox.Location = new System.Drawing.Point(125, 12);
+            this.idTextBox.Location = new System.Drawing.Point(167, 15);
+            this.idTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.idTextBox.Name = "idTextBox";
             this.idTextBox.ReadOnly = true;
-            this.idTextBox.Size = new System.Drawing.Size(60, 20);
+            this.idTextBox.Size = new System.Drawing.Size(79, 22);
             this.idTextBox.TabIndex = 1;
             // 
             // panel1
@@ -76,25 +78,29 @@
             this.panel1.AutoScroll = true;
             this.panel1.AutoSize = true;
             this.panel1.Controls.Add(this.dataGridView1);
-            this.panel1.Location = new System.Drawing.Point(16, 108);
+            this.panel1.Location = new System.Drawing.Point(21, 133);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(353, 105);
+            this.panel1.Size = new System.Drawing.Size(471, 129);
             this.panel1.TabIndex = 3;
             // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(350, 100);
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.Size = new System.Drawing.Size(467, 123);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(375, 108);
+            this.button1.Location = new System.Drawing.Point(500, 133);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(143, 38);
+            this.button1.Size = new System.Drawing.Size(191, 47);
             this.button1.TabIndex = 4;
             this.button1.Text = "Pick Customer";
             this.button1.UseVisualStyleBackColor = true;
@@ -103,24 +109,28 @@
             // panel2
             // 
             this.panel2.Controls.Add(this.dataGridView2);
-            this.panel2.Location = new System.Drawing.Point(16, 218);
+            this.panel2.Location = new System.Drawing.Point(21, 268);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(350, 105);
+            this.panel2.Size = new System.Drawing.Size(467, 129);
             this.panel2.TabIndex = 5;
             // 
             // dataGridView2
             // 
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(0, 3);
+            this.dataGridView2.Location = new System.Drawing.Point(0, 4);
+            this.dataGridView2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(350, 100);
+            this.dataGridView2.RowHeadersWidth = 51;
+            this.dataGridView2.Size = new System.Drawing.Size(467, 123);
             this.dataGridView2.TabIndex = 0;
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(375, 221);
+            this.button2.Location = new System.Drawing.Point(500, 272);
+            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(143, 38);
+            this.button2.Size = new System.Drawing.Size(191, 47);
             this.button2.TabIndex = 6;
             this.button2.Text = "Pick Vehicle";
             this.button2.UseVisualStyleBackColor = true;
@@ -129,42 +139,47 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(15, 58);
+            this.label2.Location = new System.Drawing.Point(20, 71);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(73, 13);
+            this.label2.Size = new System.Drawing.Size(95, 17);
             this.label2.TabIndex = 7;
             this.label2.Text = "Request Date";
             // 
             // dateTimePicker1
             // 
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(200, 58);
+            this.dateTimePicker1.Location = new System.Drawing.Point(267, 71);
+            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(92, 20);
+            this.dateTimePicker1.Size = new System.Drawing.Size(121, 22);
             this.dateTimePicker1.TabIndex = 8;
             // 
             // richTextBox1
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(18, 346);
+            this.richTextBox1.Location = new System.Drawing.Point(24, 426);
+            this.richTextBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(351, 126);
+            this.richTextBox1.Size = new System.Drawing.Size(467, 154);
             this.richTextBox1.TabIndex = 9;
             this.richTextBox1.Text = "";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(15, 330);
+            this.label3.Location = new System.Drawing.Point(20, 406);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(60, 13);
+            this.label3.Size = new System.Drawing.Size(79, 17);
             this.label3.TabIndex = 10;
             this.label3.Text = "Description";
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(375, 346);
+            this.button3.Location = new System.Drawing.Point(500, 426);
+            this.button3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(143, 38);
+            this.button3.Size = new System.Drawing.Size(191, 47);
             this.button3.TabIndex = 11;
             this.button3.Text = "Add Activity";
             this.button3.UseVisualStyleBackColor = true;
@@ -172,9 +187,10 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(375, 403);
+            this.button4.Location = new System.Drawing.Point(500, 496);
+            this.button4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(143, 38);
+            this.button4.Size = new System.Drawing.Size(191, 47);
             this.button4.TabIndex = 12;
             this.button4.Text = "Show Activity";
             this.button4.UseVisualStyleBackColor = true;
@@ -182,9 +198,10 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(375, 493);
+            this.button5.Location = new System.Drawing.Point(500, 607);
+            this.button5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(143, 38);
+            this.button5.Size = new System.Drawing.Size(191, 47);
             this.button5.TabIndex = 13;
             this.button5.Text = "Finish";
             this.button5.UseVisualStyleBackColor = true;
@@ -193,43 +210,48 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(15, 81);
+            this.label4.Location = new System.Drawing.Point(20, 100);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(62, 13);
+            this.label4.Size = new System.Drawing.Size(81, 17);
             this.label4.TabIndex = 14;
             this.label4.Text = "Expire Date";
             // 
             // dateTimePicker2
             // 
             this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(200, 81);
+            this.dateTimePicker2.Location = new System.Drawing.Point(267, 100);
+            this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(92, 20);
+            this.dateTimePicker2.Size = new System.Drawing.Size(121, 22);
             this.dateTimePicker2.TabIndex = 15;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(15, 35);
+            this.label5.Location = new System.Drawing.Point(20, 43);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(61, 13);
+            this.label5.Size = new System.Drawing.Size(78, 17);
             this.label5.TabIndex = 17;
             this.label5.Text = "Request ID";
             // 
             // requestIdBox1
             // 
-            this.requestIdBox1.Location = new System.Drawing.Point(125, 35);
+            this.requestIdBox1.Location = new System.Drawing.Point(167, 43);
+            this.requestIdBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.requestIdBox1.Name = "requestIdBox1";
             this.requestIdBox1.ReadOnly = true;
-            this.requestIdBox1.Size = new System.Drawing.Size(167, 20);
+            this.requestIdBox1.Size = new System.Drawing.Size(221, 22);
             this.requestIdBox1.TabIndex = 18;
             this.requestIdBox1.TabStop = false;
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(18, 493);
+            this.button6.Location = new System.Drawing.Point(24, 607);
+            this.button6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(143, 38);
+            this.button6.Size = new System.Drawing.Size(191, 47);
             this.button6.TabIndex = 16;
             this.button6.Text = "Discard";
             this.button6.UseVisualStyleBackColor = true;
@@ -237,9 +259,9 @@
             // 
             // NeuRequest
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(557, 543);
+            this.ClientSize = new System.Drawing.Size(743, 668);
             this.Controls.Add(this.requestIdBox1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.button6);
@@ -258,8 +280,10 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.idTextBox);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "NeuRequest";
             this.Text = "Request Generator";
+            this.Load += new System.EventHandler(this.NeuRequest_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel2.ResumeLayout(false);
