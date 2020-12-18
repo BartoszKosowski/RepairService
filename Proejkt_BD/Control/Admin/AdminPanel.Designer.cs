@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -55,124 +56,143 @@
             this.label5 = new System.Windows.Forms.Label();
             this.pERSONELTableAdapter = new Proejkt_BD.RSSDataSetTableAdapters.PERSONELTableAdapter();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pERSONELBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rSSDataSet)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label3.Location = new System.Drawing.Point(474, 41);
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 15F);
+            this.label3.Location = new System.Drawing.Point(446, 95);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(50, 20);
+            this.label3.Size = new System.Drawing.Size(60, 23);
             this.label3.TabIndex = 24;
             this.label3.Text = "Login";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label2.Location = new System.Drawing.Point(239, 41);
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 15F);
+            this.label2.Location = new System.Drawing.Point(223, 94);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(88, 20);
+            this.label2.Size = new System.Drawing.Size(112, 23);
             this.label2.TabIndex = 23;
             this.label2.Text = "Last name";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label1.Location = new System.Drawing.Point(12, 41);
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 15F);
+            this.label1.Location = new System.Drawing.Point(14, 92);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(89, 20);
+            this.label1.Size = new System.Drawing.Size(108, 23);
             this.label1.TabIndex = 22;
             this.label1.Text = "First name";
             // 
             // button3
             // 
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.button3.Location = new System.Drawing.Point(530, 452);
+            this.button3.BackColor = System.Drawing.Color.White;
+            this.button3.Font = new System.Drawing.Font("Century Gothic", 15F);
+            this.button3.Location = new System.Drawing.Point(520, 385);
+            this.button3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(483, 84);
+            this.button3.Size = new System.Drawing.Size(242, 50);
             this.button3.TabIndex = 19;
             this.button3.Text = "Show details (Edit)";
-            this.button3.UseVisualStyleBackColor = true;
+            this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
             // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.button2.Location = new System.Drawing.Point(12, 452);
+            this.button2.BackColor = System.Drawing.Color.White;
+            this.button2.Font = new System.Drawing.Font("Century Gothic", 15F);
+            this.button2.Location = new System.Drawing.Point(9, 385);
+            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(512, 84);
+            this.button2.Size = new System.Drawing.Size(242, 50);
             this.button2.TabIndex = 18;
             this.button2.Text = "New";
-            this.button2.UseVisualStyleBackColor = true;
+            this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(530, 41);
+            this.textBox3.Location = new System.Drawing.Point(510, 94);
+            this.textBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(123, 22);
+            this.textBox3.Size = new System.Drawing.Size(93, 20);
             this.textBox3.TabIndex = 17;
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(333, 41);
+            this.textBox2.Location = new System.Drawing.Point(339, 94);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 22);
+            this.textBox2.Size = new System.Drawing.Size(93, 20);
             this.textBox2.TabIndex = 16;
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(107, 41);
+            this.textBox1.Location = new System.Drawing.Point(126, 94);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 22);
+            this.textBox1.Size = new System.Drawing.Size(93, 20);
             this.textBox1.TabIndex = 15;
             // 
             // button1
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.button1.Location = new System.Drawing.Point(747, 41);
+            this.button1.BackColor = System.Drawing.Color.White;
+            this.button1.Font = new System.Drawing.Font("Century Gothic", 15F);
+            this.button1.Location = new System.Drawing.Point(634, 95);
+            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(266, 50);
+            this.button1.Size = new System.Drawing.Size(133, 41);
             this.button1.TabIndex = 14;
             this.button1.Text = "Search";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.checkBox1.Location = new System.Drawing.Point(211, 71);
+            this.checkBox1.Font = new System.Drawing.Font("Century Gothic", 10F);
+            this.checkBox1.Location = new System.Drawing.Point(180, 132);
+            this.checkBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(77, 24);
+            this.checkBox1.Size = new System.Drawing.Size(71, 23);
             this.checkBox1.TabIndex = 13;
             this.checkBox1.Text = "Active";
             this.checkBox1.UseVisualStyleBackColor = true;
             // 
             // button5
             // 
-            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.button5.Location = new System.Drawing.Point(852, -1);
+            this.button5.BackColor = System.Drawing.Color.White;
+            this.button5.FlatAppearance.BorderSize = 0;
+            this.button5.Font = new System.Drawing.Font("Century Gothic", 10F);
+            this.button5.Location = new System.Drawing.Point(634, 11);
+            this.button5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(177, 27);
+            this.button5.Size = new System.Drawing.Size(133, 38);
             this.button5.TabIndex = 25;
             this.button5.Text = "Log out";
-            this.button5.UseVisualStyleBackColor = true;
+            this.button5.UseVisualStyleBackColor = false;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label4.Location = new System.Drawing.Point(12, 71);
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 15F);
+            this.label4.Location = new System.Drawing.Point(14, 128);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(43, 20);
+            this.label4.Size = new System.Drawing.Size(53, 23);
             this.label4.TabIndex = 26;
             this.label4.Text = "Role";
             this.label4.Click += new System.EventHandler(this.label4_Click);
@@ -185,16 +205,22 @@
             "Admin",
             "Worker",
             "Manager"});
-            this.comboBox1.Location = new System.Drawing.Point(61, 69);
+            this.comboBox1.Location = new System.Drawing.Point(71, 130);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 24);
+            this.comboBox1.Size = new System.Drawing.Size(92, 21);
             this.comboBox1.TabIndex = 27;
             // 
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 8.25F);
+            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.Gainsboro;
+            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idpersonelDataGridViewTextBoxColumn,
@@ -205,13 +231,14 @@
             this.loginDataGridViewTextBoxColumn,
             this.passwordDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.pERSONELBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 101);
+            this.dataGridView1.Location = new System.Drawing.Point(11, 159);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(1001, 345);
+            this.dataGridView1.Size = new System.Drawing.Size(751, 222);
             this.dataGridView1.TabIndex = 28;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -222,7 +249,6 @@
             this.idpersonelDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.idpersonelDataGridViewTextBoxColumn.Name = "idpersonelDataGridViewTextBoxColumn";
             this.idpersonelDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idpersonelDataGridViewTextBoxColumn.Width = 125;
             // 
             // firstnameDataGridViewTextBoxColumn
             // 
@@ -231,7 +257,6 @@
             this.firstnameDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.firstnameDataGridViewTextBoxColumn.Name = "firstnameDataGridViewTextBoxColumn";
             this.firstnameDataGridViewTextBoxColumn.ReadOnly = true;
-            this.firstnameDataGridViewTextBoxColumn.Width = 125;
             // 
             // lastnameDataGridViewTextBoxColumn
             // 
@@ -240,7 +265,6 @@
             this.lastnameDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.lastnameDataGridViewTextBoxColumn.Name = "lastnameDataGridViewTextBoxColumn";
             this.lastnameDataGridViewTextBoxColumn.ReadOnly = true;
-            this.lastnameDataGridViewTextBoxColumn.Width = 125;
             // 
             // roleDataGridViewTextBoxColumn
             // 
@@ -249,7 +273,6 @@
             this.roleDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.roleDataGridViewTextBoxColumn.Name = "roleDataGridViewTextBoxColumn";
             this.roleDataGridViewTextBoxColumn.ReadOnly = true;
-            this.roleDataGridViewTextBoxColumn.Width = 125;
             // 
             // activeDataGridViewTextBoxColumn
             // 
@@ -258,7 +281,6 @@
             this.activeDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.activeDataGridViewTextBoxColumn.Name = "activeDataGridViewTextBoxColumn";
             this.activeDataGridViewTextBoxColumn.ReadOnly = true;
-            this.activeDataGridViewTextBoxColumn.Width = 125;
             // 
             // loginDataGridViewTextBoxColumn
             // 
@@ -267,7 +289,6 @@
             this.loginDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.loginDataGridViewTextBoxColumn.Name = "loginDataGridViewTextBoxColumn";
             this.loginDataGridViewTextBoxColumn.ReadOnly = true;
-            this.loginDataGridViewTextBoxColumn.Width = 125;
             // 
             // passwordDataGridViewTextBoxColumn
             // 
@@ -276,7 +297,6 @@
             this.passwordDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.passwordDataGridViewTextBoxColumn.Name = "passwordDataGridViewTextBoxColumn";
             this.passwordDataGridViewTextBoxColumn.ReadOnly = true;
-            this.passwordDataGridViewTextBoxColumn.Width = 125;
             // 
             // pERSONELBindingSource
             // 
@@ -291,10 +311,12 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
-            this.label5.Location = new System.Drawing.Point(-3, -1);
+            this.label5.Font = new System.Drawing.Font("Century Gothic", 35F);
+            this.label5.ForeColor = System.Drawing.SystemColors.Control;
+            this.label5.Location = new System.Drawing.Point(11, 9);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(198, 31);
+            this.label5.Size = new System.Drawing.Size(338, 57);
             this.label5.TabIndex = 29;
             this.label5.Text = "ADMIN PANEL";
             // 
@@ -305,28 +327,42 @@
             // checkBox2
             // 
             this.checkBox2.AutoSize = true;
-            this.checkBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.checkBox2.Location = new System.Drawing.Point(306, 71);
+            this.checkBox2.Font = new System.Drawing.Font("Century Gothic", 10F);
+            this.checkBox2.Location = new System.Drawing.Point(252, 132);
+            this.checkBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(91, 24);
+            this.checkBox2.Size = new System.Drawing.Size(83, 23);
             this.checkBox2.TabIndex = 30;
             this.checkBox2.Text = "Blocked";
             this.checkBox2.UseVisualStyleBackColor = true;
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(53)))), ((int)(((byte)(65)))));
+            this.panel1.Controls.Add(this.label5);
+            this.panel1.Controls.Add(this.button5);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(778, 76);
+            this.panel1.TabIndex = 31;
+            // 
             // AdminPanel
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1029, 544);
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(778, 446);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.checkBox2);
-            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.button5);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.textBox3);
@@ -334,12 +370,16 @@
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.checkBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "AdminPanel";
-            this.Text = "AdminPanel";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Load += new System.EventHandler(this.AdminPanel_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pERSONELBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rSSDataSet)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -373,5 +413,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn loginDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn passwordDataGridViewTextBoxColumn;
         private System.Windows.Forms.CheckBox checkBox2;
+        private System.Windows.Forms.Panel panel1;
     }
 }
