@@ -12,7 +12,7 @@ namespace Proejkt_BD.Control.Menager
 {
     public partial class AddActivity : Form
     {
-        public Int32 _id;
+        Int32 _id;
         DateTime _reqDate, _exDate;
         public AddActivity(Int32 id, DateTime reqDate, DateTime exDate)
         {
@@ -22,6 +22,7 @@ namespace Proejkt_BD.Control.Menager
             _reqDate = reqDate;
 
             comboBox1.DataSource = Baza.SQLmanager.GetAvailableActivity().ToList();
+            textBox5.Text = Baza.SQLmanager.GetActivityNumber(_id).ToString();
         }
 
         private void button2_Click(object sender, EventArgs e)

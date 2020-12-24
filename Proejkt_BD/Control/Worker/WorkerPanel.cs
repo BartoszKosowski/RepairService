@@ -16,6 +16,7 @@ namespace Proejkt_BD.Control.Worker
         public WorkerPanel()
         {
             InitializeComponent();
+            
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -23,6 +24,7 @@ namespace Proejkt_BD.Control.Worker
             this.Hide();
             Form1 a1 = new Form1();
             a1.ShowDialog();
+            //Baza.SQLworker.SetWorkerInactive(Int32.Parse(textBox1.Text));
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -58,7 +60,7 @@ namespace Proejkt_BD.Control.Worker
             else
                 d = "";
 
-            var result = SQLworker.SearchActivity(comboBox1.Text.ToString(), d, check);
+            var result = SQLworker.SearchActivity(comboBox1.SelectedValue.ToString(), d, check);
             dataGridView1.DataSource = result;
         }
 
@@ -170,6 +172,7 @@ namespace Proejkt_BD.Control.Worker
             a1.button1.Visible = true;
 
             a1.ShowDialog();
+            this.aCTIVITYTableAdapter.Fill(this.rSSDataSet.ACTIVITY);
         }
     }
 }

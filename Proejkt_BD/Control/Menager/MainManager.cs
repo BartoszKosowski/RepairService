@@ -1,6 +1,6 @@
-﻿using Proejkt_BD.Control.Admin;
+﻿//using Proejkt_BD.Control.Admin;
 using Proejkt_BD.Control.Menager;
-using Proejkt_BD.Control.Worker;
+//using Proejkt_BD.Control.Worker;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -47,6 +47,10 @@ namespace Proejkt_BD.Control.Menager
             Baza.SQLmanager.CreateEmptyRequest();
             var a1 = new NeuRequest(textBox1.Text);
             a1.ShowDialog();
+            Baza.SQLmanager.RefreshRequest();
+            MainPanel.Controls.Clear();
+            MainPanel.Controls.Add(new Requests());
+
         }
 
         private void button5_Click(object sender, EventArgs e)

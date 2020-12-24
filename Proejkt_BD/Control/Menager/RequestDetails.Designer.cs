@@ -33,10 +33,8 @@
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -64,6 +62,10 @@
             this.aCTIVITYBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.rSSDataSet = new Proejkt_BD.RSSDataSet();
             this.aCTIVITYTableAdapter = new Proejkt_BD.RSSDataSetTableAdapters.ACTIVITYTableAdapter();
+            this.button3 = new System.Windows.Forms.Button();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.button4 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.aCTIVITYBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rSSDataSet)).BeginInit();
@@ -107,13 +109,6 @@
             this.label2.TabIndex = 46;
             this.label2.Text = "Final Date";
             // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(128, 245);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(240, 20);
-            this.textBox5.TabIndex = 45;
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -134,17 +129,11 @@
             this.label6.TabIndex = 43;
             this.label6.Text = "Vehicle";
             // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(128, 136);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(240, 20);
-            this.textBox4.TabIndex = 42;
-            // 
             // textBox3
             // 
             this.textBox3.Location = new System.Drawing.Point(128, 215);
             this.textBox3.Name = "textBox3";
+            this.textBox3.ReadOnly = true;
             this.textBox3.Size = new System.Drawing.Size(240, 20);
             this.textBox3.TabIndex = 41;
             // 
@@ -153,6 +142,7 @@
             this.textBox2.Enabled = false;
             this.textBox2.Location = new System.Drawing.Point(128, 188);
             this.textBox2.Name = "textBox2";
+            this.textBox2.ReadOnly = true;
             this.textBox2.Size = new System.Drawing.Size(240, 20);
             this.textBox2.TabIndex = 40;
             // 
@@ -161,6 +151,7 @@
             this.textBox1.Enabled = false;
             this.textBox1.Location = new System.Drawing.Point(128, 36);
             this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
             this.textBox1.Size = new System.Drawing.Size(240, 20);
             this.textBox1.TabIndex = 39;
             // 
@@ -207,7 +198,7 @@
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.button1.Location = new System.Drawing.Point(680, 268);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(107, 25);
             this.button1.TabIndex = 51;
@@ -219,12 +210,13 @@
             // 
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.button2.Location = new System.Drawing.Point(10, 378);
-            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(776, 25);
             this.button2.TabIndex = 52;
             this.button2.Text = "Save";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // label10
             // 
@@ -246,7 +238,7 @@
             "ACT",
             "XXX"});
             this.comboBox1.Location = new System.Drawing.Point(128, 159);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(86, 21);
             this.comboBox1.TabIndex = 54;
@@ -286,7 +278,7 @@
             this.sequencenbDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.aCTIVITYBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(394, 40);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
@@ -399,11 +391,56 @@
             // 
             this.aCTIVITYTableAdapter.ClearBeforeFill = true;
             // 
+            // button3
+            // 
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.button3.Location = new System.Drawing.Point(395, 267);
+            this.button3.Margin = new System.Windows.Forms.Padding(2);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(107, 25);
+            this.button3.TabIndex = 58;
+            this.button3.Text = "Add Activity";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker1.Location = new System.Drawing.Point(128, 243);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(240, 20);
+            this.dateTimePicker1.TabIndex = 59;
+            // 
+            // dateTimePicker2
+            // 
+            this.dateTimePicker2.Enabled = false;
+            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker2.Location = new System.Drawing.Point(128, 134);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(240, 20);
+            this.dateTimePicker2.TabIndex = 60;
+            // 
+            // button4
+            // 
+            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.button4.Location = new System.Drawing.Point(539, 268);
+            this.button4.Margin = new System.Windows.Forms.Padding(2);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(107, 25);
+            this.button4.TabIndex = 61;
+            this.button4.Text = "Refresh";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
             // RequestDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(794, 413);
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.dateTimePicker2);
+            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.richTextBox2);
             this.Controls.Add(this.label11);
@@ -415,10 +452,8 @@
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox5);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.textBox4);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
@@ -426,7 +461,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "RequestDetails";
             this.Text = "RequestDetails";
             this.Load += new System.EventHandler(this.RequestDetails_Load);
@@ -455,13 +490,10 @@
         private System.Windows.Forms.Label label11;
         public System.Windows.Forms.RichTextBox richTextBox2;
         public System.Windows.Forms.RichTextBox richTextBox1;
-        public System.Windows.Forms.TextBox textBox5;
-        public System.Windows.Forms.TextBox textBox4;
         public System.Windows.Forms.TextBox textBox3;
         public System.Windows.Forms.TextBox textBox2;
         public System.Windows.Forms.TextBox textBox1;
         public System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private RSSDataSet rSSDataSet;
         private System.Windows.Forms.BindingSource aCTIVITYBindingSource;
         private RSSDataSetTableAdapters.ACTIVITYTableAdapter aCTIVITYTableAdapter;
@@ -475,5 +507,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn idpersonelDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn actdictDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn sequencenbDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button button3;
+        public System.Windows.Forms.DateTimePicker dateTimePicker1;
+        public System.Windows.Forms.DateTimePicker dateTimePicker2;
+        public System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button button4;
     }
 }

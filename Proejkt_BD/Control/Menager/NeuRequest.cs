@@ -104,7 +104,7 @@ namespace Proejkt_BD.Control.Menager
         private void button5_Click(object sender, EventArgs e)
         {
             Baza.SQLmanager.FulfillRequestInformation(Int32.Parse(requestIdBox1.Text.ToString()), richTextBox1.Text.ToString(),
-                "Active", " ", dateTimePicker1.Value.Date, dateTimePicker2.Value.Date, 1, dataGridView2.Rows[0].Cells[0].Value.ToString());
+                "ACT", " ", dateTimePicker1.Value.Date, dateTimePicker2.Value.Date, 1, dataGridView2.Rows[0].Cells[0].Value.ToString());
             MessageBox.Show("The case has been created");
             Close();
         }

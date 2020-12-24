@@ -34,6 +34,8 @@ namespace Proejkt_BD.Control.Menager
         {
             AddVehicle a1 = new AddVehicle();
             a1.ShowDialog();
+            var result = SQLmanager.SearchObjects("", "", "");
+            dataGridView1.DataSource = result;
         }
 
         private void button1_Click(object sender, EventArgs e)

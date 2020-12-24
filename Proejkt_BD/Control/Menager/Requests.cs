@@ -41,12 +41,12 @@ namespace Proejkt_BD.Control.Menager
             a1.comboBox1.Text = this.dataGridView1.CurrentRow.Cells[2].Value.ToString(); //status
             a1.textBox2.Text = customer2; //customer data
             a1.textBox3.Text = this.dataGridView1.CurrentRow.Cells[7].Value.ToString(); //vehicle data            
-            a1.textBox4.Text = this.dataGridView1.CurrentRow.Cells[4].Value.ToString(); //start date
+            a1.dateTimePicker1.Value = Convert.ToDateTime(this.dataGridView1.CurrentRow.Cells[4].Value.ToString()); //start date
 
             if (this.dataGridView1.CurrentRow.Cells[5].Value == null)
                 a1.richTextBox2.Text = "";
             else                
-                a1.textBox5.Text = this.dataGridView1.CurrentRow.Cells[5].Value.ToString(); //final date
+                a1.dateTimePicker2.Value = Convert.ToDateTime(this.dataGridView1.CurrentRow.Cells[5].Value.ToString()); //final date
             
             a1.ShowDialog();
         }

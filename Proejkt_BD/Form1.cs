@@ -71,6 +71,7 @@ namespace Proejkt_BD
                     this.Hide();
                     MainManager a1 = new MainManager();
                     a1.textBox1.Text = result.First().id_personel.ToString();
+                    //SQLworker.SetWorkerActive(result.First().id_personel);
                     a1.ShowDialog();
 
                 }

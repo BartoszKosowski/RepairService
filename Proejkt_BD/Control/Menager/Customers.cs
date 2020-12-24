@@ -37,6 +37,9 @@ namespace Proejkt_BD.Control.Menager
             a1.textBox4.Text = this.dataGridView1.CurrentRow.Cells[4].Value.ToString(); //tel
 
             a1.ShowDialog();
+
+            var result = SQLmanager.SearchCustomers("", "", "");
+            dataGridView1.DataSource = result;
         }
 
         private void button5_Click(object sender, EventArgs e)

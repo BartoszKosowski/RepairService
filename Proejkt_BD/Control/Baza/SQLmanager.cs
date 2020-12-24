@@ -235,27 +235,27 @@ namespace Proejkt_BD.Control.Baza
         public static IQueryable<CLIENT> ChooseCustomer(object id)
         {
             LINQDataContext db = new LINQDataContext();
-            var result = from cc in db.CLIENT
-                         where cc.id_client.Equals(id)
-                         select cc;
+            var result = from e in db.CLIENT
+                         where e.id_client.Equals(id)
+                         select e;
             return result;
         }
 
         public static IQueryable<OBJECT> ChooseObject(object id)
         {
             LINQDataContext db = new LINQDataContext();
-            var result = from co in db.OBJECT
-                         where co.nr_object.Equals(id)
-                         select co;
+            var result = from e in db.OBJECT
+                         where e.nr_object.Equals(id)
+                         select e;
             return result;
         }
 
         public static IQueryable<OBJECT> GetCustomerObject(object id)
         {
             LINQDataContext db = new LINQDataContext();
-            var result = from gco in db.OBJECT
-                         where gco.id_client.Equals(id)
-                         select gco;
+            var result = from e in db.OBJECT
+                         where e.id_client.Equals(id)
+                         select e;
             return result;
         }
 
@@ -269,7 +269,7 @@ namespace Proejkt_BD.Control.Baza
             activity.description = dc;
             activity.date_reg = regDate;
             activity.date_fn_cn = exDate;
-            activity.status = "Active";
+            activity.status = "ACT";
 
             db.ACTIVITY.InsertOnSubmit(activity);
             db.SubmitChanges();
@@ -289,12 +289,12 @@ namespace Proejkt_BD.Control.Baza
         public static string GetManagerName(string id) //do poprawy
         {
             LINQDataContext db = new LINQDataContext();
-            var result0 = from gmn in db.PERSONEL
-                          where gmn.id_personel.Equals(Int32.Parse(id))
-                          select gmn.first_name;
-            var result1 = from gmn in db.PERSONEL
-                          where gmn.id_personel.Equals(Int32.Parse(id))
-                          select gmn.last_name;
+            var result0 = from e in db.PERSONEL
+                          where e.id_personel.Equals(Int32.Parse(id))
+                          select e.first_name;
+            var result1 = from e in db.PERSONEL
+                          where e.id_personel.Equals(Int32.Parse(id))
+                          select e.last_name;
             string name = result0.ToString() + result1.ToString();
             return name;
         }
@@ -326,12 +326,12 @@ namespace Proejkt_BD.Control.Baza
             db.SubmitChanges();
         }
 
-        public static void FulfillRequestInformation(Int32 idre ,string desc, string stat, string resu, DateTime datr, DateTime datf, Int16 idpe, string nrob)
+        public static void FulfillRequestInformation(Int32 idre ,string desc, string stat, string resu, DateTime datr, DateTime datf, Int32 idpe, string nrob)
         {
             LINQDataContext db = new LINQDataContext();
-            REQUEST request = (from p in db.REQUEST 
-                              where p.id_request.Equals(idre)
-                              select p).SingleOrDefault();
+            REQUEST request = (from e in db.REQUEST 
+                              where e.id_request.Equals(idre)
+                              select e).SingleOrDefault();
             request.description = desc;
             request.status = stat;
             request.result = resu;
@@ -347,9 +347,9 @@ namespace Proejkt_BD.Control.Baza
         {
             LINQDataContext db = new LINQDataContext();
             var number = GetRequestId();
-            var requests = from dcr in db.REQUEST
-                           where dcr.id_request.Equals(number)
-                           select dcr;
+            var requests = from e in db.REQUEST
+                           where e.id_request.Equals(number)
+                           select e;
 
             foreach (var request in requests)
                 db.REQUEST.DeleteOnSubmit(request);
@@ -360,9 +360,9 @@ namespace Proejkt_BD.Control.Baza
         public static void DeleteRequestsActivity(Int32 id)
         {
             LINQDataContext db = new LINQDataContext();
-            var activityToDelete = from dra in db.ACTIVITY
-                                   where dra.id_request == id
-                                   select dra;
+            var activityToDelete = from e in db.ACTIVITY
+                                   where e.id_request == id
+                                   select e;
             foreach (var activity in activityToDelete)
                 db.ACTIVITY.DeleteOnSubmit(activity);
 
@@ -372,9 +372,77 @@ namespace Proejkt_BD.Control.Baza
         public static IQueryable<string> GetAvailableActivity()
         {
             LINQDataContext db = new LINQDataContext();
-            var result = from gaa in db.ACT_DICT
-                         select gaa.act_type;
+            var result = from e in db.ACT_DICT
+                         select e.act_name;
             return result;
+        }
+
+        public static void RefreshRequest()
+        {
+            LINQDataContext db = new LINQDataContext();
+            db.Refresh(System.Data.Linq.RefreshMode.KeepChanges, db.REQUEST);
+        }
+
+        /*public static void GetAvailableWorkers(out IQueryable<string> firstName, out IQueryable<string> lastName) //tak powinno byc ale nie dziala
+        {
+            LINQDataContext db = new LINQDataContext();
+            var result = from e in db.PERSONEL
+                         where e.active.ToString().Equals("T") && e.role.ToString().Equals("Worker")
+                         select new 
+                         {
+                             firstName = e.first_name,
+                             lastName = e.last_name
+                         };
+        }*/
+
+        public static IQueryable<string> GetAvailableWorkers()//w tym wypadku jesli bdmy mieli 2 pracownikow o tym samym nazwisku to nwmy ktorego wybieramy
+        {
+            LINQDataContext db = new LINQDataContext();
+            var result = from e in db.PERSONEL
+                         where e.active.ToString().Equals("T") && e.role.ToString().Equals("Worker")
+                         select e.last_name;
+            return result;
+        }
+        public static void UpdateActivity(Int32 id, Int32 sn, string dc, string wo, string status)
+        {
+            //Int32 _idPersonel = 0;
+            LINQDataContext db = new LINQDataContext();
+            var result = (from e in db.ACTIVITY
+                          where e.id_request.Equals(id) && e.sequence_nb.Equals(sn)
+                          select e).SingleOrDefault();
+            var result1 = (from e in db.PERSONEL
+                          where e.last_name.ToString().Equals(wo)
+                          select e).SingleOrDefault();
+
+            result.id_personel = result1.id_personel;
+            result.description = dc;
+            result.status = status;
+
+
+            db.SubmitChanges();
+        }
+
+        public static void SaveRequestDetails(Int32 id, string desc/*,object status*/, string result, DateTime expDate)
+        {
+            LINQDataContext db = new LINQDataContext();
+            REQUEST request = (from e in db.REQUEST
+                               where e.id_request.Equals(id)
+                               select e).SingleOrDefault();
+            request.description = desc;
+            //request.status = status.ToString();
+            request.result = result;
+            request.date_reg = expDate;
+
+            db.SubmitChanges();
+        }
+
+        public static int GetActivityNumber(Int32 id)
+        {
+            LINQDataContext db = new LINQDataContext();
+            var result = from e in db.ACTIVITY
+                         where e.id_request.Equals(id)
+                         select e;
+            return result.Count() + 1;
         }
     }
 }
