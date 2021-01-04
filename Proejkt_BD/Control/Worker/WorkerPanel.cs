@@ -60,8 +60,16 @@ namespace Proejkt_BD.Control.Worker
             else
                 d = "";
 
-            var result = SQLworker.SearchActivity(comboBox1.SelectedValue.ToString(), d, check);
-            dataGridView1.DataSource = result;
+            if (comboBox1.Text.ToString() == "ALL")
+            {
+                var result = SQLworker.SearchActivity("", d, check);
+                dataGridView1.DataSource = result;
+            }
+            else
+            {
+                var result = SQLworker.SearchActivity(comboBox1.Text.ToString(), d, check);
+                dataGridView1.DataSource = result;
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -151,7 +159,7 @@ namespace Proejkt_BD.Control.Worker
             a1.richTextBox1.Text = this.dataGridView1.CurrentRow.Cells[1].Value.ToString(); //description
             a1.richTextBox1.Enabled = false;
 
-            if (this.dataGridView1.CurrentRow.Cells[3].Value == null)
+            if (this.dataGridView1.CurrentRow.Cells[2].Value == null)
                 a1.richTextBox2.Text = "";
             else
                 a1.richTextBox2.Text = this.dataGridView1.CurrentRow.Cells[2].Value.ToString(); //result
