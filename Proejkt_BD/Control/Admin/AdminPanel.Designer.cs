@@ -160,13 +160,17 @@
             // 
             // button5
             // 
-            this.button5.BackColor = System.Drawing.Color.White;
+            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(53)))), ((int)(((byte)(65)))));
             this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.Font = new System.Drawing.Font("Century Gothic", 10F);
-            this.button5.Location = new System.Drawing.Point(634, 28);
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button5.Font = new System.Drawing.Font("Century Gothic", 15F);
+            this.button5.ForeColor = System.Drawing.Color.White;
+            this.button5.Image = global::Proejkt_BD.Properties.Resources.log_out;
+            this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button5.Location = new System.Drawing.Point(610, 11);
             this.button5.Margin = new System.Windows.Forms.Padding(2);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(133, 38);
+            this.button5.Size = new System.Drawing.Size(182, 55);
             this.button5.TabIndex = 25;
             this.button5.Text = "Log out";
             this.button5.UseVisualStyleBackColor = false;
@@ -298,12 +302,12 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Century Gothic", 35F);
+            this.label5.Font = new System.Drawing.Font("Century Gothic", 35.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label5.ForeColor = System.Drawing.SystemColors.Control;
             this.label5.Location = new System.Drawing.Point(11, 9);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(338, 57);
+            this.label5.Size = new System.Drawing.Size(342, 57);
             this.label5.TabIndex = 29;
             this.label5.Text = "ADMIN PANEL";
             // 

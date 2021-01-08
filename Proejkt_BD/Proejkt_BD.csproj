@@ -241,6 +241,12 @@
     <EmbeddedResource Include="Control\Menager\SearchActivity.resx">
       <DependentUpon>SearchActivity.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Control\Menager\SearchCustomer.resx">
+      <DependentUpon>SearchCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\Menager\SearchVehicle.resx">
+      <DependentUpon>SearchVehicle.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Control\Menager\ShowCustomerDetails.resx">
       <DependentUpon>ShowCustomerDetails.cs</DependentUpon>
     </EmbeddedResource>
@@ -305,7 +311,22 @@
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Resources\" />
+    <None Include="Resources\vehicle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\customer1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\request1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\log out.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\plus.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

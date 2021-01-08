@@ -58,5 +58,10 @@ namespace Proejkt_BD.Control.Menager
             MainPanel.Controls.Clear();
             MainPanel.Controls.Add(new Vehicle());
         }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

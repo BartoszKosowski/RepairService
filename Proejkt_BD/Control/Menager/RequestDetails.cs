@@ -60,5 +60,10 @@ namespace Proejkt_BD.Control.Menager
             var result = SQLmanager.SearchActivity(this.textBox1.Text.ToString());
             dataGridView1.DataSource = result;
         }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.button2 = new System.Windows.Forms.Button();
             this.searchBox = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -56,29 +58,41 @@
             // 
             // button2
             // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.button2.BackColor = System.Drawing.Color.White;
+            this.button2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button2.Location = new System.Drawing.Point(673, 352);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(122, 31);
             this.button2.TabIndex = 33;
             this.button2.Text = "Details";
-            this.button2.UseVisualStyleBackColor = true;
+            this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // searchBox
             // 
-            this.searchBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.searchBox.Location = new System.Drawing.Point(673, 14);
+            this.searchBox.BackColor = System.Drawing.Color.White;
+            this.searchBox.Font = new System.Drawing.Font("Century Gothic", 10F);
+            this.searchBox.Location = new System.Drawing.Point(673, 9);
             this.searchBox.Name = "searchBox";
-            this.searchBox.Size = new System.Drawing.Size(122, 25);
+            this.searchBox.Size = new System.Drawing.Size(122, 41);
             this.searchBox.TabIndex = 28;
             this.searchBox.Text = "Search";
-            this.searchBox.UseVisualStyleBackColor = true;
+            this.searchBox.UseVisualStyleBackColor = false;
             this.searchBox.Click += new System.EventHandler(this.searchBox_Click);
             // 
             // dataGridView1
             // 
             this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idrequestDataGridViewTextBoxColumn,
@@ -90,14 +104,22 @@
             this.idpersonelDataGridViewTextBoxColumn,
             this.nrobjectDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.rEQUESTBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(9, 40);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 8.25F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridView1.Location = new System.Drawing.Point(9, 60);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(786, 297);
+            this.dataGridView1.Size = new System.Drawing.Size(786, 277);
             this.dataGridView1.TabIndex = 45;
             // 
             // idrequestDataGridViewTextBoxColumn
@@ -107,7 +129,6 @@
             this.idrequestDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.idrequestDataGridViewTextBoxColumn.Name = "idrequestDataGridViewTextBoxColumn";
             this.idrequestDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idrequestDataGridViewTextBoxColumn.Width = 125;
             // 
             // descriptionDataGridViewTextBoxColumn
             // 
@@ -116,7 +137,6 @@
             this.descriptionDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
             this.descriptionDataGridViewTextBoxColumn.ReadOnly = true;
-            this.descriptionDataGridViewTextBoxColumn.Width = 125;
             // 
             // statusDataGridViewTextBoxColumn
             // 
@@ -125,7 +145,6 @@
             this.statusDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.statusDataGridViewTextBoxColumn.Name = "statusDataGridViewTextBoxColumn";
             this.statusDataGridViewTextBoxColumn.ReadOnly = true;
-            this.statusDataGridViewTextBoxColumn.Width = 125;
             // 
             // resultDataGridViewTextBoxColumn
             // 
@@ -134,7 +153,6 @@
             this.resultDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.resultDataGridViewTextBoxColumn.Name = "resultDataGridViewTextBoxColumn";
             this.resultDataGridViewTextBoxColumn.ReadOnly = true;
-            this.resultDataGridViewTextBoxColumn.Width = 125;
             // 
             // dateregDataGridViewTextBoxColumn
             // 
@@ -143,7 +161,6 @@
             this.dateregDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.dateregDataGridViewTextBoxColumn.Name = "dateregDataGridViewTextBoxColumn";
             this.dateregDataGridViewTextBoxColumn.ReadOnly = true;
-            this.dateregDataGridViewTextBoxColumn.Width = 125;
             // 
             // datefncnDataGridViewTextBoxColumn
             // 
@@ -152,7 +169,6 @@
             this.datefncnDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.datefncnDataGridViewTextBoxColumn.Name = "datefncnDataGridViewTextBoxColumn";
             this.datefncnDataGridViewTextBoxColumn.ReadOnly = true;
-            this.datefncnDataGridViewTextBoxColumn.Width = 125;
             // 
             // idpersonelDataGridViewTextBoxColumn
             // 
@@ -161,7 +177,6 @@
             this.idpersonelDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.idpersonelDataGridViewTextBoxColumn.Name = "idpersonelDataGridViewTextBoxColumn";
             this.idpersonelDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idpersonelDataGridViewTextBoxColumn.Width = 125;
             // 
             // nrobjectDataGridViewTextBoxColumn
             // 
@@ -170,7 +185,6 @@
             this.nrobjectDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.nrobjectDataGridViewTextBoxColumn.Name = "nrobjectDataGridViewTextBoxColumn";
             this.nrobjectDataGridViewTextBoxColumn.ReadOnly = true;
-            this.nrobjectDataGridViewTextBoxColumn.Width = 125;
             // 
             // rEQUESTBindingSource
             // 
@@ -184,6 +198,7 @@
             // 
             // comboBox1
             // 
+            this.comboBox1.Font = new System.Drawing.Font("Century Gothic", 10F);
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
             "ALL",
@@ -191,40 +206,41 @@
             "CAN",
             "ACT",
             "XXX"});
-            this.comboBox1.Location = new System.Drawing.Point(54, 14);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBox1.Location = new System.Drawing.Point(76, 15);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(68, 21);
+            this.comboBox1.Size = new System.Drawing.Size(68, 25);
             this.comboBox1.TabIndex = 49;
             // 
             // dateTimePicker2
             // 
             this.dateTimePicker2.CustomFormat = "yyyy-MM-dd";
+            this.dateTimePicker2.Font = new System.Drawing.Font("Century Gothic", 10F);
             this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker2.Location = new System.Drawing.Point(188, 15);
-            this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dateTimePicker2.Location = new System.Drawing.Point(197, 15);
+            this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(2);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.ShowCheckBox = true;
-            this.dateTimePicker2.Size = new System.Drawing.Size(120, 20);
+            this.dateTimePicker2.Size = new System.Drawing.Size(120, 24);
             this.dateTimePicker2.TabIndex = 48;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label5.Font = new System.Drawing.Font("Century Gothic", 10F);
             this.label5.Location = new System.Drawing.Point(149, 17);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(38, 17);
+            this.label5.Size = new System.Drawing.Size(43, 19);
             this.label5.TabIndex = 47;
             this.label5.Text = "Date";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label6.Location = new System.Drawing.Point(6, 15);
+            this.label6.Font = new System.Drawing.Font("Century Gothic", 10F);
+            this.label6.Location = new System.Drawing.Point(21, 17);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(48, 17);
+            this.label6.Size = new System.Drawing.Size(50, 19);
             this.label6.TabIndex = 46;
             this.label6.Text = "Status";
             // 
@@ -234,18 +250,19 @@
             // 
             // objectBox
             // 
-            this.objectBox.Location = new System.Drawing.Point(400, 15);
+            this.objectBox.Font = new System.Drawing.Font("Century Gothic", 10F);
+            this.objectBox.Location = new System.Drawing.Point(414, 14);
             this.objectBox.Name = "objectBox";
-            this.objectBox.Size = new System.Drawing.Size(115, 20);
+            this.objectBox.Size = new System.Drawing.Size(115, 24);
             this.objectBox.TabIndex = 50;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label3.Location = new System.Drawing.Point(336, 15);
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 10F);
+            this.label3.Location = new System.Drawing.Point(336, 17);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(62, 16);
+            this.label3.Size = new System.Drawing.Size(72, 19);
             this.label3.TabIndex = 51;
             this.label3.Text = "Nr object";
             // 
@@ -253,6 +270,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.label3);
             this.Controls.Add(this.objectBox);
             this.Controls.Add(this.comboBox1);
@@ -262,7 +280,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.searchBox);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Requests";
             this.Size = new System.Drawing.Size(802, 392);
             this.Load += new System.EventHandler(this.Requests_Load);
