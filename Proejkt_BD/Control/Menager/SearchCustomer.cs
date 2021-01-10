@@ -49,5 +49,10 @@ namespace Proejkt_BD.Control.Menager
 
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

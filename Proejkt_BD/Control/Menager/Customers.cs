@@ -23,6 +23,9 @@ namespace Proejkt_BD.Control.Menager
             AddCustomer a1 = new AddCustomer();
             a1.ShowDialog();
             UsersDataLoad();
+
+            var result = SQLmanager.SearchCustomers("", "", "");
+            dataGridView1.DataSource = result;
         }
 
         private void button1_Click(object sender, EventArgs e)
