@@ -24,7 +24,7 @@ namespace Proejkt_BD.Control.Worker
             this.Hide();
             Form1 a1 = new Form1();
             a1.ShowDialog();
-            //Baza.SQLworker.SetWorkerInactive(Int32.Parse(textBox1.Text));
+            //Baza.SQLworker.SetWorkerInactive(textBox1.Text);
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -43,6 +43,14 @@ namespace Proejkt_BD.Control.Worker
             // TODO: Ten wiersz kodu wczytuje dane do tabeli 'rSSDataSet.ACTIVITY' . Możesz go przenieść lub usunąć.
             this.aCTIVITYTableAdapter.Fill(this.rSSDataSet.ACTIVITY);
 
+            var dataSource = new List<string>();
+            dataSource.Add("ALL");
+            dataSource.Add("ACT");
+            dataSource.Add("CAN");
+            dataSource.Add("EXP");
+
+            comboBox1.DataSource = dataSource;
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -60,7 +68,7 @@ namespace Proejkt_BD.Control.Worker
             else
                 d = "";
 
-            if (comboBox1.Text.ToString() == "ALL")
+            if (comboBox1.Text == "ALL")
             {
                 var result = SQLworker.SearchActivity("", d, check);
                 dataGridView1.DataSource = result;

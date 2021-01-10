@@ -69,22 +69,24 @@ namespace Proejkt_BD.Control.Baza
             return;
         }
 
-        public static void SetWorkerActive(Int32 id)
+        public static void SetWorkerActive(string id)
         {
+            Int32 _id = Int32.Parse(id);
             LINQDataContext db = new LINQDataContext();
             var result = (from e in db.PERSONEL
-                          where e.id_personel.Equals(id)
-                          select e).SingleOrDefault();
+                          where e.id_personel.Equals(_id)
+                          select e).First();
             result.active = "T";
             db.SubmitChanges();
         }
 
-        public static void SetWorkerInactive(Int32 id)
+        public static void SetWorkerInactive(string id)
         {
+            Int32 _id = Int32.Parse(id);
             LINQDataContext db = new LINQDataContext();
             var result = (from e in db.PERSONEL
-                          where e.id_personel.Equals(id)
-                          select e).SingleOrDefault();
+                          where e.id_personel.Equals(_id)
+                          select e).First();
             result.active = "F";
 
             db.SubmitChanges();

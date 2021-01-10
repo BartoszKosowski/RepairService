@@ -13,9 +13,14 @@ namespace Proejkt_BD.Control.Menager
     public partial class SearchVehicle : Form
     {
         public IQueryable<Baza.OBJECT> _ob;
-        public SearchVehicle(object id)
+        bool _ifRequest;
+        object _id;
+        Int32 _idClient;
+        public SearchVehicle(object id, bool ifRequest)
         {
             InitializeComponent();
+            _ifRequest = ifRequest;
+            _id = id;
             var result = Baza.SQLmanager.GetCustomerObject(id);
             dataGridView1.DataSource = result;
             this.dataGridView1.Columns["id_client"].Visible = false;
@@ -36,7 +41,7 @@ namespace Proejkt_BD.Control.Menager
 
         private void addButton1_Click(object sender, EventArgs e)
         {
-            AddVehicle av = new AddVehicle();
+            AddVehicle av = new AddVehicle(_ifRequest, _id);
             av.ShowDialog();
         }
 
@@ -44,6 +49,11 @@ namespace Proejkt_BD.Control.Menager
         {
             var result = Baza.SQLmanager.ChooseObject(this.dataGridView1.CurrentRow.Cells[0].Value);
             SetVehicle(result);
+            Close();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
             Close();
         }
     }

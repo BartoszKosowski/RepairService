@@ -16,6 +16,13 @@ namespace Proejkt_BD.Control.Admin
         public NewUser()
         {
             InitializeComponent();
+
+            var dataSource = new List<string>();
+            dataSource.Add("Admin");
+            dataSource.Add("Manager");
+            dataSource.Add("Worker");
+
+            comboBox1.DataSource = dataSource;
         }
 
         private void button1_Click(object sender, EventArgs e)

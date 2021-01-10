@@ -20,7 +20,6 @@ namespace Proejkt_BD.Control.Menager
             _id = id;
             _exDate = exDate;
             _reqDate = reqDate;
-
             comboBox1.DataSource = Baza.SQLmanager.GetAvailableActivity().ToList();
             textBox5.Text = Baza.SQLmanager.GetActivityNumber(_id).ToString();
         }

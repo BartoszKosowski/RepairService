@@ -16,6 +16,13 @@ namespace Proejkt_BD.Control.Admin
         public EditUser()
         {
             InitializeComponent();
+
+            var dataSource = new List<string>();
+            dataSource.Add("Admin");
+            dataSource.Add("Manager");
+            dataSource.Add("Worker");
+
+            comboBox1.DataSource = dataSource;
         }
 
         private void textBox5_TextChanged(object sender, EventArgs e)

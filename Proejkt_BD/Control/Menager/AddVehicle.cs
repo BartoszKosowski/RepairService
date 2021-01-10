@@ -13,9 +13,14 @@ namespace Proejkt_BD.Control.Menager
 {
     public partial class AddVehicle : Form
     {
-        public AddVehicle()
+        bool _ifRequest = false;
+        object _id;
+        public AddVehicle(bool ifRequest, object id)
         {
             InitializeComponent();
+            _ifRequest = ifRequest;
+            _id = id;
+
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -30,9 +35,17 @@ namespace Proejkt_BD.Control.Menager
             
             // TODO: Ten wiersz kodu wczytuje dane do tabeli 'rSSDataSet.OBJ_TYPE' . Możesz go przenieść lub usunąć.
             //this.oBJ_TYPETableAdapter.Fill(this.rSSDataSet.OBJ_TYPE);
+            if(_ifRequest == true)
+            {
+                var result0 = Baza.SQLmanager.SearchCustomers(_id);
+                dataGridView1.DataSource = result0;
+            }
+            else
+            {
+                var result0 = Baza.SQLmanager.SearchCustomers("","","");
+                dataGridView1.DataSource = result0;
+            }
             
-            var result0 = Baza.SQLmanager.SearchCustomers("xxxxx", "", "");
-            dataGridView1.DataSource = result0;
 
             var types = SQLmanager.GetAllObjectTypes().ToList();
             comboBox1.DataSource = types;
@@ -46,6 +59,7 @@ namespace Proejkt_BD.Control.Menager
         {
             //int.TryParse(comboBox2.SelectedValue.ToString(), out int id_client);
             //SQLmanager.AddVehicle(textBox1.Text,textBox2.Text, comboBox1.SelectedValue.ToString(), id_client);
+
             Int32 id = Int32.Parse(this.dataGridView1.CurrentRow.Cells[0].Value.ToString());
             string reg = this.textBox1.Text;
             string model = this.textBox2.Text;

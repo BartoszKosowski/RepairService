@@ -17,12 +17,18 @@ namespace Proejkt_BD.Control.Admin
         public AdminPanel()
         {
             InitializeComponent();
+            var dataSource = new List<string>();
+            dataSource.Add("Admin");
+            dataSource.Add("Manager");
+            dataSource.Add("Worker");
+
+            comboBox1.DataSource = dataSource;
         }
 
         private void button5_Click(object sender, EventArgs e)
         {           
             this.Hide();
-            MessageBox.Show("Goodbye!");
+            //MessageBox.Show("Goodbye!");
             Form1 a1 = new Form1();
             a1.ShowDialog();
             this.Close();
@@ -56,6 +62,8 @@ namespace Proejkt_BD.Control.Admin
                 a1.checkBox1.Checked = false;
             }
             a1.ShowDialog();
+
+            
         }
 
         private void label4_Click(object sender, EventArgs e)

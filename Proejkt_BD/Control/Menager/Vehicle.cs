@@ -32,7 +32,7 @@ namespace Proejkt_BD.Control.Menager
 
         private void addButton1_Click(object sender, EventArgs e)
         {
-            AddVehicle a1 = new AddVehicle();
+            AddVehicle a1 = new AddVehicle(false,0);
             a1.ShowDialog();
             var result = SQLmanager.SearchObjects("", "", "");
             dataGridView1.DataSource = result;

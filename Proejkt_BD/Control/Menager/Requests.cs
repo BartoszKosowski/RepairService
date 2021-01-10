@@ -16,6 +16,14 @@ namespace Proejkt_BD.Control.Menager
         public Requests()
         {
             InitializeComponent();
+
+            var dataSource = new List<string>();
+            dataSource.Add("ALL");
+            dataSource.Add("ACT");
+            dataSource.Add("CAN");
+            dataSource.Add("EXP");
+
+            comboBox1.DataSource = dataSource;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -28,7 +36,7 @@ namespace Proejkt_BD.Control.Menager
             var obj = SQLmanager.SearchObjects3(this.dataGridView1.CurrentRow.Cells[7].Value.ToString());
             var customer = SQLmanager.SearchCustomerFromID(obj.First().id_client.ToString());
             string customer2 = customer.First().first_name.ToString() + " " + customer.First().last_name.ToString() + " " + customer.First().name.ToString();
-            RequestDetails a1 = new RequestDetails();
+            RequestDetails a1 = new RequestDetails(this.dataGridView1.CurrentRow.Cells[2].Value.ToString());
             a1.textBox1.Text = this.dataGridView1.CurrentRow.Cells[0].Value.ToString(); //id
             a1.richTextBox1.Text = this.dataGridView1.CurrentRow.Cells[1].Value.ToString(); //description
 
@@ -38,7 +46,7 @@ namespace Proejkt_BD.Control.Menager
                 a1.richTextBox2.Text = this.dataGridView1.CurrentRow.Cells[3].Value.ToString(); //result
 
 
-            a1.comboBox1.Text = this.dataGridView1.CurrentRow.Cells[2].Value.ToString(); //status
+            //a1.comboBox1.Text = this.dataGridView1.CurrentRow.Cells[2].Value.ToString(); //status
             a1.textBox2.Text = customer2; //customer data
             a1.textBox3.Text = this.dataGridView1.CurrentRow.Cells[7].Value.ToString(); //vehicle data            
             a1.dateTimePicker1.Value = Convert.ToDateTime(this.dataGridView1.CurrentRow.Cells[4].Value.ToString()); //start date
@@ -49,6 +57,8 @@ namespace Proejkt_BD.Control.Menager
                 a1.dateTimePicker2.Value = Convert.ToDateTime(this.dataGridView1.CurrentRow.Cells[5].Value.ToString()); //final date
             
             a1.ShowDialog();
+            var result = SQLmanager.SearchRequests();
+            dataGridView1.DataSource = result;
         }
 
         private void searchBox_Click(object sender, EventArgs e)
@@ -65,7 +75,7 @@ namespace Proejkt_BD.Control.Menager
 
         private void Requests_Load(object sender, EventArgs e)
         {            
-            var result = SQLmanager.SearchRequests("", "", "");
+            var result = SQLmanager.SearchRequests();
             dataGridView1.DataSource = result;
         }
     }

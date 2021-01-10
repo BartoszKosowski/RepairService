@@ -7,9 +7,20 @@ using Proejkt_BD.Control.Baza.Modele;
 
 namespace Proejkt_BD.Control.Baza
 {
+
     class SQLmanager
     {
-		public static IQueryable<CLIENT> SearchCustomers(string name, string fname, string lname)
+        public static IQueryable<CLIENT> SearchCustomers(object id)
+        {
+            LINQDataContext db = new LINQDataContext();
+            var result = from e in db.CLIENT
+                          where e.id_client.Equals(id)
+                          select e;
+            return result;
+        }
+
+
+        public static IQueryable<CLIENT> SearchCustomers(string name, string fname, string lname)
 		{
 			LINQDataContext db = new LINQDataContext();
 			var result = from adm in db.CLIENT
@@ -132,18 +143,43 @@ namespace Proejkt_BD.Control.Baza
 			return;
 		}
 
+        public static IQueryable<REQUEST> SearchRequests()
+        {
+            LINQDataContext db = new LINQDataContext();
+            var result = from e in db.REQUEST
+                         select e;
+            return result;
+        }
+
 		public static IQueryable<REQUEST> SearchRequests(string status, string date, string nr_object)
 		{
 			if (string.IsNullOrWhiteSpace(date))
 			{
 				LINQDataContext db = new LINQDataContext();
-				var result = from adm in db.REQUEST
-							 where adm.status.StartsWith(status) &&
-								adm.nr_object.StartsWith(nr_object)
-							 select adm;
-				return result;
-			}
-			else
+                if(status != "ALL")
+                {
+                    var result = from adm in db.REQUEST
+                                 where adm.status.StartsWith(status) &&
+                                    adm.nr_object.StartsWith(nr_object)
+                                 select adm;
+                    return result;
+                }
+                else
+                {
+                    var result = from e in db.REQUEST
+                                 select e;
+                    return result;
+                }
+				
+			} else if(status == "ALL")
+            {
+                LINQDataContext db = new LINQDataContext();
+                var result = from e in db.REQUEST
+                             where e.date_reg.Equals(date)
+                             select e;
+                return result;
+            }
+			else 
             {
 				LINQDataContext db = new LINQDataContext();
 				var result = from adm in db.REQUEST
@@ -401,6 +437,7 @@ namespace Proejkt_BD.Control.Baza
             var result = from e in db.PERSONEL
                          where e.active.ToString().Equals("T") && e.role.ToString().Equals("Worker")
                          select e.last_name;
+
             return result;
         }
         public static void UpdateActivity(Int32 id, Int32 sn, string dc, string wo, string status)
@@ -422,14 +459,14 @@ namespace Proejkt_BD.Control.Baza
             db.SubmitChanges();
         }
 
-        public static void SaveRequestDetails(Int32 id, string desc/*,object status*/, string result, DateTime expDate)
+        public static void SaveRequestDetails(Int32 id, string desc, string status, string result, DateTime expDate)
         {
             LINQDataContext db = new LINQDataContext();
             REQUEST request = (from e in db.REQUEST
                                where e.id_request.Equals(id)
                                select e).SingleOrDefault();
             request.description = desc;
-            //request.status = status.ToString();
+            request.status = status;
             request.result = result;
             request.date_reg = expDate;
 
@@ -444,6 +481,7 @@ namespace Proejkt_BD.Control.Baza
                          select e;
             return result.Count() + 1;
         }
+
     }
 }
 
