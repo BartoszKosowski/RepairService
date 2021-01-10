@@ -19,13 +19,6 @@ namespace Proejkt_BD.Control.Worker
             
         }
 
-        private void button5_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Form1 a1 = new Form1();
-            a1.ShowDialog();
-            //Baza.SQLworker.SetWorkerInactive(textBox1.Text);
-        }
 
         private void button4_Click(object sender, EventArgs e)
         {
@@ -189,6 +182,14 @@ namespace Proejkt_BD.Control.Worker
 
             a1.ShowDialog();
             this.aCTIVITYTableAdapter.Fill(this.rSSDataSet.ACTIVITY);
+        }
+
+        private void button4_Click_1(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form1 a1 = new Form1();
+            a1.ShowDialog();
+            //Baza.SQLworker.SetWorkerInactive(textBox1.Text);
         }
     }
 }
