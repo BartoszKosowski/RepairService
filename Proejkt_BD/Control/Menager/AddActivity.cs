@@ -26,11 +26,19 @@ namespace Proejkt_BD.Control.Menager
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Baza.SQLmanager.AddActivity(_id, Int16.Parse(textBox5.Text), comboBox1.Text, richTextBox1.Text, _reqDate, _exDate);
+            var act_dict = Baza.SQLmanager.SearchActivityDictionary(comboBox1.Text);
+            string act_dict_ = act_dict.First().ToString();
+            
+            Baza.SQLmanager.AddActivity(_id, Int16.Parse(textBox5.Text), act_dict_, richTextBox1.Text, _reqDate, _exDate);
             Close();
         }
 
         private void AddActivity_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

@@ -201,15 +201,32 @@ namespace Proejkt_BD.Control.Baza
 			return result;
 		}
 
-		public static IQueryable<string> GetAllObjectTypes()
+        public static IQueryable<string> SearchActivityDictionary(string act_name)
+        {
+            LINQDataContext db = new LINQDataContext();
+            var result = from adm in db.ACT_DICT
+                         where adm.act_name.Equals(act_name)
+                         select adm.act_type;
+            return result;
+        }
+
+        public static IQueryable<string> GetAllObjectTypes()
         {
 			LINQDataContext db = new LINQDataContext();
 			var result = from types in db.OBJ_TYPE 
-						select types.type;
+						select types.name;
 			return result;
 		}
+        public static IQueryable<string> SearchObjectTypeFromName(string name)
+        {
+            LINQDataContext db = new LINQDataContext();
+            var result = from adm in db.OBJ_TYPE
+                         where adm.name.Equals(name)
+                         select adm.type;
+            return result;
+        }
 
-		public static void AddVehicle(string nr_object, string name , string obj_type, int id_client)
+        public static void AddVehicle(string nr_object, string name , string obj_type, int id_client)
 		{
 			//Create new Employee
 			LINQDataContext db = new LINQDataContext();

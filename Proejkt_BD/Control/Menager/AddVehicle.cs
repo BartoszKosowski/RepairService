@@ -63,9 +63,11 @@ namespace Proejkt_BD.Control.Menager
             Int32 id = Int32.Parse(this.dataGridView1.CurrentRow.Cells[0].Value.ToString());
             string reg = this.textBox1.Text;
             string model = this.textBox2.Text;
-            string type = this.comboBox1.Text;
 
-            SQLmanager.AddVehicle(reg, model, type, id);
+            var type = SQLmanager.SearchObjectTypeFromName(this.comboBox1.Text);
+            string type_ = type.First().ToString();
+            
+            SQLmanager.AddVehicle(reg, model, type_, id);
             //MessageBox.Show("The vehicle has been added to database");
             this.Close();
             MessageBox.Show("The vehicle has been added to database");
