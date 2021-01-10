@@ -41,6 +41,7 @@ namespace Proejkt_BD.Control.Menager
             {
                 dataSource.Add("CAN");
                 dataSource.Add("ACT");
+                dataSource.Add("EXP");
 
             }
             else

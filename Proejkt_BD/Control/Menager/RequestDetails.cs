@@ -17,7 +17,7 @@ namespace Proejkt_BD.Control.Menager
         public RequestDetails(string status)
         {
             InitializeComponent();
-            status = _status;
+            _status = status;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -48,17 +48,21 @@ namespace Proejkt_BD.Control.Menager
             // TODO: Ten wiersz kodu wczytuje dane do tabeli 'rSSDataSet.ACTIVITY' . Możesz go przenieść lub usunąć.
             //this.aCTIVITYTableAdapter.Fill(this.rSSDataSet.ACTIVITY);
             var dataSource = new List<string>();
+            
             if (_status == "ACT")
             {
                 dataSource.Add("ACT");
                 dataSource.Add("CAN");
                 dataSource.Add("EXP");
-            } else if (_status == "CAN")
+            } 
+            
+            else if (_status == "CAN")
             {
                 dataSource.Add("CAN");
                 dataSource.Add("ACT");
                 dataSource.Add("EXP");
             }
+            
             else
             {
                 dataSource.Add("EXP");
@@ -107,6 +111,11 @@ namespace Proejkt_BD.Control.Menager
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }
