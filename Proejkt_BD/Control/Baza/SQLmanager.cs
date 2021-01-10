@@ -153,42 +153,49 @@ namespace Proejkt_BD.Control.Baza
 
 		public static IQueryable<REQUEST> SearchRequests(string status, string date, string nr_object)
 		{
-			if (string.IsNullOrWhiteSpace(date))
-			{
-				LINQDataContext db = new LINQDataContext();
-                if(status != "ALL")
+            if (string.IsNullOrWhiteSpace(date))
+            {
+                LINQDataContext db = new LINQDataContext();
+                if (status == "ALL")
                 {
-                    var result = from adm in db.REQUEST
-                                 where adm.status.StartsWith(status) &&
-                                    adm.nr_object.StartsWith(nr_object)
-                                 select adm;
+                    var result = from e in db.REQUEST
+                                 where e.status.StartsWith("") &&
+                                    e.nr_object.StartsWith(nr_object)
+                                 select e;
                     return result;
                 }
                 else
                 {
                     var result = from e in db.REQUEST
+                                 where e.status.StartsWith(status) &&
+                                    e.nr_object.StartsWith(nr_object)
                                  select e;
                     return result;
                 }
-				
-			} else if(status == "ALL")
+            }
+
+            else
             {
                 LINQDataContext db = new LINQDataContext();
-                var result = from e in db.REQUEST
-                             where e.date_reg.Equals(date)
-                             select e;
-                return result;
+                if (status == "ALL")
+                {
+                    var result = from e in db.REQUEST
+                                 where e.status.StartsWith("") &&
+                                 e.nr_object.StartsWith(nr_object) &&
+                                    e.date_reg.Equals(date)
+                                 select e;
+                    return result;
+                }
+                else
+                {
+                    var result = from e in db.REQUEST
+                                 where e.status.StartsWith(status) &&
+                                    e.nr_object.StartsWith(nr_object) &&
+                                    e.date_reg.Equals(date) 
+                                 select e;
+                    return result;
+                }
             }
-			else 
-            {
-				LINQDataContext db = new LINQDataContext();
-				var result = from adm in db.REQUEST
-							 where adm.status.StartsWith(status) &&
-								adm.date_reg.Equals(date) &&
-								adm.nr_object.StartsWith(nr_object)
-							 select adm;
-				return result;
-			}
 
 		}
 
