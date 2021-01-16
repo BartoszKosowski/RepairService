@@ -67,11 +67,11 @@
             this.checkBox1.AutoSize = true;
             this.checkBox1.Font = new System.Drawing.Font("Century Gothic", 10F);
             this.checkBox1.Location = new System.Drawing.Point(533, 82);
-            this.checkBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkBox1.Margin = new System.Windows.Forms.Padding(4);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(60, 25);
+            this.checkBox1.Size = new System.Drawing.Size(73, 25);
             this.checkBox1.TabIndex = 23;
-            this.checkBox1.Text = "Me";
+            this.checkBox1.Text = "Mine";
             this.checkBox1.UseVisualStyleBackColor = true;
             // 
             // label3
@@ -89,8 +89,8 @@
             // 
             this.button1.BackColor = System.Drawing.Color.White;
             this.button1.Font = new System.Drawing.Font("Century Gothic", 10F);
-            this.button1.Location = new System.Drawing.Point(608, 76);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Location = new System.Drawing.Point(631, 75);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(177, 37);
             this.button1.TabIndex = 19;
@@ -297,7 +297,7 @@
             this.button2.BackColor = System.Drawing.Color.White;
             this.button2.Font = new System.Drawing.Font("Century Gothic", 10F);
             this.button2.Location = new System.Drawing.Point(13, 533);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(653, 50);
             this.button2.TabIndex = 33;
@@ -310,7 +310,7 @@
             this.button3.BackColor = System.Drawing.Color.White;
             this.button3.Font = new System.Drawing.Font("Century Gothic", 10F);
             this.button3.Location = new System.Drawing.Point(675, 533);
-            this.button3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button3.Margin = new System.Windows.Forms.Padding(4);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(673, 50);
             this.button3.TabIndex = 34;
@@ -325,7 +325,7 @@
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.textBox1);
             this.panel1.Location = new System.Drawing.Point(-4, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1367, 62);
             this.panel1.TabIndex = 35;

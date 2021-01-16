@@ -34,7 +34,11 @@ namespace Proejkt_BD.Control.Worker
         private void WorkerPanel_Load(object sender, EventArgs e)
         {
             // TODO: Ten wiersz kodu wczytuje dane do tabeli 'rSSDataSet.ACTIVITY' . Możesz go przenieść lub usunąć.
-            this.aCTIVITYTableAdapter.Fill(this.rSSDataSet.ACTIVITY);
+
+            //this.aCTIVITYTableAdapter.Fill(this.rSSDataSet.ACTIVITY);
+            this.checkBox1.Checked = true;
+            var result = SQLworker.SearchActivity("", "", textBox1.Text.ToString());
+            dataGridView1.DataSource = result;
 
             var dataSource = new List<string>();
             dataSource.Add("ALL");

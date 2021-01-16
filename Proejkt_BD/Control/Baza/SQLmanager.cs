@@ -478,11 +478,11 @@ namespace Proejkt_BD.Control.Baza
             //Int32 _idPersonel = 0;
             LINQDataContext db = new LINQDataContext();
             var result = (from e in db.ACTIVITY
-                          where e.id_request.Equals(id) && e.sequence_nb.Equals(sn)
-                          select e).SingleOrDefault();
+                          where e.id_activity == id && e.sequence_nb == sn
+                          select e).First();
             var result1 = (from e in db.PERSONEL
                           where e.last_name.ToString().Equals(wo)
-                          select e).SingleOrDefault();
+                          select e).First();
 
             result.id_personel = result1.id_personel;
             result.description = dc;
