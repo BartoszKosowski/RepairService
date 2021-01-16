@@ -30,10 +30,34 @@ namespace Proejkt_BD.Control.Menager
                 dataGridView1.DataSource = result1;
 
             }
+            else if (this.dataGridView1.CurrentRow.Cells[4].Value.ToString() == null && this.dataGridView1.CurrentRow.Cells[5].Value.ToString() == null)
+            {
+                Activity a1 = new Activity(Int32.Parse(this.dataGridView1.CurrentRow.Cells[0].Value.ToString()), Int32.Parse(this.dataGridView1.CurrentRow.Cells[6].Value.ToString()),
+                Int32.Parse(this.dataGridView1.CurrentRow.Cells[9].Value.ToString()), this.dataGridView1.CurrentRow.Cells[8].Value.ToString(), this.dataGridView1.CurrentRow.Cells[1].Value.ToString(), this.dataGridView1.CurrentRow.Cells[3].Value.ToString(),
+                DateTime.Parse("10.10.1999 00:00:00"), DateTime.Parse("10.10.1999 00:00:00"));
+                a1.ShowDialog();
+            }
+            else if (this.dataGridView1.CurrentRow.Cells[4].Value.ToString() == null && this.dataGridView1.CurrentRow.Cells[5].Value.ToString() != null)
+            {
+                Activity a1 = new Activity(Int32.Parse(this.dataGridView1.CurrentRow.Cells[0].Value.ToString()), Int32.Parse(this.dataGridView1.CurrentRow.Cells[6].Value.ToString()),
+                Int32.Parse(this.dataGridView1.CurrentRow.Cells[9].Value.ToString()), this.dataGridView1.CurrentRow.Cells[8].Value.ToString(), this.dataGridView1.CurrentRow.Cells[1].Value.ToString(), this.dataGridView1.CurrentRow.Cells[3].Value.ToString(),
+                DateTime.Parse("10.10.1999 00:00:00"), DateTime.Parse(this.dataGridView1.CurrentRow.Cells[5].Value.ToString()));
+                a1.ShowDialog();
+            }
+
+            else if (this.dataGridView1.CurrentRow.Cells[4].Value != null && this.dataGridView1.CurrentRow.Cells[5].Value == null)
+            {
+                Activity a1 = new Activity(Int32.Parse(this.dataGridView1.CurrentRow.Cells[0].Value.ToString()), Int32.Parse(this.dataGridView1.CurrentRow.Cells[6].Value.ToString()),
+                Int32.Parse(this.dataGridView1.CurrentRow.Cells[9].Value.ToString()), this.dataGridView1.CurrentRow.Cells[8].Value.ToString(), this.dataGridView1.CurrentRow.Cells[1].Value.ToString(), this.dataGridView1.CurrentRow.Cells[3].Value.ToString(),
+                DateTime.Parse(this.dataGridView1.CurrentRow.Cells[4].Value.ToString()), DateTime.Parse("10.10.1999 00:00:00"));
+                a1.ShowDialog();
+            }
+
             else
             {
-                Activity a1 = new Activity(Int32.Parse(textBox1.Text), Int32.Parse(this.dataGridView1.CurrentRow.Cells[9].Value.ToString()),
-                this.dataGridView1.CurrentRow.Cells[8].Value.ToString(), this.dataGridView1.CurrentRow.Cells[1].Value.ToString(), this.dataGridView1.CurrentRow.Cells[3].Value.ToString());
+                Activity a1 = new Activity(Int32.Parse(this.dataGridView1.CurrentRow.Cells[0].Value.ToString()), Int32.Parse(this.dataGridView1.CurrentRow.Cells[6].Value.ToString()),
+                Int32.Parse(this.dataGridView1.CurrentRow.Cells[9].Value.ToString()), this.dataGridView1.CurrentRow.Cells[8].Value.ToString(), this.dataGridView1.CurrentRow.Cells[1].Value.ToString(), this.dataGridView1.CurrentRow.Cells[3].Value.ToString(), 
+                DateTime.Parse(this.dataGridView1.CurrentRow.Cells[4].Value.ToString()), DateTime.Parse(this.dataGridView1.CurrentRow.Cells[5].Value.ToString()));
                 a1.ShowDialog();
             }
             

@@ -243,7 +243,7 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(293, 44);
             this.button2.TabIndex = 52;
-            this.button2.Text = "Save";
+            this.button2.Text = "Apply changes";
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 

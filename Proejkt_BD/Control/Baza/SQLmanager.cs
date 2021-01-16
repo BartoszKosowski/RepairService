@@ -217,6 +217,15 @@ namespace Proejkt_BD.Control.Baza
             return result;
         }
 
+        public static IQueryable<string> SearchActivityDictionaryType(string act_type)
+        {
+            LINQDataContext db = new LINQDataContext();
+            var result = from adm in db.ACT_DICT
+                         where adm.act_type.Equals(act_type)
+                         select adm.act_name;
+            return result;
+        }
+
         public static IQueryable<string> GetAllObjectTypes()
         {
 			LINQDataContext db = new LINQDataContext();
@@ -464,7 +473,7 @@ namespace Proejkt_BD.Control.Baza
 
             return result;
         }
-        public static void UpdateActivity(Int32 id, Int32 sn, string dc, string wo, string status)
+        public static void UpdateActivity(Int32 id, Int32 sn, string dc, string wo, string status, DateTime dreg, DateTime dfc, string act)
         {
             //Int32 _idPersonel = 0;
             LINQDataContext db = new LINQDataContext();
@@ -478,6 +487,9 @@ namespace Proejkt_BD.Control.Baza
             result.id_personel = result1.id_personel;
             result.description = dc;
             result.status = status;
+            result.date_reg = dreg;
+            result.date_fn_cn = dfc;
+            result.act_dict = act;
 
 
             db.SubmitChanges();
